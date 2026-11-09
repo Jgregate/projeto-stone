@@ -1,0 +1,63 @@
+username,origem,segmento,como_encontrei
+impulsostone,ecossistema_stone,educacao_empreendedora,perfil oficial do Impulso Stone (relatório do case)
+stone,ecossistema_stone,ferramentas_maquininha,perfil oficial da Stone
+tonpagamentos,ecossistema_stone,ferramentas_maquininha,perfil oficial da Ton (handle a confirmar)
+ton,ecossistema_stone,ferramentas_maquininha,variação do handle da Ton
+rodrigofinancas,ecossistema_stone,financas,parceiro do Impulso Stone (relatório do case) - embaixador de referência
+indiacorrea,ecossistema_stone,beleza,parceira do Impulso Stone (relatório do case) - embaixadora de referência
+sebrae,curadoria_setor,educacao_empreendedora,perfil oficial do Sebrae Nacional
+sebraesp,curadoria_setor,educacao_empreendedora,Sebrae estadual
+sebraemg,curadoria_setor,educacao_empreendedora,Sebrae estadual
+sebraerj,curadoria_setor,educacao_empreendedora,Sebrae estadual
+sebraepr,curadoria_setor,educacao_empreendedora,Sebrae estadual
+sebraeba,curadoria_setor,educacao_empreendedora,Sebrae estadual
+sebraego,curadoria_setor,educacao_empreendedora,Sebrae estadual (organizou o Mês do MEI)
+sebraedelas,curadoria_setor,educacao_empreendedora,programa Sebrae Delas citado na aula (handle a confirmar)
+jornalcontabil,curadoria_setor,gestao,portal de conteúdo para MEI e contadores
+revistapegn,curadoria_setor,educacao_empreendedora,revista Pequenas Empresas e Grandes Negócios
+contabilizei,curadoria_setor,gestao,contabilidade online para MEI e pequenas empresas
+maismei,curadoria_setor,gestao,MaisMei citada em reportagem da CartaCapital sobre MEI (handle a confirmar)
+infinitepay,concorrente_fintech,ferramentas_maquininha,concorrente citado na aula
+pagbank,concorrente_fintech,ferramentas_maquininha,concorrente citado na aula
+cora.bank,concorrente_fintech,financas,concorrente citado na aula (handle a confirmar)
+corabank,concorrente_fintech,financas,variação do handle da Cora
+mercadopagobr,concorrente_fintech,ferramentas_maquininha,concorrente de maquininhas
+sumupbrasil,concorrente_fintech,ferramentas_maquininha,concorrente de maquininhas
+contaazul,concorrente_fintech,gestao,ERP e gestão financeira para pequenas empresas
+asaas,concorrente_fintech,financas,conta digital e cobrança para pequenos negócios
+contasimples,concorrente_fintech,financas,conta PJ para pequenas empresas
+c6bank,concorrente_fintech,financas,banco com conta PJ e maquininha
+nuvemshop,plataforma_mpe,varejo,plataforma de e-commerce para pequenos negócios
+lojaintegrada,plataforma_mpe,varejo,plataforma de e-commerce para pequenos negócios
+rdstation,plataforma_mpe,marketing,ferramenta de marketing para pequenas e médias empresas
+camilafarani,criador_mpe,educacao_empreendedora,Forbes Brasil - perfis inspiradores de empreendedorismo
+anatex,criador_mpe,marketing,InfoMoney - perfis que todo empreendedor deve seguir
+conradoadolpho,criador_mpe,marketing,referência em marketing para pequenas empresas
+rafaelkiso,criador_mpe,marketing,fundador da mLabs e conteúdo de marketing para pequenos negócios
+nathfinancas,criador_mpe,financas,Nath Finanças - palestrante da Semana do MEI (CartaCapital)
+nataliabeauty,criador_mpe,beleza,Natália Beauty - palestrante da Semana do MEI (CartaCapital)
+lilialmeida,criador_mpe,alimentacao,chef Lili Almeida - palestrante da Semana do MEI (handle a confirmar)
+alicesalazar,criador_mpe,beleza,Alice Salazar - palestrante da Semana do MEI 2026 em MS
+luizdobrownie,criador_mpe,alimentacao,Luiz do Brownie - palestrante da Semana do MEI 2026 em MS (handle a confirmar)
+zicaassis,criador_mpe,beleza,Zica Assis - abriu o Esquenta da Semana do MEI 2026 (handle a confirmar)
+adrianapreta,criador_mpe,educacao_empreendedora,Adriana Barbosa da Feira Preta - Forbes Brasil
+facoascontas,criador_mpe,financas,Pamela Margarida - finanças para pequenas empreendedoras (Diário do Comércio)
+rodrigoschumacherfinancas,criador_mpe,financas,finfluencer citado no Diário do Comércio
+_manapreta,criador_mpe,marketing,marketing digital para afroempreendedoras (Metrópoles)
+mulheresceo,criador_mpe,educacao_empreendedora,perfil de empreendedorismo feminino citado no Metrópoles (handle a confirmar)
+bldfoodbr,criador_mpe,alimentacao,busca no Instagram por termos de alimentação (garimpo manual)
+lucro.na.confeitaria,criador_mpe,alimentacao,busca no Instagram por "lucro na confeitaria" (garimpo manual)
+mmgestaoenegocios,criador_mpe,alimentacao,busca no Instagram por termos de alimentação (garimpo manual)
+deliverycomdebora,criador_mpe,alimentacao,busca no Instagram por termos de alimentação (garimpo manual)
+sauloabrahaoo,criador_mpe,beleza,busca no Instagram por termos de beleza (garimpo manual)
+belezacomonegociooficial,criador_mpe,beleza,busca no Instagram por termos de beleza (garimpo manual)
+robsgrunevald,criador_mpe,beleza,busca no Instagram por termos de beleza (garimpo manual)
+belaflor.studio,criador_mpe,beleza,busca no Instagram por termos de beleza (garimpo manual)
+larissaotolini,criador_mpe,varejo,busca no Instagram por termos de varejo e moda (garimpo manual)
+marcelansgp,criador_mpe,varejo,busca no Instagram por termos de varejo e moda (garimpo manual)
+metodomajuseller,criador_mpe,varejo,busca no Instagram por termos de varejo e moda (garimpo manual)
+contadoramunique,criador_mpe,gestao,busca no Instagram por "contadora MEI" (garimpo manual)
+contadora.deborahmoreira,criador_mpe,gestao,busca no Instagram por "contadora MEI" (garimpo manual)
+mkt.insider.ca,criador_mpe,marketing,busca no Instagram por "marketing para pequenos negócios" (garimpo manual)
+kamilacd_,criador_mpe,marketing,busca no Instagram por "marketing para pequenos negócios" (garimpo manual)
+cora.contapj,concorrente_fintech,financas,concorrente citado na aula (handle confirmado no app)

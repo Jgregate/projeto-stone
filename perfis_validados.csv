@@ -1,0 +1,63 @@
+username,origem,segmento,como_encontrei,status,nome,followers,media_count,ultimo_post,detalhe,faixa,ativo_12m,aprovado,motivo
+impulsostone,ecossistema_stone,educacao_empreendedora,perfil oficial do Impulso Stone (relatório do case),ok,Impulso Stone,4363.0,152.0,2026-11-20 17:14:53+00:00,,micro,True,True,
+stone,ecossistema_stone,ferramentas_maquininha,perfil oficial da Stone,ok,Stone,711809.0,368.0,2026-11-20 11:00:04+00:00,,grande,True,True,
+tonpagamentos,ecossistema_stone,ferramentas_maquininha,perfil oficial da Ton (handle a confirmar),ok,Consultor de Vendas Ton,157.0,4.0,2025-07-07 22:51:43+00:00,,micro,False,False,excluído na curadoria manual (conta não oficial da Ton (poucos seguidores))
+ton,ecossistema_stone,ferramentas_maquininha,variação do handle da Ton,ok,TON Foundation,1261.0,35.0,2026-04-07 18:28:17+00:00,,micro,True,False,excluído na curadoria manual (conta não oficial da Ton (poucos seguidores))
+rodrigofinancas,ecossistema_stone,financas,parceiro do Impulso Stone (relatório do case) - embaixador de referência,ok,Rodrigo Almeida | Caixa e Lucro para Pequenas Empresas,375871.0,977.0,2026-11-18 21:07:44+00:00,,grande,True,True,
+indiacorrea,ecossistema_stone,beleza,parceira do Impulso Stone (relatório do case) - embaixadora de referência,ok,Indiânara Cörrêa,1337.0,255.0,2026-11-19 14:44:39+00:00,,micro,True,True,
+sebrae,curadoria_setor,educacao_empreendedora,perfil oficial do Sebrae Nacional,ok,Sebrae Nacional,2332221.0,10673.0,2026-11-21 14:01:39+00:00,,grande,True,True,
+sebraesp,curadoria_setor,educacao_empreendedora,Sebrae estadual,ok,Sebrae SP,520406.0,7329.0,2026-11-20 13:15:01+00:00,,grande,True,False,excluído por balanceamento de faixa (excesso de contas grandes)
+sebraemg,curadoria_setor,educacao_empreendedora,Sebrae estadual,erro,,,,,Invalid user id,,False,False,"conta inexistente, pessoal ou inacessível"
+sebraerj,curadoria_setor,educacao_empreendedora,Sebrae estadual,ok,Sebrae/RJ,384158.0,2702.0,2026-11-19 20:28:26+00:00,,grande,True,False,excluído por balanceamento de faixa (excesso de contas grandes)
+sebraepr,curadoria_setor,educacao_empreendedora,Sebrae estadual,ok,Sebrae PR,200476.0,4364.0,2026-11-20 13:00:18+00:00,,grande,True,False,excluído por balanceamento de faixa (excesso de contas grandes)
+sebraeba,curadoria_setor,educacao_empreendedora,Sebrae estadual,erro,,,,,Invalid user id,,False,False,"conta inexistente, pessoal ou inacessível"
+sebraego,curadoria_setor,educacao_empreendedora,Sebrae estadual (organizou o Mês do MEI),erro,,,,,Invalid user id,,False,False,"conta inexistente, pessoal ou inacessível"
+sebraedelas,curadoria_setor,educacao_empreendedora,programa Sebrae Delas citado na aula (handle a confirmar),erro,,,,,Invalid user id,,False,False,"conta inexistente, pessoal ou inacessível"
+jornalcontabil,curadoria_setor,gestao,portal de conteúdo para MEI e contadores,ok,Jornal Contábil,316909.0,17130.0,2026-11-20 09:00:01+00:00,,grande,True,False,excluído por balanceamento de faixa (excesso de contas grandes)
+revistapegn,curadoria_setor,educacao_empreendedora,revista Pequenas Empresas e Grandes Negócios,ok,Revista PEGN,1518565.0,6620.0,2026-11-21 20:00:06+00:00,,grande,True,False,excluído por balanceamento de faixa (excesso de contas grandes)
+contabilizei,curadoria_setor,gestao,contabilidade online para MEI e pequenas empresas,ok,Contabilizei,211873.0,2145.0,2026-11-19 15:19:52+00:00,,grande,True,False,excluído por balanceamento de faixa (excesso de contas grandes)
+maismei,curadoria_setor,gestao,MaisMei citada em reportagem da CartaCapital sobre MEI (handle a confirmar),erro,,,,,Invalid user id,,False,False,"conta inexistente, pessoal ou inacessível"
+infinitepay,concorrente_fintech,ferramentas_maquininha,concorrente citado na aula,ok,InfinitePay,2476288.0,1650.0,2026-11-19 14:32:29+00:00,,grande,True,True,
+pagbank,concorrente_fintech,ferramentas_maquininha,concorrente citado na aula,ok,PagBank,889052.0,2525.0,2026-11-19 10:00:24+00:00,,grande,True,True,
+cora.bank,concorrente_fintech,financas,concorrente citado na aula (handle a confirmar),erro,,,,,Invalid user id,,False,False,"conta inexistente, pessoal ou inacessível"
+corabank,concorrente_fintech,financas,variação do handle da Cora,erro,,,,,Invalid user id,,False,False,"conta inexistente, pessoal ou inacessível"
+mercadopagobr,concorrente_fintech,ferramentas_maquininha,concorrente de maquininhas,ok,Mercado Pago Brasil,1687763.0,142.0,2026-11-19 20:27:14+00:00,,grande,True,True,
+sumupbrasil,concorrente_fintech,ferramentas_maquininha,concorrente de maquininhas,ok,Sumup | Brasil,639.0,59.0,2021-08-01 16:43:23+00:00,,micro,False,False,excluído na curadoria manual (conta não oficial da SumUp (poucos seguidores))
+contaazul,concorrente_fintech,gestao,ERP e gestão financeira para pequenas empresas,ok,Conta Azul | Sistema de Gestão Financeira,340775.0,2117.0,2026-11-21 13:00:11+00:00,,grande,True,True,
+asaas,concorrente_fintech,financas,conta digital e cobrança para pequenos negócios,erro,,,,,Invalid user id,,False,False,"conta inexistente, pessoal ou inacessível"
+contasimples,concorrente_fintech,financas,conta PJ para pequenas empresas,erro,,,,,Invalid user id,,False,False,"conta inexistente, pessoal ou inacessível"
+c6bank,concorrente_fintech,financas,banco com conta PJ e maquininha,ok,C6 Bank,920170.0,262.0,2026-11-21 18:40:08+00:00,,grande,True,False,"excluído na curadoria manual (banco generalista, sem foco declarado em MPE)"
+nuvemshop,plataforma_mpe,varejo,plataforma de e-commerce para pequenos negócios,ok,Nuvemshop,489727.0,1829.0,2026-11-20 17:32:39+00:00,,grande,True,False,excluído por balanceamento de faixa (excesso de contas grandes)
+lojaintegrada,plataforma_mpe,varejo,plataforma de e-commerce para pequenos negócios,ok,Loja Integrada | Plataforma de E-commerce,187795.0,1190.0,2026-11-17 18:27:52+00:00,,grande,True,False,excluído por balanceamento de faixa (excesso de contas grandes)
+rdstation,plataforma_mpe,marketing,ferramenta de marketing para pequenas e médias empresas,ok,RD Station,455286.0,3553.0,2026-11-20 13:01:00+00:00,,grande,True,False,excluído por balanceamento de faixa (excesso de contas grandes)
+camilafarani,criador_mpe,educacao_empreendedora,Forbes Brasil - perfis inspiradores de empreendedorismo,ok,Camila Farani,1165291.0,5204.0,2026-11-20 17:35:34+00:00,,grande,True,False,excluído por balanceamento de faixa (excesso de contas grandes)
+anatex,criador_mpe,marketing,InfoMoney - perfis que todo empreendedor deve seguir,ok,Ana Tex - Inteligência Artificial para Negócios,792048.0,1567.0,2026-11-21 22:17:54+00:00,,grande,True,False,excluído por balanceamento de faixa (excesso de contas grandes)
+conradoadolpho,criador_mpe,marketing,referência em marketing para pequenas empresas,ok,Conrado Adolpho | Criador do Método 8Ps,810711.0,344.0,2026-11-21 12:53:49+00:00,,grande,True,False,excluído por balanceamento de faixa (excesso de contas grandes)
+rafaelkiso,criador_mpe,marketing,fundador da mLabs e conteúdo de marketing para pequenos negócios,ok,Rafael Kiso,530166.0,3533.0,2026-11-21 09:34:36+00:00,,grande,True,False,excluído por balanceamento de faixa (excesso de contas grandes)
+nathfinancas,criador_mpe,financas,Nath Finanças - palestrante da Semana do MEI (CartaCapital),ok,Nath Finanças,1102256.0,2086.0,2026-11-20 15:00:03+00:00,,grande,True,True,
+nataliabeauty,criador_mpe,beleza,Natália Beauty - palestrante da Semana do MEI (CartaCapital),ok,NATALIA BEAUTY,10930310.0,798.0,2026-11-21 21:20:10+00:00,,grande,True,False,excluído por balanceamento de faixa (excesso de contas grandes)
+lilialmeida,criador_mpe,alimentacao,chef Lili Almeida - palestrante da Semana do MEI (handle a confirmar),ok,Lili Almeida |  Storytelling,1335852.0,1105.0,2026-10-28 14:56:50+00:00,,grande,True,False,excluído por balanceamento de faixa (excesso de contas grandes)
+alicesalazar,criador_mpe,beleza,Alice Salazar - palestrante da Semana do MEI 2026 em MS,ok,Alice Salazar,3826141.0,12807.0,2026-11-21 22:00:05+00:00,,grande,True,False,excluído por balanceamento de faixa (excesso de contas grandes)
+luizdobrownie,criador_mpe,alimentacao,Luiz do Brownie - palestrante da Semana do MEI 2026 em MS (handle a confirmar),ok,Luiz Quinderé,50448.0,1897.0,2026-11-19 11:33:12+00:00,,medio,True,True,
+zicaassis,criador_mpe,beleza,Zica Assis - abriu o Esquenta da Semana do MEI 2026 (handle a confirmar),ok,Zica Assis,98526.0,719.0,2026-11-20 15:00:15+00:00,,medio,True,True,
+adrianapreta,criador_mpe,educacao_empreendedora,Adriana Barbosa da Feira Preta - Forbes Brasil,ok,ADRIANA BARBOSA,52768.0,638.0,2026-11-20 00:22:27+00:00,,medio,True,True,
+facoascontas,criador_mpe,financas,Pamela Margarida - finanças para pequenas empreendedoras (Diário do Comércio),ok,Pamela Margarida,55744.0,1635.0,2026-11-19 12:51:23+00:00,,medio,True,True,
+rodrigoschumacherfinancas,criador_mpe,financas,finfluencer citado no Diário do Comércio,ok,Rodrigo Schumacher | Mentor Financeiro,13779.0,3061.0,2026-11-20 15:01:25+00:00,,medio,True,True,
+_manapreta,criador_mpe,marketing,marketing digital para afroempreendedoras (Metrópoles),ok,Marketing digital | Empreendedorismo,2141.0,4.0,2024-10-16 11:48:25+00:00,,micro,False,False,sem posts nos últimos 12 meses
+mulheresceo,criador_mpe,educacao_empreendedora,perfil de empreendedorismo feminino citado no Metrópoles (handle a confirmar),ok,MULHERES CEO ® | Escola para Empreendedoras,247083.0,705.0,2026-07-30 13:54:25+00:00,,grande,True,True,
+bldfoodbr,criador_mpe,alimentacao,busca no Instagram por termos de alimentação (garimpo manual),ok,BLD l Marketing para Pizzaria e Hamburgueria,9376.0,393.0,2026-11-05 22:40:57+00:00,,micro,True,True,
+lucro.na.confeitaria,criador_mpe,alimentacao,"busca no Instagram por ""lucro na confeitaria"" (garimpo manual)",ok,Precificação no seu celular 📲,23086.0,9.0,2026-09-01 19:55:01+00:00,,medio,True,True,
+mmgestaoenegocios,criador_mpe,alimentacao,busca no Instagram por termos de alimentação (garimpo manual),ok,🔢 Precificação Confeitaria | Michele Marques,34578.0,737.0,2026-11-21 02:47:00+00:00,,medio,True,True,
+deliverycomdebora,criador_mpe,alimentacao,busca no Instagram por termos de alimentação (garimpo manual),ok,Debora Azevedo | Delivery com Debora,162060.0,323.0,2026-11-21 21:00:48+00:00,,grande,True,True,
+sauloabrahaoo,criador_mpe,beleza,busca no Instagram por termos de beleza (garimpo manual),ok,Saulo Abrahão | Gestão para Salão de Beleza,34692.0,954.0,2026-11-21 21:08:29+00:00,,medio,True,True,
+belezacomonegociooficial,criador_mpe,beleza,busca no Instagram por termos de beleza (garimpo manual),ok,Beleza como Negócio | Gestão de Salão de Beleza e Barbearia,5197.0,554.0,2026-11-20 13:23:10+00:00,,micro,True,True,
+robsgrunevald,criador_mpe,beleza,busca no Instagram por termos de beleza (garimpo manual),erro,,,,,Invalid user id,,False,False,"conta inexistente, pessoal ou inacessível"
+belaflor.studio,criador_mpe,beleza,busca no Instagram por termos de beleza (garimpo manual),ok,Mariana santiago | beleza e marketing,334845.0,472.0,2026-11-20 15:38:26+00:00,,grande,True,True,
+larissaotolini,criador_mpe,varejo,busca no Instagram por termos de varejo e moda (garimpo manual),ok,Larissa Otolini | Empreendedorismo,201417.0,2134.0,2026-11-21 20:27:05+00:00,,grande,True,True,
+marcelansgp,criador_mpe,varejo,busca no Instagram por termos de varejo e moda (garimpo manual),ok,Marcela Nunes/ REPRESENTANTE EUDORA/O BOTICÁRIO,118542.0,1844.0,2026-11-21 21:25:57+00:00,,grande,True,True,
+metodomajuseller,criador_mpe,varejo,busca no Instagram por termos de varejo e moda (garimpo manual),ok,Método Maju Seller,18727.0,51.0,2026-10-19 23:07:18+00:00,,medio,True,True,
+contadoramunique,criador_mpe,gestao,"busca no Instagram por ""contadora MEI"" (garimpo manual)",ok,CONTADORA MUNIQUE | MEI e IRPF,3690.0,288.0,2026-11-14 01:03:29+00:00,,micro,True,True,
+contadora.deborahmoreira,criador_mpe,gestao,"busca no Instagram por ""contadora MEI"" (garimpo manual)",ok,Deborah Moreira | Contadora do MEI,5674.0,720.0,2026-11-19 11:53:46+00:00,,micro,True,True,
+mkt.insider.ca,criador_mpe,marketing,"busca no Instagram por ""marketing para pequenos negócios"" (garimpo manual)",ok,Marketing Insider®️ |  Assessoria para Médicos & Clínicas,163514.0,92.0,2026-11-21 13:33:11+00:00,,grande,True,True,
+kamilacd_,criador_mpe,marketing,"busca no Instagram por ""marketing para pequenos negócios"" (garimpo manual)",ok,Kamila✨,31543.0,59.0,2026-10-07 02:38:18+00:00,,medio,True,True,
+cora.contapj,concorrente_fintech,financas,concorrente citado na aula (handle confirmado no app),ok,Cora,352291.0,303.0,2026-11-13 15:40:44+00:00,,grande,True,True,

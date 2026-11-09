@@ -1,0 +1,15 @@
+{
+  "coletado_em": "2026-11-21T22:39:40.260732+00:00",
+  "api": "Instagram Graph API v27.0, Business Discovery",
+  "perfis_solicitados": 3,
+  "perfis_coletados": 3,
+  "posts_brutos": 60,
+  "posts_validos": 25,
+  "posts_likes_ocultos": 0,
+  "criterios": {
+    "idade_minima_dias": 14,
+    "janela_dias": 365,
+    "max_posts_por_perfil": 20
+  },
+  "falhas": []
+}
