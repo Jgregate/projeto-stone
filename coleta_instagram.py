@@ -48,7 +48,7 @@ MEDIA_FIELDS_MIN = (
 )
 RATE_LIMIT_CODES = {4, 17, 32, 613}
 MIN_AGE_DAYS = 14          # métricas estabilizadas (TAPI, seção 5)
-LOOKBACK_DAYS = 365        # atividade nos últimos 12 meses
+LOOKBACK_DAYS = 365        # padrão; ajustável com --janela-dias
 
 DATA = Path("data")
 RAW = DATA / "raw"
@@ -62,10 +62,18 @@ class ProfileError(Exception):
     pass
 
 
+class RateLimitError(Exception):
+    pass
+
+
+class CacheMiss(Exception):
+    pass
+
+
 def _request(username, media_fields, after, limit, ig_user_id, token):
     media = f"media.limit({limit})" + (f".after({after})" if after else "")
     fields = f"business_discovery.username({username}){{{PROFILE_FIELDS},{media}{{{media_fields}}}}}"
-    for attempt in range(6):
+    for attempt in range(4):
         r = requests.get(
             f"{BASE_URL}/{ig_user_id}",
             params={"fields": fields, "access_token": token},
@@ -76,33 +84,40 @@ def _request(username, media_fields, after, limit, ig_user_id, token):
         err = r.json().get("error", {})
         code = err.get("code")
         if r.status_code == 429 or code in RATE_LIMIT_CODES:
-            wait = 60 * 2 ** attempt
+            wait = [60, 180, 300, 600][attempt]
             print(f"  limite atingido ({code}), aguardando {wait}s")
             time.sleep(wait)
             continue
         if code == 100 and "field" in err.get("message", "").lower():
             raise FieldError(err.get("message"))
         raise ProfileError(f"{code} {err.get('message')}")
-    raise ProfileError("limite de requisições persistente")
+    raise RateLimitError("limite de requisições persistente")
+
+
+SOMENTE_CACHE = False
 
 
 def fetch_page(username, page, after, media_fields, ig_user_id, token, limit=50):
     cache = RAW / f"{username}_p{page:03d}.json"
     if cache.exists():
         return json.loads(cache.read_text(encoding="utf-8"))
+    if SOMENTE_CACHE:
+        raise CacheMiss()
     data = _request(username, media_fields, after, limit, ig_user_id, token)
     cache.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
     time.sleep(1.5)
     return data
 
 
-def collect_profile(username, max_posts, ig_user_id, token, now):
+def collect_profile(username, max_posts, ig_user_id, token, now, janela_dias=LOOKBACK_DAYS):
     media_fields = MEDIA_FIELDS_FULL
     profile, posts, after, page = None, [], None, 0
-    cutoff = now - timedelta(days=LOOKBACK_DAYS)
+    cutoff = now - timedelta(days=janela_dias)
     while len(posts) < max_posts:
         try:
             data = fetch_page(username, page, after, media_fields, ig_user_id, token)
+        except CacheMiss:
+            break
         except FieldError:
             if media_fields == MEDIA_FIELDS_MIN:
                 raise
@@ -115,9 +130,10 @@ def collect_profile(username, max_posts, ig_user_id, token, now):
         batch = media.get("data", [])
         posts.extend(batch)
         oldest = min((m["timestamp"] for m in batch), default=None)
+        # o Business Discovery devolve só o cursor "after", sem o link "next";
+        # a coleta continua enquanto houver cursor e a página vier com posts
         after = media.get("paging", {}).get("cursors", {}).get("after")
-        has_next = "next" in media.get("paging", {})
-        if not batch or not has_next or (oldest and pd.Timestamp(oldest) < cutoff):
+        if not batch or not after or (oldest and pd.Timestamp(oldest) < cutoff):
             break
         page += 1
     return profile, posts[:max_posts]
@@ -137,7 +153,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--perfis", default="perfis.csv")
     ap.add_argument("--max-posts", type=int, default=150)
+    ap.add_argument("--janela-dias", type=int, default=LOOKBACK_DAYS)
+    ap.add_argument("--somente-cache", action="store_true",
+                    help="monta as saídas só com as páginas já baixadas, sem chamar a API")
     args = ap.parse_args()
+    global SOMENTE_CACHE
+    SOMENTE_CACHE = args.somente_cache
 
     ig_user_id = os.environ["IG_USER_ID"]
     token = os.environ["IG_TOKEN"]
@@ -146,15 +167,25 @@ def main():
     now = datetime.now(timezone.utc)
     perfis_in = pd.read_csv(args.perfis)
     perfis_out, rows, falhas = [], [], []
+    interrompido = None
 
     for _, p in perfis_in.iterrows():
         user = p["username"].strip().lstrip("@")
         print(f"@{user}")
         try:
-            profile, posts = collect_profile(user, args.max_posts, ig_user_id, token, now)
+            profile, posts = collect_profile(user, args.max_posts, ig_user_id, token, now, args.janela_dias)
         except ProfileError as e:
             print(f"  falha {e}")
             falhas.append({"username": user, "erro": str(e)})
+            continue
+        except RateLimitError:
+            # a partir daqui, segue só com o cache (o que já foi baixado não se perde)
+            SOMENTE_CACHE = True
+            interrompido = interrompido or user
+            print(f"  limite da API persistente; seguindo só com o cache a partir de @{user}")
+            profile, posts = collect_profile(user, args.max_posts, ig_user_id, token, now, args.janela_dias)
+        if profile is None:
+            falhas.append({"username": user, "erro": "sem páginas no cache"})
             continue
         followers = profile.get("followers_count")
         perfis_out.append({
@@ -185,7 +216,7 @@ def main():
     posts.loc[posts["likes_ocultos"], "engajamento"] = float("nan")
 
     total_bruto = len(posts)
-    posts = posts[(posts["idade_dias"] >= MIN_AGE_DAYS) & (posts["idade_dias"] <= LOOKBACK_DAYS)]
+    posts = posts[(posts["idade_dias"] >= MIN_AGE_DAYS) & (posts["idade_dias"] <= args.janela_dias)]
 
     posts.to_parquet(DATA / "posts.parquet", index=False)
     pd.DataFrame(perfis_out).to_parquet(DATA / "perfis.parquet", index=False)
@@ -197,12 +228,16 @@ def main():
         "posts_brutos": total_bruto,
         "posts_validos": len(posts),
         "posts_likes_ocultos": int(posts["likes_ocultos"].sum()),
-        "criterios": {"idade_minima_dias": MIN_AGE_DAYS, "janela_dias": LOOKBACK_DAYS,
+        "criterios": {"idade_minima_dias": MIN_AGE_DAYS, "janela_dias": args.janela_dias,
                       "max_posts_por_perfil": args.max_posts},
         "falhas": falhas,
+        "somente_cache": args.somente_cache,
+        "interrompido_em": interrompido,
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
     print(f"\n{len(perfis_out)} perfis, {len(posts)} posts válidos, {len(falhas)} falhas")
+    if interrompido:
+        print(f"coleta parcial: limite da API a partir de @{interrompido}. Rode o mesmo comando mais tarde para completar.")
 
 
 if __name__ == "__main__":

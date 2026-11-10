@@ -1,0 +1,40 @@
+{
+  "coletado_em": "2026-11-23T13:57:57.330425+00:00",
+  "api": "YouTube Data API v3 (channels.list forHandle, playlistItems.list, videos.list)",
+  "canais_solicitados": 20,
+  "canais_coletados": 14,
+  "videos_brutos": 1993,
+  "shorts_validos": 975,
+  "criterios": {
+    "duracao_max_s": 180,
+    "idade_minima_dias": 14,
+    "janela_dias": 365,
+    "max_videos_por_canal": 150
+  },
+  "falhas": [
+    {
+      "handle": "anatex",
+      "erro": "canal não encontrado pelo handle"
+    },
+    {
+      "handle": "alicesalazar",
+      "erro": "canal não encontrado pelo handle"
+    },
+    {
+      "handle": "impulsostone",
+      "erro": "canal não encontrado pelo handle"
+    },
+    {
+      "handle": "contaazul",
+      "erro": "canal não encontrado pelo handle"
+    },
+    {
+      "handle": "rdstation",
+      "erro": "canal não encontrado pelo handle"
+    },
+    {
+      "handle": "contabilizei",
+      "erro": "canal não encontrado pelo handle"
+    }
+  ]
+}

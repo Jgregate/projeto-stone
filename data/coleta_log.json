@@ -1,15 +1,17 @@
 {
-  "coletado_em": "2026-11-21T22:39:40.260732+00:00",
+  "coletado_em": "2026-11-23T15:55:02.725472+00:00",
   "api": "Instagram Graph API v27.0, Business Discovery",
-  "perfis_solicitados": 3,
-  "perfis_coletados": 3,
-  "posts_brutos": 60,
-  "posts_validos": 25,
-  "posts_likes_ocultos": 0,
+  "perfis_solicitados": 31,
+  "perfis_coletados": 31,
+  "posts_brutos": 4350,
+  "posts_validos": 3866,
+  "posts_likes_ocultos": 402,
   "criterios": {
     "idade_minima_dias": 14,
-    "janela_dias": 365,
-    "max_posts_por_perfil": 20
+    "janela_dias": 730,
+    "max_posts_por_perfil": 300
   },
-  "falhas": []
+  "falhas": [],
+  "somente_cache": true,
+  "interrompido_em": null
 }
