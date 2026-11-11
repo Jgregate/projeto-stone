@@ -6,10 +6,16 @@ Métrica (TAPI 6.1)
     engajamento = (curtidas + comentários) / seguidores (ou inscritos)
 
 Critério de alto desempenho (declarado no README)
-    top 10% DENTRO de cada combinação plataforma x faixa de tamanho.
-    A taxa de engajamento cai naturalmente com o tamanho da conta, então um corte global
-    levaria o top 10% a ser dominado por contas micro. O corte estratificado compara cada post
-    com contas de escala parecida. O percentil global também é salvo, para comparação.
+    critério "perfil" (padrão)
+        lift = engajamento do post / mediana do engajamento do próprio perfil
+        alto desempenho = top 10% de lift em cada plataforma, só para perfis com
+        pelo menos 10 posts válidos (mediana confiável).
+        O lift remove o efeito do tamanho da conta e da audiência de cada perfil e isola
+        o efeito do conteúdo. Evita que um único perfil com audiência muito engajada
+        domine o top 10%.
+    critério "estrato" (comparação)
+        top 10% de engajamento dentro de cada combinação plataforma x faixa de tamanho.
+    As duas marcações ficam salvas na base (alto_perfil e alto_estrato).
 
 Indicador indireto de lead (TAPI 6.1)
     presença e tipo de chamada para ação na legenda/descrição, por expressões regulares.
@@ -38,6 +44,7 @@ DATA = Path("data")
 MIDIA = DATA / "midia"
 TOP_PCT = 0.90
 MIN_GRUPO = 30
+MIN_POSTS_PERFIL = 10
 
 CTA_PADROES = {
     "link_na_bio": r"link na bio|link da bio|link no perfil",
@@ -117,8 +124,15 @@ def ranquear(df):
     df["pct_global"] = df.loc[valid].groupby("plataforma")["engajamento"].rank(pct=True)
     df["pct_estrato"] = df.loc[valid].groupby(["plataforma", "faixa"])["engajamento"].rank(pct=True)
     df["tam_estrato"] = df.groupby(["plataforma", "faixa"])["post_id"].transform("count")
-    df["alto_desempenho"] = df["pct_estrato"] >= TOP_PCT
+    df["alto_estrato"] = df["pct_estrato"] >= TOP_PCT
     df["estrato_pequeno"] = df["tam_estrato"] < MIN_GRUPO
+
+    df["n_validos_perfil"] = df.loc[valid].groupby(["plataforma", "perfil"])["post_id"].transform("count")
+    df["mediana_perfil"] = df.loc[valid].groupby(["plataforma", "perfil"])["engajamento"].transform("median")
+    df["lift"] = df["engajamento"] / df["mediana_perfil"].replace(0, float("nan"))
+    elegivel = valid & df["n_validos_perfil"].ge(MIN_POSTS_PERFIL) & df["lift"].notna()
+    df["pct_lift"] = df.loc[elegivel].groupby("plataforma")["lift"].rank(pct=True)
+    df["alto_perfil"] = df["pct_lift"] >= TOP_PCT
     return df
 
 
@@ -173,11 +187,14 @@ def baixar_midias(top):
     return status
 
 
-def relatorio(df, top):
+def relatorio(df, top, criterio):
     linhas = ["# Relatório da base", ""]
     linhas.append(f"- Publicações na base: {len(df)}")
     linhas.append(f"- Publicações com métrica válida: {int(df['metrica_valida'].sum())}")
-    linhas.append(f"- Publicações de alto desempenho (top 10% por plataforma e faixa): {len(top)}")
+    nome = "top 10% de lift (post vs mediana do próprio perfil)" if criterio == "perfil" else "top 10% por plataforma e faixa"
+    linhas.append(f"- Critério de alto desempenho: {nome}")
+    linhas.append(f"- Publicações de alto desempenho: {len(top)}")
+    linhas.append(f"- Maior participação de um único perfil no top: {top['perfil'].value_counts(normalize=True).max():.1%}")
     linhas.append(f"- Período: {df['publicado_em'].min():%d/%m/%Y} a {df['publicado_em'].max():%d/%m/%Y}")
     linhas.append(f"- Perfis/canais: {df['perfil'].nunique()}")
     linhas.append("")
@@ -189,7 +206,17 @@ def relatorio(df, top):
     tabela("Volume por tipo de post", df["tipo_post"].value_counts().rename("posts"))
     tabela("Engajamento mediano por plataforma e faixa",
            df.groupby(["plataforma", "faixa"])["engajamento"].median().round(4).rename("mediana"))
-    tabela("Top 10% por tipo de post", top["tipo_post"].value_counts().rename("posts"))
+    def comparar(col):
+        base = df.loc[df["metrica_valida"], col].value_counts(normalize=True)
+        t = top[col].value_counts(normalize=True)
+        out = pd.DataFrame({"% base": base, "% top": t}).fillna(0)
+        out["razao top/base"] = (out["% top"] / out["% base"]).round(2)
+        out[["% base", "% top"]] = (out[["% base", "% top"]] * 100).round(1)
+        return out.sort_values("razao top/base", ascending=False)
+
+    tabela("Tipo de post (base vs top)", comparar("tipo_post"))
+    tabela("Segmento (base vs top)", comparar("segmento"))
+    tabela("Faixa (base vs top)", comparar("faixa"))
     tabela("Top 10% por origem", top["origem"].value_counts().rename("posts"))
     tabela("Perfis mais presentes no top 10%", top["perfil"].value_counts().head(15).rename("posts"))
     tabela("Presença de CTA (base vs top 10%)",
@@ -210,11 +237,13 @@ def relatorio(df, top):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--sem-midia", action="store_true")
+    ap.add_argument("--criterio", choices=["perfil", "estrato"], default="perfil")
     args = ap.parse_args()
 
     df = pd.concat([carregar_instagram(), carregar_youtube()], ignore_index=True)
     df = df.drop_duplicates("post_id")
     df = marcar_cta(ranquear(df))
+    df["alto_desempenho"] = df["alto_perfil"] if args.criterio == "perfil" else df["alto_estrato"]
     top = df[df["alto_desempenho"]].sort_values(["plataforma", "faixa", "engajamento"], ascending=[True, True, False])
 
     if not args.sem_midia:
@@ -226,7 +255,7 @@ def main():
     df.to_parquet(DATA / "base.parquet", index=False)
     df.to_csv(DATA / "base.csv", index=False, encoding="utf-8")
     top.to_csv(DATA / "top10.csv", index=False, encoding="utf-8")
-    relatorio(df, top)
+    relatorio(df, top, args.criterio)
 
     print(f"\nbase {len(df)} posts, top 10% {len(top)} posts")
     print(df.groupby(["plataforma", "faixa"]).agg(posts=("post_id", "count"),
