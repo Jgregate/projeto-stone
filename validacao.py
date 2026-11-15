@@ -1,7 +1,7 @@
 """
 Validação manual da categorização (TAPI 6.1, mínimo de 50 publicações).
 
-amostra  sorteia 50 posts categorizados (estratificado por plataforma e tipo de post) e gera
+amostra  sorteia 50 posts do top 10% (estratificado por plataforma e tipo de post) e gera
          data/validacao_manual.csv com as colunas da rubrica EM BRANCO. A anotação é cega,
          você classifica sem ver a resposta do modelo, para não ser influenciada.
 avaliar  compara a sua anotação com a do modelo e gera data/validacao_resultado.md
@@ -37,7 +37,10 @@ OPCOES = {
 
 
 def amostra():
-    cat = pd.read_parquet(DATA / "categorias.parquet")
+    # sorteia direto do top 10% da base, então a anotação manual pode começar
+    # enquanto a categorização ainda está rodando
+    base = pd.read_parquet(DATA / "base.parquet")
+    cat = base[base["alto_desempenho"]]
     n_estratos = cat.groupby(["plataforma", "tipo_post"]).ngroups
     por_estrato = max(1, N // n_estratos)
     amo = (cat.groupby(["plataforma", "tipo_post"], group_keys=False)
@@ -82,6 +85,9 @@ def avaliar():
     man = pd.read_csv(ARQ, encoding="utf-8-sig")
     cat = pd.read_parquet(DATA / "categorias.parquet")
     df = man.merge(cat, on="post_id", suffixes=("", "_modelo"))
+    faltam = len(man) - len(df)
+    if faltam:
+        print(f"atenção: {faltam} posts da amostra ainda não foram categorizados e ficaram de fora")
 
     linhas = ["# Validação manual da categorização", "",
               f"Amostra de {len(df)} publicações do top 10%, sorteada por plataforma e tipo de post (seed {SEED}).",
