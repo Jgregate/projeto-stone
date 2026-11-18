@@ -1,21 +1,260 @@
 # Validação manual da categorização
 
-Amostra de 50 publicações do top 10%, sorteada por plataforma e tipo de post (seed 42).
+Amostra de 49 publicações do top 10%, sorteada por plataforma e tipo de post (seed 42).
 Anotação manual feita às cegas, sem ver a resposta do modelo.
 
 | campo | n | concordância | kappa |
 |---|---|---|---|
-| formato_video | 1 | 100% | 1.00 |
-| tipo_hook | 0 | nan% | nan |
-| tema_principal | 0 | nan% | nan |
-| tem_rosto | 0 | nan% | nan |
-| texto_na_tela | 0 | nan% | nan |
-| tom | 0 | nan% | nan |
-| tem_cta | 0 | nan% | nan |
-| tipo_cta | 0 | nan% | nan |
+| formato_video | 25 | 100% | 1.00 |
+| tipo_hook | 49 | 0% | 0.00 |
+| tema_principal | 49 | 0% | 0.00 |
+| tem_rosto | 49 | 82% | 0.60 |
+| texto_na_tela | 49 | 65% | 0.22 |
+| tom | 49 | 10% | 0.07 |
+| tem_cta | 49 | 57% | 0.07 |
+| tipo_cta | 49 | 0% | 0.00 |
 
-Concordância média 100%, kappa médio 1.00.
+Concordância média 39%, kappa médio 0.24.
 
 Leitura do kappa (Landis e Koch) abaixo de 0,40 fraco, 0,40 a 0,60 moderado, 0,60 a 0,80 substancial, acima de 0,80 quase perfeito.
 
 ## Divergências
+
+- tipo_hook | ig_17962041558196238 | manual missão recebida | modelo nenhum
+- tipo_hook | yt_18htcB3ZmzE | manual vale do silicio | modelo curiosidade
+- tipo_hook | ig_17847276480695312 | manual caiu uma lágrima | modelo polemica
+- tipo_hook | yt_valMkH0JNzw | manual como proteger sua renda | modelo pergunta
+- tipo_hook | ig_17905579065507726 | manual reforma tributária | modelo curiosidade
+- tipo_hook | ig_18348303511267617 | manual false | modelo curiosidade
+- tipo_hook | ig_17922023424225552 | manual isso já aconteceu com vc | modelo pergunta
+- tipo_hook | ig_18324045601302588 | manual false | modelo polemica
+- tipo_hook | ig_17940770520048564 | manual é isso mesmo | modelo polemica
+- tipo_hook | ig_18128828017653666 | manual apoiar é a escolha inteligente | modelo promessa
+- tipo_hook | ig_18120548056916510 | manual split payment | modelo curiosidade
+- tipo_hook | ig_17866935219677566 | manual limite do faturamento do mei | modelo promessa
+- tipo_hook | yt_DvX90IufS0M | manual nosso canto | modelo nenhum
+- tipo_hook | ig_18079581854682324 | manual vender online agora é com stone | modelo polemica
+- tipo_hook | ig_18112347652983926 | manual novo limite do mei | modelo pergunta
+- tipo_hook | ig_18069040607496612 | manual excelência financeira | modelo promessa
+- tipo_hook | yt_FblZAg1Z5Rw | manual reserva stone | modelo promessa
+- tipo_hook | yt_vdGtuy9TrNw | manual ia no varejo | modelo pergunta
+- tipo_hook | ig_17891479911223368 | manual false | modelo nenhum
+- tipo_hook | ig_18004992074820378 | manual receita do brownie | modelo numero
+- tipo_hook | ig_18102501353265461 | manual split payment | modelo nenhum
+- tipo_hook | ig_17990195250088159 | manual false | modelo dor
+- tipo_hook | ig_18054446957564499 | manual e o que seria cmv real | modelo pergunta
+- tipo_hook | ig_18116036200972034 | manual beleza como negócio | modelo nenhum
+- tipo_hook | ig_18018556442894577 | manual false | modelo promessa
+- tipo_hook | yt_e5__USmyLs4 | manual nosso canto | modelo nenhum
+- tipo_hook | ig_17894227917524873 | manual false | modelo dor
+- tipo_hook | ig_18311134441303694 | manual false | modelo promessa
+- tipo_hook | ig_18430881142122767 | manual false | modelo nenhum
+- tipo_hook | ig_17958370751836920 | manual false | modelo curiosidade
+- tipo_hook | ig_18383480188238842 | manual dívidas dos meis | modelo promessa
+- tipo_hook | yt_TZvVxEQC6a8 | manual split de pagamento pagbank | modelo nenhum
+- tipo_hook | ig_17920951587440693 | manual quem é gabriela | modelo curiosidade
+- tipo_hook | ig_18439915231124301 | manual pré-venda exclusiva | modelo promessa
+- tipo_hook | ig_18084104891113143 | manual false | modelo nenhum
+- tipo_hook | yt_JHMpQYBvlk4 | manual li o plano do flávio e não achei salário mínimo | modelo curiosidade
+- tipo_hook | ig_18129375233311108 | manual li o plano do flávio e não achei salário mínimo | modelo curiosidade
+- tipo_hook | ig_17990396400008667 | manual reforma tributária | modelo nenhum
+- tipo_hook | yt_e_LR-p3l0M4 | manual o lula gastou demais | modelo pergunta
+- tipo_hook | ig_18393260191225800 | manual a comida subiu 46,2% com bolsonaro | modelo polemica
+- tipo_hook | ig_18119801084115824 | manual é oficial: mei não precisará emitir nota fiscal | modelo dor
+- tipo_hook | ig_17986272509998593 | manual reforma tributária | modelo curiosidade
+- tipo_hook | ig_18391825840118525 | manual esse recado é para você | modelo curiosidade
+- tipo_hook | ig_18476814982116018 | manual false | modelo dor
+- tipo_hook | ig_17899898319377433 | manual mei está inseguro quanto a reforma tributária | modelo pergunta
+- tipo_hook | yt_xaKYH1St4Gc | manual o brasil pode virar a argentina | modelo pergunta
+- tipo_hook | ig_18021496976897043 | manual conheça o parceiro do impulso | modelo curiosidade
+- tipo_hook | ig_18063902873423391 | manual estamos de cara nova | modelo nenhum
+- tipo_hook | yt_TJZHc0HRokE | manual enquanto a torcida grita pelo sorvete da seleção, aqui o gol sai por aproximação | modelo curiosidade
+- tema_principal | ig_17962041558196238 | manual política | modelo motivacao
+- tema_principal | yt_18htcB3ZmzE | manual empreendorismo | modelo marketing
+- tema_principal | ig_17847276480695312 | manual empreendorismo na culinária | modelo gestao
+- tema_principal | yt_valMkH0JNzw | manual finanças | modelo financas
+- tema_principal | ig_17905579065507726 | manual notícias | modelo financas
+- tema_principal | ig_18348303511267617 | manual beleza | modelo ferramentas_maquininha
+- tema_principal | ig_17922023424225552 | manual empresarial | modelo gestao
+- tema_principal | ig_18324045601302588 | manual finanças | modelo financas
+- tema_principal | ig_17940770520048564 | manual finanças | modelo financas
+- tema_principal | ig_18128828017653666 | manual empreendorismo | modelo motivacao
+- tema_principal | ig_18120548056916510 | manual notícias | modelo financas
+- tema_principal | ig_17866935219677566 | manual notícias | modelo financas
+- tema_principal | yt_DvX90IufS0M | manual empreendorismo | modelo motivacao
+- tema_principal | ig_18079581854682324 | manual propaganda | modelo ferramentas_maquininha
+- tema_principal | ig_18112347652983926 | manual notícias | modelo gestao
+- tema_principal | ig_18069040607496612 | manual finanças | modelo motivacao
+- tema_principal | yt_FblZAg1Z5Rw | manual propaganda | modelo financas
+- tema_principal | yt_vdGtuy9TrNw | manual notícias | modelo marketing
+- tema_principal | ig_17891479911223368 | manual propaganda | modelo marketing
+- tema_principal | ig_18004992074820378 | manual culinária | modelo marketing
+- tema_principal | ig_18102501353265461 | manual notícias | modelo financas
+- tema_principal | ig_17990195250088159 | manual propaganda | modelo gestao
+- tema_principal | ig_18054446957564499 | manual finanças | modelo financas
+- tema_principal | ig_18116036200972034 | manual beleza | modelo marketing
+- tema_principal | ig_18018556442894577 | manual culinária | modelo marketing
+- tema_principal | yt_e5__USmyLs4 | manual propaganda | modelo motivacao
+- tema_principal | ig_17894227917524873 | manual propaganda | modelo gestao
+- tema_principal | ig_18311134441303694 | manual beleza | modelo gestao
+- tema_principal | ig_18430881142122767 | manual post pessoal de aniversário | modelo motivacao
+- tema_principal | ig_17958370751836920 | manual propaganda | modelo motivacao
+- tema_principal | ig_18383480188238842 | manual notícias | modelo financas
+- tema_principal | yt_TZvVxEQC6a8 | manual propaganda | modelo ferramentas_maquininha
+- tema_principal | ig_17920951587440693 | manual empreendorismo | modelo historia_de_empreendedor
+- tema_principal | ig_18439915231124301 | manual propaganda | modelo ferramentas_maquininha
+- tema_principal | ig_18084104891113143 | manual pessoal | modelo gestao
+- tema_principal | yt_JHMpQYBvlk4 | manual finanças | modelo financas
+- tema_principal | ig_18129375233311108 | manual finanças | modelo financas
+- tema_principal | ig_17990396400008667 | manual notícias | modelo financas
+- tema_principal | yt_e_LR-p3l0M4 | manual finanças | modelo financas
+- tema_principal | ig_18393260191225800 | manual notícias | modelo financas
+- tema_principal | ig_18119801084115824 | manual notícias | modelo gestao
+- tema_principal | ig_17986272509998593 | manual notícias | modelo financas
+- tema_principal | ig_18391825840118525 | manual notícias | modelo marketing
+- tema_principal | ig_18476814982116018 | manual pessoal | modelo motivacao
+- tema_principal | ig_17899898319377433 | manual notícias | modelo financas
+- tema_principal | yt_xaKYH1St4Gc | manual finanças | modelo financas
+- tema_principal | ig_18021496976897043 | manual propaganda | modelo marketing
+- tema_principal | ig_18063902873423391 | manual propaganda | modelo marketing
+- tema_principal | yt_TJZHc0HRokE | manual propaganda | modelo ferramentas_maquininha
+- tem_rosto | yt_18htcB3ZmzE | manual true | modelo false
+- tem_rosto | ig_18348303511267617 | manual true | modelo false
+- tem_rosto | yt_FblZAg1Z5Rw | manual true | modelo false
+- tem_rosto | yt_vdGtuy9TrNw | manual false | modelo true
+- tem_rosto | ig_18383480188238842 | manual false | modelo true
+- tem_rosto | yt_TZvVxEQC6a8 | manual true | modelo false
+- tem_rosto | yt_e_LR-p3l0M4 | manual false | modelo true
+- tem_rosto | ig_18119801084115824 | manual true | modelo false
+- tem_rosto | yt_xaKYH1St4Gc | manual false | modelo true
+- texto_na_tela | ig_18324045601302588 | manual true | modelo false
+- texto_na_tela | ig_17940770520048564 | manual false | modelo true
+- texto_na_tela | ig_18120548056916510 | manual true | modelo false
+- texto_na_tela | ig_18112347652983926 | manual true | modelo false
+- texto_na_tela | ig_18069040607496612 | manual true | modelo false
+- texto_na_tela | yt_FblZAg1Z5Rw | manual true | modelo false
+- texto_na_tela | ig_17891479911223368 | manual true | modelo false
+- texto_na_tela | ig_18004992074820378 | manual true | modelo false
+- texto_na_tela | ig_18102501353265461 | manual true | modelo false
+- texto_na_tela | ig_18018556442894577 | manual true | modelo false
+- texto_na_tela | yt_e5__USmyLs4 | manual true | modelo false
+- texto_na_tela | yt_JHMpQYBvlk4 | manual true | modelo false
+- texto_na_tela | ig_18129375233311108 | manual true | modelo false
+- texto_na_tela | ig_17990396400008667 | manual true | modelo false
+- texto_na_tela | ig_17899898319377433 | manual true | modelo false
+- texto_na_tela | yt_xaKYH1St4Gc | manual true | modelo false
+- texto_na_tela | ig_18063902873423391 | manual true | modelo false
+- tom | yt_18htcB3ZmzE | manual conhecimento | modelo tecnico
+- tom | ig_17847276480695312 | manual inspiracional | modelo tecnico
+- tom | yt_valMkH0JNzw | manual conhecimento | modelo informal
+- tom | ig_17905579065507726 | manual informação | modelo tecnico
+- tom | ig_17922023424225552 | manual conhecimento | modelo informal
+- tom | ig_18324045601302588 | manual conhecimento | modelo tecnico
+- tom | ig_17940770520048564 | manual propaganda | modelo humoristico
+- tom | ig_18120548056916510 | manual informação | modelo tecnico
+- tom | ig_17866935219677566 | manual informação | modelo tecnico
+- tom | ig_18079581854682324 | manual propaganda | modelo tecnico
+- tom | ig_18112347652983926 | manual informacão | modelo tecnico
+- tom | ig_18069040607496612 | manual informação | modelo inspiracional
+- tom | yt_FblZAg1Z5Rw | manual informação | modelo informal
+- tom | yt_vdGtuy9TrNw | manual informação | modelo tecnico
+- tom | ig_17891479911223368 | manual inspiracional | modelo informal
+- tom | ig_18004992074820378 | manual receita | modelo informal
+- tom | ig_18102501353265461 | manual informação | modelo tecnico
+- tom | ig_17990195250088159 | manual informação | modelo informal
+- tom | ig_18054446957564499 | manual informação | modelo tecnico
+- tom | ig_18116036200972034 | manual propaganda | modelo inspiracional
+- tom | ig_18018556442894577 | manual propaganda | modelo informal
+- tom | ig_17894227917524873 | manual informação | modelo inspiracional
+- tom | ig_18311134441303694 | manual propaganda | modelo tecnico
+- tom | ig_18430881142122767 | manual pessoal | modelo inspiracional
+- tom | ig_17958370751836920 | manual propaganda | modelo humoristico
+- tom | ig_18383480188238842 | manual informacão | modelo tecnico
+- tom | yt_TZvVxEQC6a8 | manual propaganda | modelo tecnico
+- tom | ig_17920951587440693 | manual propaganda | modelo inspiracional
+- tom | ig_18439915231124301 | manual propaganda | modelo informal
+- tom | ig_18084104891113143 | manual pessoal | modelo informal
+- tom | yt_JHMpQYBvlk4 | manual informação | modelo informal
+- tom | ig_18129375233311108 | manual informação | modelo tecnico
+- tom | ig_17990396400008667 | manual informação | modelo tecnico
+- tom | yt_e_LR-p3l0M4 | manual informação | modelo tecnico
+- tom | ig_18393260191225800 | manual informação | modelo tecnico
+- tom | ig_18119801084115824 | manual informação | modelo tecnico
+- tom | ig_17986272509998593 | manual informação | modelo tecnico
+- tom | ig_18391825840118525 | manual inspiracional | modelo informal
+- tom | ig_18476814982116018 | manual pessoal | modelo inspiracional
+- tom | ig_17899898319377433 | manual informação | modelo informal
+- tom | yt_xaKYH1St4Gc | manual informação | modelo tecnico
+- tom | ig_18021496976897043 | manual propaganda | modelo inspiracional
+- tom | ig_18063902873423391 | manual propaganda | modelo tecnico
+- tom | yt_TJZHc0HRokE | manual propaganda | modelo humoristico
+- tem_cta | ig_17962041558196238 | manual true | modelo false
+- tem_cta | yt_18htcB3ZmzE | manual true | modelo false
+- tem_cta | ig_17847276480695312 | manual true | modelo false
+- tem_cta | ig_17905579065507726 | manual true | modelo false
+- tem_cta | ig_18128828017653666 | manual false | modelo true
+- tem_cta | ig_18120548056916510 | manual true | modelo false
+- tem_cta | ig_18079581854682324 | manual false | modelo true
+- tem_cta | ig_18112347652983926 | manual false | modelo true
+- tem_cta | yt_FblZAg1Z5Rw | manual false | modelo true
+- tem_cta | ig_17891479911223368 | manual false | modelo true
+- tem_cta | ig_18004992074820378 | manual false | modelo true
+- tem_cta | ig_18102501353265461 | manual true | modelo false
+- tem_cta | yt_TZvVxEQC6a8 | manual true | modelo false
+- tem_cta | ig_17920951587440693 | manual true | modelo false
+- tem_cta | ig_18084104891113143 | manual false | modelo true
+- tem_cta | ig_17990396400008667 | manual true | modelo false
+- tem_cta | yt_e_LR-p3l0M4 | manual false | modelo true
+- tem_cta | ig_17986272509998593 | manual true | modelo false
+- tem_cta | ig_17899898319377433 | manual true | modelo false
+- tem_cta | yt_xaKYH1St4Gc | manual false | modelo true
+- tem_cta | yt_TJZHc0HRokE | manual false | modelo true
+- tipo_cta | ig_17962041558196238 | manual votar na eleição | modelo nenhum
+- tipo_cta | yt_18htcB3ZmzE | manual marcar com gostei | modelo nenhum
+- tipo_cta | ig_17847276480695312 | manual fazer parte da stone | modelo nenhum
+- tipo_cta | yt_valMkH0JNzw | manual false | modelo nenhum
+- tipo_cta | ig_17905579065507726 | manual receber manual gratuito | modelo nenhum
+- tipo_cta | ig_18348303511267617 | manual false | modelo nenhum
+- tipo_cta | ig_17922023424225552 | manual false | modelo nenhum
+- tipo_cta | ig_18324045601302588 | manual false | modelo nenhum
+- tipo_cta | ig_17940770520048564 | manual baixar o app | modelo link_na_bio
+- tipo_cta | ig_18128828017653666 | manual false | modelo comentar
+- tipo_cta | ig_18120548056916510 | manual receber manual gratuito | modelo nenhum
+- tipo_cta | ig_17866935219677566 | manual false | modelo nenhum
+- tipo_cta | yt_DvX90IufS0M | manual false | modelo nenhum
+- tipo_cta | ig_18079581854682324 | manual false | modelo link_na_bio
+- tipo_cta | ig_18112347652983926 | manual false | modelo comentar
+- tipo_cta | ig_18069040607496612 | manual ir na bio | modelo link_na_bio
+- tipo_cta | yt_FblZAg1Z5Rw | manual false | modelo link_na_bio
+- tipo_cta | yt_vdGtuy9TrNw | manual false | modelo nenhum
+- tipo_cta | ig_17891479911223368 | manual false | modelo compartilhar
+- tipo_cta | ig_18004992074820378 | manual false | modelo link_na_bio
+- tipo_cta | ig_18102501353265461 | manual receber manual gratuito | modelo nenhum
+- tipo_cta | ig_17990195250088159 | manual acessar o podcast | modelo comentar
+- tipo_cta | ig_18054446957564499 | manual false | modelo nenhum
+- tipo_cta | ig_18116036200972034 | manual false | modelo nenhum
+- tipo_cta | ig_18018556442894577 | manual false | modelo nenhum
+- tipo_cta | yt_e5__USmyLs4 | manual false | modelo nenhum
+- tipo_cta | ig_17894227917524873 | manual acessar o podcast | modelo comentar
+- tipo_cta | ig_18311134441303694 | manual false | modelo nenhum
+- tipo_cta | ig_18430881142122767 | manual false | modelo nenhum
+- tipo_cta | ig_17958370751836920 | manual false | modelo nenhum
+- tipo_cta | ig_18383480188238842 | manual false | modelo nenhum
+- tipo_cta | yt_TZvVxEQC6a8 | manual visitar no vtex day | modelo nenhum
+- tipo_cta | ig_17920951587440693 | manual inscrever no impulsostone | modelo nenhum
+- tipo_cta | ig_18439915231124301 | manual consultar limites de cashback | modelo comentar
+- tipo_cta | ig_18084104891113143 | manual false | modelo link_na_bio
+- tipo_cta | yt_JHMpQYBvlk4 | manual acessar link da bio | modelo link_na_bio
+- tipo_cta | ig_18129375233311108 | manual acessar link da bio | modelo link_na_bio
+- tipo_cta | ig_17990396400008667 | manual receber manual gratuito | modelo nenhum
+- tipo_cta | yt_e_LR-p3l0M4 | manual false | modelo link_na_bio
+- tipo_cta | ig_18393260191225800 | manual false | modelo nenhum
+- tipo_cta | ig_18119801084115824 | manual false | modelo nenhum
+- tipo_cta | ig_17986272509998593 | manual receber manual gratuito | modelo nenhum
+- tipo_cta | ig_18391825840118525 | manual false | modelo nenhum
+- tipo_cta | ig_18476814982116018 | manual false | modelo nenhum
+- tipo_cta | ig_17899898319377433 | manual comentar no post | modelo nenhum
+- tipo_cta | yt_xaKYH1St4Gc | manual false | modelo compartilhar
+- tipo_cta | ig_18021496976897043 | manual false | modelo nenhum
+- tipo_cta | ig_18063902873423391 | manual false | modelo nenhum
+- tipo_cta | yt_TJZHc0HRokE | manual false | modelo link_na_bio

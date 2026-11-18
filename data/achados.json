@@ -1,74 +1,79 @@
 {
-  "n_posts_top": 430,
+  "n_posts_top": 425,
   "criterio": "top 10% de lift por plataforma",
   "campos": {
     "formato_video": [
       {
-        "valor": "talking_head",
-        "posts": 322,
-        "pct": 1.0,
+        "valor": "depoimento",
+        "posts": 38,
+        "pct": 0.12,
         "confidence_flag": false,
         "exemplos": [
-          {
-            "post_id": "yt_aUEuk1J3lu4",
-            "perfil": "infinitepay",
-            "url": "https://www.youtube.com/shorts/aUEuk1J3lu4",
-            "lift": 2512.08,
-            "engajamento": 0.12882
-          },
-          {
-            "post_id": "yt_Efv_beC-m5A",
-            "perfil": "infinitepay",
-            "url": "https://www.youtube.com/shorts/Efv_beC-m5A",
-            "lift": 1732.08,
-            "engajamento": 0.08882
-          },
           {
             "post_id": "yt_gekE1L2ENQw",
             "perfil": "pagbank",
             "url": "https://www.youtube.com/shorts/gekE1L2ENQw",
             "lift": 1547.54,
             "engajamento": 0.1248
-          }
-        ]
-      }
-    ],
-    "tipo_hook": [
-      {
-        "valor": "promessa",
-        "posts": 304,
-        "pct": 0.707,
-        "confidence_flag": false,
-        "exemplos": [
-          {
-            "post_id": "yt_aUEuk1J3lu4",
-            "perfil": "infinitepay",
-            "url": "https://www.youtube.com/shorts/aUEuk1J3lu4",
-            "lift": 2512.08,
-            "engajamento": 0.12882
           },
           {
-            "post_id": "yt_Efv_beC-m5A",
+            "post_id": "yt_sU-EorgQxUg",
             "perfil": "infinitepay",
-            "url": "https://www.youtube.com/shorts/Efv_beC-m5A",
-            "lift": 1732.08,
-            "engajamento": 0.08882
+            "url": "https://www.youtube.com/shorts/sU-EorgQxUg",
+            "lift": 673.58,
+            "engajamento": 0.03454
           },
           {
-            "post_id": "yt_gekE1L2ENQw",
-            "perfil": "pagbank",
-            "url": "https://www.youtube.com/shorts/gekE1L2ENQw",
-            "lift": 1547.54,
-            "engajamento": 0.1248
+            "post_id": "yt_FblZAg1Z5Rw",
+            "perfil": "stone",
+            "url": "https://www.youtube.com/shorts/FblZAg1Z5Rw",
+            "lift": 634.5,
+            "engajamento": 0.04414
           }
         ]
       },
       {
-        "valor": "dor",
-        "posts": 101,
-        "pct": 0.235,
+        "valor": "tutorial",
+        "posts": 34,
+        "pct": 0.107,
         "confidence_flag": false,
         "exemplos": [
+          {
+            "post_id": "yt_Efv_beC-m5A",
+            "perfil": "infinitepay",
+            "url": "https://www.youtube.com/shorts/Efv_beC-m5A",
+            "lift": 1732.08,
+            "engajamento": 0.08882
+          },
+          {
+            "post_id": "yt_0G6tOJvnVhk",
+            "perfil": "stone",
+            "url": "https://www.youtube.com/shorts/0G6tOJvnVhk",
+            "lift": 437.5,
+            "engajamento": 0.03043
+          },
+          {
+            "post_id": "yt_L0djkZ3Jq6s",
+            "perfil": "infinitepay",
+            "url": "https://www.youtube.com/shorts/L0djkZ3Jq6s",
+            "lift": 212.42,
+            "engajamento": 0.01089
+          }
+        ]
+      },
+      {
+        "valor": "humor_esquete",
+        "posts": 31,
+        "pct": 0.098,
+        "confidence_flag": false,
+        "exemplos": [
+          {
+            "post_id": "yt_aUEuk1J3lu4",
+            "perfil": "infinitepay",
+            "url": "https://www.youtube.com/shorts/aUEuk1J3lu4",
+            "lift": 2512.08,
+            "engajamento": 0.12882
+          },
           {
             "post_id": "yt_wgVQPX_izJs",
             "perfil": "stone",
@@ -76,160 +81,145 @@
             "lift": 670.75,
             "engajamento": 0.04666
           },
-          {
-            "post_id": "yt_bHHvBkp84V4",
-            "perfil": "pagbank",
-            "url": "https://www.youtube.com/shorts/bHHvBkp84V4",
-            "lift": 361.66,
-            "engajamento": 0.02917
-          },
-          {
-            "post_id": "ig_18417331885197834",
-            "perfil": "mercadopagobr",
-            "url": "https://www.instagram.com/reel/DandghUEQB0/",
-            "lift": 194.35,
-            "engajamento": 0.04566
-          }
-        ]
-      },
-      {
-        "valor": "curiosidade",
-        "posts": 10,
-        "pct": 0.023,
-        "confidence_flag": false,
-        "exemplos": [
           {
             "post_id": "ig_18062638856643470",
             "perfil": "mercadopagobr",
             "url": "https://www.instagram.com/reel/DTgaRH6DckT/",
             "lift": 406.65,
             "engajamento": 0.09554
-          },
-          {
-            "post_id": "ig_18308439181246323",
-            "perfil": "luizdobrownie",
-            "url": "https://www.instagram.com/reel/DKwn0QVOK5F/",
-            "lift": 34.93,
-            "engajamento": 0.16794
-          },
-          {
-            "post_id": "ig_18049976758842854",
-            "perfil": "luizdobrownie",
-            "url": "https://www.instagram.com/reel/DDSWqUBRBEt/",
-            "lift": 30.03,
-            "engajamento": 0.14439
           }
         ]
       },
       {
-        "valor": "polemica",
-        "posts": 8,
-        "pct": 0.019,
-        "confidence_flag": true,
+        "valor": "talking_head",
+        "posts": 26,
+        "pct": 0.082,
+        "confidence_flag": false,
         "exemplos": [
           {
-            "post_id": "ig_18098820470025295",
-            "perfil": "rodrigofinancas",
-            "url": "https://www.instagram.com/reel/DX2coM0hZ7H/",
-            "lift": 46.23,
-            "engajamento": 0.03223
-          },
-          {
-            "post_id": "ig_17930219142314847",
+            "post_id": "ig_18129375233311108",
             "perfil": "nathfinancas",
-            "url": "https://www.instagram.com/reel/DZ_GyQpJ_Mc/",
-            "lift": 36.28,
-            "engajamento": 0.11578
+            "url": "https://www.instagram.com/reel/DedC9fgJjXU/",
+            "lift": 60.29,
+            "engajamento": 0.19239
           },
           {
-            "post_id": "ig_18115544033056255",
-            "perfil": "mkt.insider.ca",
-            "url": "https://www.instagram.com/p/Dc6Qu6XEc0t/",
-            "lift": 13.24,
-            "engajamento": 0.00373
-          }
-        ]
-      },
-      {
-        "valor": "pergunta",
-        "posts": 5,
-        "pct": 0.012,
-        "confidence_flag": true,
-        "exemplos": [
-          {
-            "post_id": "ig_18105020081279130",
-            "perfil": "sebrae",
-            "url": "https://www.instagram.com/reel/Da3lYR1vTsc/",
-            "lift": 27.57,
-            "engajamento": 0.00345
+            "post_id": "ig_18200183647388592",
+            "perfil": "nathfinancas",
+            "url": "https://www.instagram.com/reel/De9jfVmxRZp/",
+            "lift": 56.34,
+            "engajamento": 0.17979
           },
           {
-            "post_id": "ig_17903861640569664",
-            "perfil": "mkt.insider.ca",
-            "url": "https://www.instagram.com/p/Ddd5ZsAERHf/",
-            "lift": 25.8,
-            "engajamento": 0.00726
-          },
-          {
-            "post_id": "ig_18136105765544053",
-            "perfil": "sebrae",
-            "url": "https://www.instagram.com/reel/DY5Oe1KxIW8/",
-            "lift": 17.28,
-            "engajamento": 0.00216
-          }
-        ]
-      },
-      {
-        "valor": "nenhum",
-        "posts": 1,
-        "pct": 0.002,
-        "confidence_flag": true,
-        "exemplos": [
-          {
-            "post_id": "ig_18134421607601867",
+            "post_id": "ig_18067270766343708",
             "perfil": "luizdobrownie",
-            "url": "https://www.instagram.com/p/DZ3Ck58mLK1/",
-            "lift": 5.05,
-            "engajamento": 0.02427
+            "url": "https://www.instagram.com/reel/DPl0DW1kbIM/",
+            "lift": 45.88,
+            "engajamento": 0.22055
           }
         ]
       },
       {
-        "valor": "numero",
-        "posts": 1,
-        "pct": 0.002,
+        "valor": "bastidores",
+        "posts": 20,
+        "pct": 0.063,
+        "confidence_flag": false,
+        "exemplos": [
+          {
+            "post_id": "ig_18060261665702121",
+            "perfil": "bldfoodbr",
+            "url": "https://www.instagram.com/reel/DXiEpzBDckO/",
+            "lift": 551.21,
+            "engajamento": 1.64735
+          },
+          {
+            "post_id": "yt_f2VGKROBQ4g",
+            "perfil": "stone",
+            "url": "https://www.youtube.com/shorts/f2VGKROBQ4g",
+            "lift": 498.75,
+            "engajamento": 0.0347
+          },
+          {
+            "post_id": "ig_18060304121103976",
+            "perfil": "mercadopagobr",
+            "url": "https://www.instagram.com/reel/DIwvEwHSfjN/",
+            "lift": 327.41,
+            "engajamento": 0.07692
+          }
+        ]
+      },
+      {
+        "valor": "lista_dicas",
+        "posts": 3,
+        "pct": 0.009,
         "confidence_flag": true,
         "exemplos": [
           {
-            "post_id": "ig_18565904503076194",
-            "perfil": "contadoramunique",
-            "url": "https://www.instagram.com/reel/DeAvDhIKhKK/",
-            "lift": 46.44,
-            "engajamento": 1.29585
+            "post_id": "ig_18099558080191297",
+            "perfil": "contaazul",
+            "url": "https://www.instagram.com/reel/DbtDWt3xJDR/",
+            "lift": 41.3,
+            "engajamento": 0.00912
+          },
+          {
+            "post_id": "ig_18195078313384756",
+            "perfil": "bldfoodbr",
+            "url": "https://www.instagram.com/reel/DdrpvUxtvLb/",
+            "lift": 5.5,
+            "engajamento": 0.01644
+          },
+          {
+            "post_id": "yt_qJHdlzLFbS0",
+            "perfil": "nathfinancas",
+            "url": "https://www.youtube.com/shorts/qJHdlzLFbS0",
+            "lift": 5.19,
+            "engajamento": 0.00159
+          }
+        ]
+      },
+      {
+        "valor": "antes_depois",
+        "posts": 2,
+        "pct": 0.006,
+        "confidence_flag": true,
+        "exemplos": [
+          {
+            "post_id": "ig_17924226900007609",
+            "perfil": "zicaassis",
+            "url": "https://www.instagram.com/reel/DEh0kSYuyTg/",
+            "lift": 7.19,
+            "engajamento": 0.04287
+          },
+          {
+            "post_id": "ig_18363391519214303",
+            "perfil": "contaazul",
+            "url": "https://www.instagram.com/reel/Dbtgy_9pnue/",
+            "lift": 5.55,
+            "engajamento": 0.00123
           }
         ]
       }
     ],
-    "tema_principal": [
+    "tipo_hook": [
       {
-        "valor": "financas",
-        "posts": 194,
-        "pct": 0.451,
+        "valor": "curiosidade",
+        "posts": 135,
+        "pct": 0.318,
         "confidence_flag": false,
         "exemplos": [
-          {
-            "post_id": "yt_aUEuk1J3lu4",
-            "perfil": "infinitepay",
-            "url": "https://www.youtube.com/shorts/aUEuk1J3lu4",
-            "lift": 2512.08,
-            "engajamento": 0.12882
-          },
           {
             "post_id": "yt_gekE1L2ENQw",
             "perfil": "pagbank",
             "url": "https://www.youtube.com/shorts/gekE1L2ENQw",
             "lift": 1547.54,
             "engajamento": 0.1248
+          },
+          {
+            "post_id": "yt_sU-EorgQxUg",
+            "perfil": "infinitepay",
+            "url": "https://www.youtube.com/shorts/sU-EorgQxUg",
+            "lift": 673.58,
+            "engajamento": 0.03454
           },
           {
             "post_id": "yt_wgVQPX_izJs",
@@ -241,18 +231,11 @@
         ]
       },
       {
-        "valor": "vendas",
-        "posts": 100,
-        "pct": 0.233,
+        "valor": "promessa",
+        "posts": 78,
+        "pct": 0.184,
         "confidence_flag": false,
         "exemplos": [
-          {
-            "post_id": "yt_Efv_beC-m5A",
-            "perfil": "infinitepay",
-            "url": "https://www.youtube.com/shorts/Efv_beC-m5A",
-            "lift": 1732.08,
-            "engajamento": 0.08882
-          },
           {
             "post_id": "ig_18104523863211622",
             "perfil": "belezacomonegociooficial",
@@ -261,18 +244,259 @@
             "engajamento": 2.13902
           },
           {
-            "post_id": "yt_sU-EorgQxUg",
+            "post_id": "yt_FblZAg1Z5Rw",
+            "perfil": "stone",
+            "url": "https://www.youtube.com/shorts/FblZAg1Z5Rw",
+            "lift": 634.5,
+            "engajamento": 0.04414
+          },
+          {
+            "post_id": "yt_0G6tOJvnVhk",
+            "perfil": "stone",
+            "url": "https://www.youtube.com/shorts/0G6tOJvnVhk",
+            "lift": 437.5,
+            "engajamento": 0.03043
+          }
+        ]
+      },
+      {
+        "valor": "pergunta",
+        "posts": 69,
+        "pct": 0.162,
+        "confidence_flag": false,
+        "exemplos": [
+          {
+            "post_id": "yt_Efv_beC-m5A",
             "perfil": "infinitepay",
-            "url": "https://www.youtube.com/shorts/sU-EorgQxUg",
-            "lift": 673.58,
-            "engajamento": 0.03454
+            "url": "https://www.youtube.com/shorts/Efv_beC-m5A",
+            "lift": 1732.08,
+            "engajamento": 0.08882
+          },
+          {
+            "post_id": "ig_17871744063644828",
+            "perfil": "contaazul",
+            "url": "https://www.instagram.com/reel/DeptsOuxzFs/",
+            "lift": 416.28,
+            "engajamento": 0.09194
+          },
+          {
+            "post_id": "ig_18099951160790129",
+            "perfil": "rodrigofinancas",
+            "url": "https://www.instagram.com/reel/DXRe44aAK6n/",
+            "lift": 101.13,
+            "engajamento": 0.07051
+          }
+        ]
+      },
+      {
+        "valor": "nenhum",
+        "posts": 57,
+        "pct": 0.134,
+        "confidence_flag": false,
+        "exemplos": [
+          {
+            "post_id": "ig_18060261665702121",
+            "perfil": "bldfoodbr",
+            "url": "https://www.instagram.com/reel/DXiEpzBDckO/",
+            "lift": 551.21,
+            "engajamento": 1.64735
+          },
+          {
+            "post_id": "ig_18062227850565606",
+            "perfil": "sebrae",
+            "url": "https://www.instagram.com/reel/DbCOxTaufZp/",
+            "lift": 283.67,
+            "engajamento": 0.03552
+          },
+          {
+            "post_id": "ig_17876819919575686",
+            "perfil": "bldfoodbr",
+            "url": "https://www.instagram.com/reel/DXchpBIjs5T/",
+            "lift": 183.86,
+            "engajamento": 0.54947
+          }
+        ]
+      },
+      {
+        "valor": "dor",
+        "posts": 40,
+        "pct": 0.094,
+        "confidence_flag": false,
+        "exemplos": [
+          {
+            "post_id": "yt_aUEuk1J3lu4",
+            "perfil": "infinitepay",
+            "url": "https://www.youtube.com/shorts/aUEuk1J3lu4",
+            "lift": 2512.08,
+            "engajamento": 0.12882
+          },
+          {
+            "post_id": "yt_5b7db6nghTk",
+            "perfil": "infinitepay",
+            "url": "https://www.youtube.com/shorts/5b7db6nghTk",
+            "lift": 213.67,
+            "engajamento": 0.01096
+          },
+          {
+            "post_id": "ig_18599904037001452",
+            "perfil": "mercadopagobr",
+            "url": "https://www.instagram.com/reel/DaVb9OflW6a/",
+            "lift": 138.73,
+            "engajamento": 0.03259
+          }
+        ]
+      },
+      {
+        "valor": "polemica",
+        "posts": 30,
+        "pct": 0.071,
+        "confidence_flag": false,
+        "exemplos": [
+          {
+            "post_id": "ig_17935987838914053",
+            "perfil": "luizdobrownie",
+            "url": "https://www.instagram.com/reel/DEBBtiIy1UY/",
+            "lift": 139.28,
+            "engajamento": 0.66959
+          },
+          {
+            "post_id": "ig_17973783261177473",
+            "perfil": "belezacomonegociooficial",
+            "url": "https://www.instagram.com/reel/DePxtnvMMah/",
+            "lift": 86.55,
+            "engajamento": 0.18255
+          },
+          {
+            "post_id": "ig_18200183647388592",
+            "perfil": "nathfinancas",
+            "url": "https://www.instagram.com/reel/De9jfVmxRZp/",
+            "lift": 56.34,
+            "engajamento": 0.17979
+          }
+        ]
+      },
+      {
+        "valor": "numero",
+        "posts": 16,
+        "pct": 0.038,
+        "confidence_flag": false,
+        "exemplos": [
+          {
+            "post_id": "ig_17924080791439233",
+            "perfil": "contaazul",
+            "url": "https://www.instagram.com/reel/Dec9JvwRYcU/",
+            "lift": 107.0,
+            "engajamento": 0.02363
+          },
+          {
+            "post_id": "ig_18099558080191297",
+            "perfil": "contaazul",
+            "url": "https://www.instagram.com/reel/DbtDWt3xJDR/",
+            "lift": 41.3,
+            "engajamento": 0.00912
+          },
+          {
+            "post_id": "ig_17957706111016583",
+            "perfil": "sebrae",
+            "url": "https://www.instagram.com/reel/DeABxFNRkAU/",
+            "lift": 37.5,
+            "engajamento": 0.0047
+          }
+        ]
+      }
+    ],
+    "tema_principal": [
+      {
+        "valor": "financas",
+        "posts": 114,
+        "pct": 0.268,
+        "confidence_flag": false,
+        "exemplos": [
+          {
+            "post_id": "yt_gekE1L2ENQw",
+            "perfil": "pagbank",
+            "url": "https://www.youtube.com/shorts/gekE1L2ENQw",
+            "lift": 1547.54,
+            "engajamento": 0.1248
+          },
+          {
+            "post_id": "yt_FblZAg1Z5Rw",
+            "perfil": "stone",
+            "url": "https://www.youtube.com/shorts/FblZAg1Z5Rw",
+            "lift": 634.5,
+            "engajamento": 0.04414
+          },
+          {
+            "post_id": "ig_17871744063644828",
+            "perfil": "contaazul",
+            "url": "https://www.instagram.com/reel/DeptsOuxzFs/",
+            "lift": 416.28,
+            "engajamento": 0.09194
+          }
+        ]
+      },
+      {
+        "valor": "marketing",
+        "posts": 67,
+        "pct": 0.158,
+        "confidence_flag": false,
+        "exemplos": [
+          {
+            "post_id": "ig_18060261665702121",
+            "perfil": "bldfoodbr",
+            "url": "https://www.instagram.com/reel/DXiEpzBDckO/",
+            "lift": 551.21,
+            "engajamento": 1.64735
+          },
+          {
+            "post_id": "ig_18062638856643470",
+            "perfil": "mercadopagobr",
+            "url": "https://www.instagram.com/reel/DTgaRH6DckT/",
+            "lift": 406.65,
+            "engajamento": 0.09554
+          },
+          {
+            "post_id": "ig_18060304121103976",
+            "perfil": "mercadopagobr",
+            "url": "https://www.instagram.com/reel/DIwvEwHSfjN/",
+            "lift": 327.41,
+            "engajamento": 0.07692
+          }
+        ]
+      },
+      {
+        "valor": "gestao",
+        "posts": 67,
+        "pct": 0.158,
+        "confidence_flag": false,
+        "exemplos": [
+          {
+            "post_id": "ig_18104523863211622",
+            "perfil": "belezacomonegociooficial",
+            "url": "https://www.instagram.com/reel/DdMYU6ER815/",
+            "lift": 1014.09,
+            "engajamento": 2.13902
+          },
+          {
+            "post_id": "yt_wgVQPX_izJs",
+            "perfil": "stone",
+            "url": "https://www.youtube.com/shorts/wgVQPX_izJs",
+            "lift": 670.75,
+            "engajamento": 0.04666
+          },
+          {
+            "post_id": "yt_9vWvGF2nSOA",
+            "perfil": "infinitepay",
+            "url": "https://www.youtube.com/shorts/9vWvGF2nSOA",
+            "lift": 581.67,
+            "engajamento": 0.02983
           }
         ]
       },
       {
         "valor": "motivacao",
-        "posts": 56,
-        "pct": 0.13,
+        "posts": 66,
+        "pct": 0.155,
         "confidence_flag": false,
         "exemplos": [
           {
@@ -299,38 +523,38 @@
         ]
       },
       {
-        "valor": "gestao",
-        "posts": 23,
-        "pct": 0.053,
+        "valor": "ferramentas_maquininha",
+        "posts": 65,
+        "pct": 0.153,
         "confidence_flag": false,
         "exemplos": [
           {
-            "post_id": "yt_0G6tOJvnVhk",
-            "perfil": "stone",
-            "url": "https://www.youtube.com/shorts/0G6tOJvnVhk",
-            "lift": 437.5,
-            "engajamento": 0.03043
+            "post_id": "yt_aUEuk1J3lu4",
+            "perfil": "infinitepay",
+            "url": "https://www.youtube.com/shorts/aUEuk1J3lu4",
+            "lift": 2512.08,
+            "engajamento": 0.12882
           },
           {
-            "post_id": "yt_MT8TzmTqSCk",
-            "perfil": "stone",
-            "url": "https://www.youtube.com/shorts/MT8TzmTqSCk",
-            "lift": 170.0,
-            "engajamento": 0.01183
+            "post_id": "yt_sU-EorgQxUg",
+            "perfil": "infinitepay",
+            "url": "https://www.youtube.com/shorts/sU-EorgQxUg",
+            "lift": 673.58,
+            "engajamento": 0.03454
           },
           {
-            "post_id": "ig_18175008208453596",
-            "perfil": "contaazul",
-            "url": "https://www.instagram.com/p/DeAypSHEQtd/",
-            "lift": 106.14,
-            "engajamento": 0.02344
+            "post_id": "yt_rxYdB7fpIKk",
+            "perfil": "infinitepay",
+            "url": "https://www.youtube.com/shorts/rxYdB7fpIKk",
+            "lift": 630.25,
+            "engajamento": 0.03232
           }
         ]
       },
       {
-        "valor": "atendimento",
-        "posts": 20,
-        "pct": 0.047,
+        "valor": "historia_de_empreendedor",
+        "posts": 34,
+        "pct": 0.08,
         "confidence_flag": false,
         "exemplos": [
           {
@@ -341,105 +565,76 @@
             "engajamento": 0.0347
           },
           {
-            "post_id": "ig_18656777059016034",
-            "perfil": "deliverycomdebora",
-            "url": "https://www.instagram.com/reel/De-MtJ9B9Pq/",
-            "lift": 32.96,
-            "engajamento": 0.0514
+            "post_id": "yt_-9KriL2wT18",
+            "perfil": "nuvemshop",
+            "url": "https://www.youtube.com/shorts/-9KriL2wT18",
+            "lift": 126.18,
+            "engajamento": 0.00586
           },
           {
-            "post_id": "ig_17861086665447855",
+            "post_id": "ig_18064396211117375",
             "perfil": "luizdobrownie",
-            "url": "https://www.instagram.com/reel/DQEiJGHDiYC/",
-            "lift": 23.66,
-            "engajamento": 0.11376
+            "url": "https://www.instagram.com/reel/DKuDbWXOVTl/",
+            "lift": 35.29,
+            "engajamento": 0.16968
           }
         ]
       },
       {
-        "valor": "historia_de_empreendedor",
-        "posts": 16,
-        "pct": 0.037,
-        "confidence_flag": false,
+        "valor": "vendas",
+        "posts": 9,
+        "pct": 0.021,
+        "confidence_flag": true,
         "exemplos": [
           {
-            "post_id": "ig_18062227850565606",
-            "perfil": "sebrae",
-            "url": "https://www.instagram.com/reel/DbCOxTaufZp/",
-            "lift": 283.67,
-            "engajamento": 0.03552
+            "post_id": "yt_Efv_beC-m5A",
+            "perfil": "infinitepay",
+            "url": "https://www.youtube.com/shorts/Efv_beC-m5A",
+            "lift": 1732.08,
+            "engajamento": 0.08882
           },
           {
-            "post_id": "ig_18082216550158494",
-            "perfil": "sebrae",
-            "url": "https://www.instagram.com/reel/DY8EFliuRyy/",
-            "lift": 87.54,
-            "engajamento": 0.01096
+            "post_id": "ig_18111134212819197",
+            "perfil": "metodomajuseller",
+            "url": "https://www.instagram.com/reel/Db3__ydRYV1/",
+            "lift": 42.16,
+            "engajamento": 0.17993
           },
           {
-            "post_id": "ig_18122343037771019",
-            "perfil": "sebrae",
-            "url": "https://www.instagram.com/reel/DbVzatiOUJB/",
-            "lift": 35.18,
-            "engajamento": 0.0044
+            "post_id": "ig_17857947012684350",
+            "perfil": "infinitepay",
+            "url": "https://www.instagram.com/reel/DW38Y98jWBB/",
+            "lift": 26.33,
+            "engajamento": 0.0024
           }
         ]
       },
       {
-        "valor": "marketing",
-        "posts": 11,
-        "pct": 0.026,
-        "confidence_flag": false,
+        "valor": "atendimento",
+        "posts": 3,
+        "pct": 0.007,
+        "confidence_flag": true,
         "exemplos": [
           {
-            "post_id": "ig_18060261665702121",
-            "perfil": "bldfoodbr",
-            "url": "https://www.instagram.com/reel/DXiEpzBDckO/",
-            "lift": 551.21,
-            "engajamento": 1.64735
-          },
-          {
-            "post_id": "ig_17876819919575686",
-            "perfil": "bldfoodbr",
-            "url": "https://www.instagram.com/reel/DXchpBIjs5T/",
-            "lift": 183.86,
-            "engajamento": 0.54947
-          },
-          {
-            "post_id": "ig_18139961461572095",
-            "perfil": "mkt.insider.ca",
-            "url": "https://www.instagram.com/p/DcBRZEskeFG/",
-            "lift": 14.72,
-            "engajamento": 0.00414
-          }
-        ]
-      },
-      {
-        "valor": "ferramentas_maquininha",
-        "posts": 10,
-        "pct": 0.023,
-        "confidence_flag": false,
-        "exemplos": [
-          {
-            "post_id": "ig_18062638856643470",
-            "perfil": "mercadopagobr",
-            "url": "https://www.instagram.com/reel/DTgaRH6DckT/",
-            "lift": 406.65,
-            "engajamento": 0.09554
-          },
-          {
-            "post_id": "ig_18134765962802326",
-            "perfil": "deliverycomdebora",
-            "url": "https://www.instagram.com/reel/DfVaF-Rhdcq/",
-            "lift": 35.5,
-            "engajamento": 0.05536
-          },
-          {
-            "post_id": "ig_18170210953467038",
+            "post_id": "ig_18198905164380310",
             "perfil": "belezacomonegociooficial",
-            "url": "https://www.instagram.com/reel/DeaSvMNRHLy/",
-            "lift": 33.64,
-            "engajamento": 0.07095
+            "url": "https://www.instagram.com/reel/DePzbevPBPG/",
+            "lift": 40.18,
+            "engajamento": 0.08476
+          },
+          {
+            "post_id": "ig_18104741234014873",
+            "perfil": "sebrae",
+            "url": "https://www.instagram.com/reel/Dad1N_bPeRH/",
+            "lift": 11.72,
+            "engajamento": 0.00147
+          },
+          {
+            "post_id": "ig_18078236672408530",
+            "perfil": "nathfinancas",
+            "url": "https://www.instagram.com/p/DZYf6sJianR/",
+            "lift": 10.02,
+            "engajamento": 0.03197
           }
         ]
       }
@@ -447,8 +642,8 @@
     "tem_rosto": [
       {
         "valor": "True",
-        "posts": 428,
-        "pct": 0.995,
+        "posts": 257,
+        "pct": 0.605,
         "confidence_flag": false,
         "exemplos": [
           {
@@ -476,32 +671,39 @@
       },
       {
         "valor": "False",
-        "posts": 2,
-        "pct": 0.005,
-        "confidence_flag": true,
+        "posts": 168,
+        "pct": 0.395,
+        "confidence_flag": false,
         "exemplos": [
           {
-            "post_id": "ig_18063902873423391",
-            "perfil": "stone",
-            "url": "https://www.instagram.com/reel/DYfsMTlRmtX/",
-            "lift": 23.93,
-            "engajamento": 0.00624
+            "post_id": "ig_18104523863211622",
+            "perfil": "belezacomonegociooficial",
+            "url": "https://www.instagram.com/reel/DdMYU6ER815/",
+            "lift": 1014.09,
+            "engajamento": 2.13902
           },
           {
-            "post_id": "yt_dfT8FIAwElM",
+            "post_id": "yt_wgVQPX_izJs",
             "perfil": "stone",
-            "url": "https://www.youtube.com/shorts/dfT8FIAwElM",
-            "lift": 4.25,
-            "engajamento": 0.0003
+            "url": "https://www.youtube.com/shorts/wgVQPX_izJs",
+            "lift": 670.75,
+            "engajamento": 0.04666
+          },
+          {
+            "post_id": "yt_FblZAg1Z5Rw",
+            "perfil": "stone",
+            "url": "https://www.youtube.com/shorts/FblZAg1Z5Rw",
+            "lift": 634.5,
+            "engajamento": 0.04414
           }
         ]
       }
     ],
     "criador_e_empreendedor_real": [
       {
-        "valor": "True",
-        "posts": 430,
-        "pct": 1.0,
+        "valor": "False",
+        "posts": 352,
+        "pct": 0.828,
         "confidence_flag": false,
         "exemplos": [
           {
@@ -519,20 +721,49 @@
             "engajamento": 0.08882
           },
           {
+            "post_id": "ig_18104523863211622",
+            "perfil": "belezacomonegociooficial",
+            "url": "https://www.instagram.com/reel/DdMYU6ER815/",
+            "lift": 1014.09,
+            "engajamento": 2.13902
+          }
+        ]
+      },
+      {
+        "valor": "True",
+        "posts": 73,
+        "pct": 0.172,
+        "confidence_flag": false,
+        "exemplos": [
+          {
             "post_id": "yt_gekE1L2ENQw",
             "perfil": "pagbank",
             "url": "https://www.youtube.com/shorts/gekE1L2ENQw",
             "lift": 1547.54,
             "engajamento": 0.1248
+          },
+          {
+            "post_id": "yt_0G6tOJvnVhk",
+            "perfil": "stone",
+            "url": "https://www.youtube.com/shorts/0G6tOJvnVhk",
+            "lift": 437.5,
+            "engajamento": 0.03043
+          },
+          {
+            "post_id": "yt_bHHvBkp84V4",
+            "perfil": "pagbank",
+            "url": "https://www.youtube.com/shorts/bHHvBkp84V4",
+            "lift": 361.66,
+            "engajamento": 0.02917
           }
         ]
       }
     ],
     "prova_social": [
       {
-        "valor": "True",
-        "posts": 412,
-        "pct": 0.958,
+        "valor": "False",
+        "posts": 386,
+        "pct": 0.908,
         "confidence_flag": false,
         "exemplos": [
           {
@@ -559,31 +790,31 @@
         ]
       },
       {
-        "valor": "False",
-        "posts": 18,
-        "pct": 0.042,
+        "valor": "True",
+        "posts": 39,
+        "pct": 0.092,
         "confidence_flag": false,
         "exemplos": [
           {
-            "post_id": "ig_18181333033373992",
-            "perfil": "sebrae",
-            "url": "https://www.instagram.com/reel/Da8Ge6lRA_F/",
-            "lift": 312.2,
-            "engajamento": 0.03909
+            "post_id": "yt_FblZAg1Z5Rw",
+            "perfil": "stone",
+            "url": "https://www.youtube.com/shorts/FblZAg1Z5Rw",
+            "lift": 634.5,
+            "engajamento": 0.04414
           },
           {
-            "post_id": "ig_18565904503076194",
-            "perfil": "contadoramunique",
-            "url": "https://www.instagram.com/reel/DeAvDhIKhKK/",
-            "lift": 46.44,
-            "engajamento": 1.29585
+            "post_id": "ig_18391825840118525",
+            "perfil": "facoascontas",
+            "url": "https://www.instagram.com/p/DISTB_8NwwC/",
+            "lift": 82.67,
+            "engajamento": 0.23127
           },
           {
-            "post_id": "ig_18049976758842854",
-            "perfil": "luizdobrownie",
-            "url": "https://www.instagram.com/reel/DDSWqUBRBEt/",
-            "lift": 30.03,
-            "engajamento": 0.14439
+            "post_id": "ig_18111134212819197",
+            "perfil": "metodomajuseller",
+            "url": "https://www.instagram.com/reel/Db3__ydRYV1/",
+            "lift": 42.16,
+            "engajamento": 0.17993
           }
         ]
       }
@@ -591,8 +822,8 @@
     "texto_na_tela": [
       {
         "valor": "True",
-        "posts": 271,
-        "pct": 0.63,
+        "posts": 267,
+        "pct": 0.628,
         "confidence_flag": false,
         "exemplos": [
           {
@@ -620,8 +851,8 @@
       },
       {
         "valor": "False",
-        "posts": 159,
-        "pct": 0.37,
+        "posts": 158,
+        "pct": 0.372,
         "confidence_flag": false,
         "exemplos": [
           {
@@ -651,8 +882,8 @@
     "tom": [
       {
         "valor": "informal",
-        "posts": 249,
-        "pct": 0.579,
+        "posts": 182,
+        "pct": 0.428,
         "confidence_flag": false,
         "exemplos": [
           {
@@ -680,8 +911,8 @@
       },
       {
         "valor": "inspiracional",
-        "posts": 128,
-        "pct": 0.298,
+        "posts": 109,
+        "pct": 0.256,
         "confidence_flag": false,
         "exemplos": [
           {
@@ -690,6 +921,13 @@
             "url": "https://www.youtube.com/shorts/gekE1L2ENQw",
             "lift": 1547.54,
             "engajamento": 0.1248
+          },
+          {
+            "post_id": "yt_f2VGKROBQ4g",
+            "perfil": "stone",
+            "url": "https://www.youtube.com/shorts/f2VGKROBQ4g",
+            "lift": 498.75,
+            "engajamento": 0.0347
           },
           {
             "post_id": "yt_bHHvBkp84V4",
@@ -697,20 +935,42 @@
             "url": "https://www.youtube.com/shorts/bHHvBkp84V4",
             "lift": 361.66,
             "engajamento": 0.02917
+          }
+        ]
+      },
+      {
+        "valor": "tecnico",
+        "posts": 88,
+        "pct": 0.207,
+        "confidence_flag": false,
+        "exemplos": [
+          {
+            "post_id": "ig_18104523863211622",
+            "perfil": "belezacomonegociooficial",
+            "url": "https://www.instagram.com/reel/DdMYU6ER815/",
+            "lift": 1014.09,
+            "engajamento": 2.13902
           },
           {
-            "post_id": "ig_17920090149369903",
-            "perfil": "sebrae",
-            "url": "https://www.instagram.com/reel/DZawG_cBm7o/",
-            "lift": 333.62,
-            "engajamento": 0.04177
+            "post_id": "ig_17871744063644828",
+            "perfil": "contaazul",
+            "url": "https://www.instagram.com/reel/DeptsOuxzFs/",
+            "lift": 416.28,
+            "engajamento": 0.09194
+          },
+          {
+            "post_id": "yt_MT8TzmTqSCk",
+            "perfil": "stone",
+            "url": "https://www.youtube.com/shorts/MT8TzmTqSCk",
+            "lift": 170.0,
+            "engajamento": 0.01183
           }
         ]
       },
       {
         "valor": "humoristico",
-        "posts": 52,
-        "pct": 0.121,
+        "posts": 46,
+        "pct": 0.108,
         "confidence_flag": false,
         "exemplos": [
           {
@@ -719,13 +979,6 @@
             "url": "https://www.youtube.com/shorts/aUEuk1J3lu4",
             "lift": 2512.08,
             "engajamento": 0.12882
-          },
-          {
-            "post_id": "ig_18104523863211622",
-            "perfil": "belezacomonegociooficial",
-            "url": "https://www.instagram.com/reel/DdMYU6ER815/",
-            "lift": 1014.09,
-            "engajamento": 2.13902
           },
           {
             "post_id": "yt_sU-EorgQxUg",
@@ -733,30 +986,22 @@
             "url": "https://www.youtube.com/shorts/sU-EorgQxUg",
             "lift": 673.58,
             "engajamento": 0.03454
-          }
-        ]
-      },
-      {
-        "valor": "tecnico",
-        "posts": 1,
-        "pct": 0.002,
-        "confidence_flag": true,
-        "exemplos": [
+          },
           {
-            "post_id": "ig_18051580559263397",
-            "perfil": "rodrigofinancas",
-            "url": "https://www.instagram.com/reel/DOim7rEgDpp/",
-            "lift": 30.17,
-            "engajamento": 0.02103
+            "post_id": "yt_wgVQPX_izJs",
+            "perfil": "stone",
+            "url": "https://www.youtube.com/shorts/wgVQPX_izJs",
+            "lift": 670.75,
+            "engajamento": 0.04666
           }
         ]
       }
     ],
     "usa_linguagem_regional": [
       {
-        "valor": "True",
-        "posts": 295,
-        "pct": 0.686,
+        "valor": "False",
+        "posts": 416,
+        "pct": 0.979,
         "confidence_flag": false,
         "exemplos": [
           {
@@ -772,6 +1017,66 @@
             "url": "https://www.youtube.com/shorts/Efv_beC-m5A",
             "lift": 1732.08,
             "engajamento": 0.08882
+          },
+          {
+            "post_id": "yt_gekE1L2ENQw",
+            "perfil": "pagbank",
+            "url": "https://www.youtube.com/shorts/gekE1L2ENQw",
+            "lift": 1547.54,
+            "engajamento": 0.1248
+          }
+        ]
+      },
+      {
+        "valor": "True",
+        "posts": 9,
+        "pct": 0.021,
+        "confidence_flag": true,
+        "exemplos": [
+          {
+            "post_id": "yt_sU-EorgQxUg",
+            "perfil": "infinitepay",
+            "url": "https://www.youtube.com/shorts/sU-EorgQxUg",
+            "lift": 673.58,
+            "engajamento": 0.03454
+          },
+          {
+            "post_id": "ig_18111299024105280",
+            "perfil": "mercadopagobr",
+            "url": "https://www.instagram.com/reel/Dc6BTzhjDxQ/",
+            "lift": 18.09,
+            "engajamento": 0.00425
+          },
+          {
+            "post_id": "yt_fT0KwjPkOMk",
+            "perfil": "infinitepay",
+            "url": "https://www.youtube.com/shorts/fT0KwjPkOMk",
+            "lift": 12.83,
+            "engajamento": 0.00066
+          }
+        ]
+      }
+    ],
+    "tem_cta": [
+      {
+        "valor": "False",
+        "posts": 245,
+        "pct": 0.576,
+        "confidence_flag": false,
+        "exemplos": [
+          {
+            "post_id": "yt_Efv_beC-m5A",
+            "perfil": "infinitepay",
+            "url": "https://www.youtube.com/shorts/Efv_beC-m5A",
+            "lift": 1732.08,
+            "engajamento": 0.08882
+          },
+          {
+            "post_id": "yt_gekE1L2ENQw",
+            "perfil": "pagbank",
+            "url": "https://www.youtube.com/shorts/gekE1L2ENQw",
+            "lift": 1547.54,
+            "engajamento": 0.1248
           },
           {
             "post_id": "ig_18104523863211622",
@@ -783,17 +1088,84 @@
         ]
       },
       {
-        "valor": "False",
-        "posts": 135,
-        "pct": 0.314,
+        "valor": "True",
+        "posts": 180,
+        "pct": 0.424,
         "confidence_flag": false,
         "exemplos": [
+          {
+            "post_id": "yt_aUEuk1J3lu4",
+            "perfil": "infinitepay",
+            "url": "https://www.youtube.com/shorts/aUEuk1J3lu4",
+            "lift": 2512.08,
+            "engajamento": 0.12882
+          },
+          {
+            "post_id": "yt_sU-EorgQxUg",
+            "perfil": "infinitepay",
+            "url": "https://www.youtube.com/shorts/sU-EorgQxUg",
+            "lift": 673.58,
+            "engajamento": 0.03454
+          },
+          {
+            "post_id": "yt_wgVQPX_izJs",
+            "perfil": "stone",
+            "url": "https://www.youtube.com/shorts/wgVQPX_izJs",
+            "lift": 670.75,
+            "engajamento": 0.04666
+          }
+        ]
+      }
+    ],
+    "tipo_cta": [
+      {
+        "valor": "nenhum",
+        "posts": 245,
+        "pct": 0.576,
+        "confidence_flag": false,
+        "exemplos": [
+          {
+            "post_id": "yt_Efv_beC-m5A",
+            "perfil": "infinitepay",
+            "url": "https://www.youtube.com/shorts/Efv_beC-m5A",
+            "lift": 1732.08,
+            "engajamento": 0.08882
+          },
           {
             "post_id": "yt_gekE1L2ENQw",
             "perfil": "pagbank",
             "url": "https://www.youtube.com/shorts/gekE1L2ENQw",
             "lift": 1547.54,
             "engajamento": 0.1248
+          },
+          {
+            "post_id": "ig_18104523863211622",
+            "perfil": "belezacomonegociooficial",
+            "url": "https://www.instagram.com/reel/DdMYU6ER815/",
+            "lift": 1014.09,
+            "engajamento": 2.13902
+          }
+        ]
+      },
+      {
+        "valor": "link_na_bio",
+        "posts": 91,
+        "pct": 0.214,
+        "confidence_flag": false,
+        "exemplos": [
+          {
+            "post_id": "yt_aUEuk1J3lu4",
+            "perfil": "infinitepay",
+            "url": "https://www.youtube.com/shorts/aUEuk1J3lu4",
+            "lift": 2512.08,
+            "engajamento": 0.12882
+          },
+          {
+            "post_id": "yt_sU-EorgQxUg",
+            "perfil": "infinitepay",
+            "url": "https://www.youtube.com/shorts/sU-EorgQxUg",
+            "lift": 673.58,
+            "engajamento": 0.03454
           },
           {
             "post_id": "yt_FblZAg1Z5Rw",
@@ -801,6 +1173,50 @@
             "url": "https://www.youtube.com/shorts/FblZAg1Z5Rw",
             "lift": 634.5,
             "engajamento": 0.04414
+          }
+        ]
+      },
+      {
+        "valor": "comentar",
+        "posts": 48,
+        "pct": 0.113,
+        "confidence_flag": false,
+        "exemplos": [
+          {
+            "post_id": "ig_18099583934144653",
+            "perfil": "sebrae",
+            "url": "https://www.instagram.com/reel/DZP6p15FWVp/",
+            "lift": 107.81,
+            "engajamento": 0.0135
+          },
+          {
+            "post_id": "ig_17973783261177473",
+            "perfil": "belezacomonegociooficial",
+            "url": "https://www.instagram.com/reel/DePxtnvMMah/",
+            "lift": 86.55,
+            "engajamento": 0.18255
+          },
+          {
+            "post_id": "ig_18085815265774077",
+            "perfil": "rodrigofinancas",
+            "url": "https://www.instagram.com/reel/DMP4KhWO77B/",
+            "lift": 42.99,
+            "engajamento": 0.02998
+          }
+        ]
+      },
+      {
+        "valor": "seguir",
+        "posts": 19,
+        "pct": 0.045,
+        "confidence_flag": false,
+        "exemplos": [
+          {
+            "post_id": "yt_wgVQPX_izJs",
+            "perfil": "stone",
+            "url": "https://www.youtube.com/shorts/wgVQPX_izJs",
+            "lift": 670.75,
+            "engajamento": 0.04666
           },
           {
             "post_id": "ig_18060261665702121",
@@ -808,164 +1224,87 @@
             "url": "https://www.instagram.com/reel/DXiEpzBDckO/",
             "lift": 551.21,
             "engajamento": 1.64735
-          }
-        ]
-      }
-    ],
-    "tem_cta": [
-      {
-        "valor": "True",
-        "posts": 418,
-        "pct": 0.972,
-        "confidence_flag": false,
-        "exemplos": [
-          {
-            "post_id": "yt_aUEuk1J3lu4",
-            "perfil": "infinitepay",
-            "url": "https://www.youtube.com/shorts/aUEuk1J3lu4",
-            "lift": 2512.08,
-            "engajamento": 0.12882
           },
           {
-            "post_id": "yt_Efv_beC-m5A",
-            "perfil": "infinitepay",
-            "url": "https://www.youtube.com/shorts/Efv_beC-m5A",
-            "lift": 1732.08,
-            "engajamento": 0.08882
-          },
-          {
-            "post_id": "yt_gekE1L2ENQw",
-            "perfil": "pagbank",
-            "url": "https://www.youtube.com/shorts/gekE1L2ENQw",
-            "lift": 1547.54,
-            "engajamento": 0.1248
+            "post_id": "yt_MT8TzmTqSCk",
+            "perfil": "stone",
+            "url": "https://www.youtube.com/shorts/MT8TzmTqSCk",
+            "lift": 170.0,
+            "engajamento": 0.01183
           }
         ]
       },
       {
-        "valor": "False",
-        "posts": 12,
-        "pct": 0.028,
+        "valor": "compartilhar",
+        "posts": 15,
+        "pct": 0.035,
         "confidence_flag": false,
         "exemplos": [
           {
-            "post_id": "ig_18181333033373992",
-            "perfil": "sebrae",
-            "url": "https://www.instagram.com/reel/Da8Ge6lRA_F/",
-            "lift": 312.2,
-            "engajamento": 0.03909
+            "post_id": "yt_-9KriL2wT18",
+            "perfil": "nuvemshop",
+            "url": "https://www.youtube.com/shorts/-9KriL2wT18",
+            "lift": 126.18,
+            "engajamento": 0.00586
           },
           {
-            "post_id": "ig_18062227850565606",
-            "perfil": "sebrae",
-            "url": "https://www.instagram.com/reel/DbCOxTaufZp/",
-            "lift": 283.67,
-            "engajamento": 0.03552
+            "post_id": "ig_18111299024105280",
+            "perfil": "mercadopagobr",
+            "url": "https://www.instagram.com/reel/Dc6BTzhjDxQ/",
+            "lift": 18.09,
+            "engajamento": 0.00425
           },
           {
-            "post_id": "ig_18049976758842854",
-            "perfil": "luizdobrownie",
-            "url": "https://www.instagram.com/reel/DDSWqUBRBEt/",
-            "lift": 30.03,
-            "engajamento": 0.14439
-          }
-        ]
-      }
-    ],
-    "tipo_cta": [
-      {
-        "valor": "comentar",
-        "posts": 403,
-        "pct": 0.937,
-        "confidence_flag": false,
-        "exemplos": [
-          {
-            "post_id": "yt_aUEuk1J3lu4",
-            "perfil": "infinitepay",
-            "url": "https://www.youtube.com/shorts/aUEuk1J3lu4",
-            "lift": 2512.08,
-            "engajamento": 0.12882
-          },
-          {
-            "post_id": "yt_Efv_beC-m5A",
-            "perfil": "infinitepay",
-            "url": "https://www.youtube.com/shorts/Efv_beC-m5A",
-            "lift": 1732.08,
-            "engajamento": 0.08882
-          },
-          {
-            "post_id": "yt_gekE1L2ENQw",
-            "perfil": "pagbank",
-            "url": "https://www.youtube.com/shorts/gekE1L2ENQw",
-            "lift": 1547.54,
-            "engajamento": 0.1248
+            "post_id": "ig_17986585002087861",
+            "perfil": "sauloabrahaoo",
+            "url": "https://www.instagram.com/p/DfW5KIIkVNy/",
+            "lift": 15.38,
+            "engajamento": 0.03144
           }
         ]
       },
       {
-        "valor": "link_na_bio",
-        "posts": 16,
-        "pct": 0.037,
-        "confidence_flag": false,
-        "exemplos": [
-          {
-            "post_id": "yt_HWorztRfQMI",
-            "perfil": "infinitepay",
-            "url": "https://www.youtube.com/shorts/HWorztRfQMI",
-            "lift": 74.33,
-            "engajamento": 0.00381
-          },
-          {
-            "post_id": "ig_18129375233311108",
-            "perfil": "nathfinancas",
-            "url": "https://www.instagram.com/reel/DedC9fgJjXU/",
-            "lift": 60.29,
-            "engajamento": 0.19239
-          },
-          {
-            "post_id": "ig_18111134212819197",
-            "perfil": "metodomajuseller",
-            "url": "https://www.instagram.com/reel/Db3__ydRYV1/",
-            "lift": 42.16,
-            "engajamento": 0.17993
-          }
-        ]
-      },
-      {
-        "valor": "nenhum",
-        "posts": 7,
-        "pct": 0.016,
+        "valor": "salvar",
+        "posts": 4,
+        "pct": 0.009,
         "confidence_flag": true,
         "exemplos": [
           {
-            "post_id": "ig_18181333033373992",
-            "perfil": "sebrae",
-            "url": "https://www.instagram.com/reel/Da8Ge6lRA_F/",
-            "lift": 312.2,
-            "engajamento": 0.03909
+            "post_id": "ig_18066746714400508",
+            "perfil": "facoascontas",
+            "url": "https://www.instagram.com/reel/DY4slKGx_mO/",
+            "lift": 61.99,
+            "engajamento": 0.17341
           },
           {
-            "post_id": "ig_18049976758842854",
-            "perfil": "luizdobrownie",
-            "url": "https://www.instagram.com/reel/DDSWqUBRBEt/",
-            "lift": 30.03,
-            "engajamento": 0.14439
+            "post_id": "ig_18107428163237679",
+            "perfil": "infinitepay",
+            "url": "https://www.instagram.com/p/DeIK7-9m4AN/",
+            "lift": 6.92,
+            "engajamento": 0.00063
           },
           {
-            "post_id": "ig_18115544033056255",
-            "perfil": "mkt.insider.ca",
-            "url": "https://www.instagram.com/p/Dc6Qu6XEc0t/",
-            "lift": 13.24,
-            "engajamento": 0.00373
+            "post_id": "ig_17884733121292873",
+            "perfil": "facoascontas",
+            "url": "https://www.instagram.com/reel/DKjsUCWOETS/",
+            "lift": 5.38,
+            "engajamento": 0.01506
           }
         ]
       },
       {
         "valor": "dm",
-        "posts": 2,
-        "pct": 0.005,
+        "posts": 3,
+        "pct": 0.007,
         "confidence_flag": true,
         "exemplos": [
+          {
+            "post_id": "ig_18112631195505099",
+            "perfil": "rodrigofinancas",
+            "url": "https://www.instagram.com/reel/DZDIk1RRUNe/",
+            "lift": 19.76,
+            "engajamento": 0.01378
+          },
           {
             "post_id": "ig_18097058978633989",
             "perfil": "contadoramunique",
@@ -974,50 +1313,49 @@
             "engajamento": 0.28827
           },
           {
-            "post_id": "ig_17894227917524873",
+            "post_id": "ig_18534418906078676",
             "perfil": "contaazul",
-            "url": "https://www.instagram.com/reel/DZ8dzzUkeJq/",
-            "lift": 5.92,
-            "engajamento": 0.00131
-          }
-        ]
-      },
-      {
-        "valor": "compartilhar",
-        "posts": 1,
-        "pct": 0.002,
-        "confidence_flag": true,
-        "exemplos": [
-          {
-            "post_id": "ig_18115514213608267",
-            "perfil": "sebrae",
-            "url": "https://www.instagram.com/p/DfZ5AmBkWe-/",
-            "lift": 6.0,
-            "engajamento": 0.00075
-          }
-        ]
-      },
-      {
-        "valor": "salvar",
-        "posts": 1,
-        "pct": 0.002,
-        "confidence_flag": true,
-        "exemplos": [
-          {
-            "post_id": "ig_18122666428695515",
-            "perfil": "sebrae",
-            "url": "https://www.instagram.com/p/Dbf5KvUDnxi/",
-            "lift": 5.0,
-            "engajamento": 0.00063
+            "url": "https://www.instagram.com/reel/DZs4nTnj0bl/",
+            "lift": 8.34,
+            "engajamento": 0.00184
           }
         ]
       }
     ],
     "oferta_ou_beneficio_explicito": [
       {
+        "valor": "False",
+        "posts": 261,
+        "pct": 0.614,
+        "confidence_flag": false,
+        "exemplos": [
+          {
+            "post_id": "yt_gekE1L2ENQw",
+            "perfil": "pagbank",
+            "url": "https://www.youtube.com/shorts/gekE1L2ENQw",
+            "lift": 1547.54,
+            "engajamento": 0.1248
+          },
+          {
+            "post_id": "ig_18060261665702121",
+            "perfil": "bldfoodbr",
+            "url": "https://www.instagram.com/reel/DXiEpzBDckO/",
+            "lift": 551.21,
+            "engajamento": 1.64735
+          },
+          {
+            "post_id": "yt_f2VGKROBQ4g",
+            "perfil": "stone",
+            "url": "https://www.youtube.com/shorts/f2VGKROBQ4g",
+            "lift": 498.75,
+            "engajamento": 0.0347
+          }
+        ]
+      },
+      {
         "valor": "True",
-        "posts": 245,
-        "pct": 0.57,
+        "posts": 164,
+        "pct": 0.386,
         "confidence_flag": false,
         "exemplos": [
           {
@@ -1042,203 +1380,227 @@
             "engajamento": 2.13902
           }
         ]
-      },
-      {
-        "valor": "False",
-        "posts": 185,
-        "pct": 0.43,
-        "confidence_flag": false,
-        "exemplos": [
-          {
-            "post_id": "yt_gekE1L2ENQw",
-            "perfil": "pagbank",
-            "url": "https://www.youtube.com/shorts/gekE1L2ENQw",
-            "lift": 1547.54,
-            "engajamento": 0.1248
-          },
-          {
-            "post_id": "ig_18060261665702121",
-            "perfil": "bldfoodbr",
-            "url": "https://www.instagram.com/reel/DXiEpzBDckO/",
-            "lift": 551.21,
-            "engajamento": 1.64735
-          },
-          {
-            "post_id": "ig_17871744063644828",
-            "perfil": "contaazul",
-            "url": "https://www.instagram.com/reel/DeptsOuxzFs/",
-            "lift": 416.28,
-            "engajamento": 0.09194
-          }
-        ]
       }
     ]
   },
   "notas": {
     "forca_hook_0a10": {
-      "media": 9.89,
-      "mediana": 10.0
+      "media": 5.87,
+      "mediana": 6.0
     },
     "clareza_mensagem_0a10": {
-      "media": 9.75,
-      "mediana": 10.0
+      "media": 7.34,
+      "mediana": 8.0
     }
   },
   "recortes": {
     "tema_x_tipo_post": {
       "carrossel": {
-        "atendimento": 2,
-        "ferramentas_maquininha": 2,
-        "financas": 44,
-        "gestao": 4,
-        "historia_de_empreendedor": 3,
-        "marketing": 3,
+        "atendimento": 1,
+        "ferramentas_maquininha": 7,
+        "financas": 21,
+        "gestao": 18,
+        "historia_de_empreendedor": 7,
+        "marketing": 13,
         "motivacao": 16,
-        "vendas": 10
+        "vendas": 1
       },
       "imagem": {
-        "atendimento": 1,
-        "ferramentas_maquininha": 0,
-        "financas": 10,
+        "atendimento": 0,
+        "ferramentas_maquininha": 2,
+        "financas": 6,
         "gestao": 3,
-        "historia_de_empreendedor": 1,
-        "marketing": 0,
-        "motivacao": 4,
-        "vendas": 5
+        "historia_de_empreendedor": 2,
+        "marketing": 3,
+        "motivacao": 8,
+        "vendas": 0
       },
       "reels": {
-        "atendimento": 15,
-        "ferramentas_maquininha": 7,
-        "financas": 92,
-        "gestao": 14,
-        "historia_de_empreendedor": 9,
-        "marketing": 6,
-        "motivacao": 27,
-        "vendas": 67
+        "atendimento": 2,
+        "ferramentas_maquininha": 39,
+        "financas": 60,
+        "gestao": 36,
+        "historia_de_empreendedor": 18,
+        "marketing": 43,
+        "motivacao": 34,
+        "vendas": 5
       },
       "short": {
-        "atendimento": 2,
-        "ferramentas_maquininha": 1,
-        "financas": 48,
-        "gestao": 2,
-        "historia_de_empreendedor": 3,
-        "marketing": 2,
-        "motivacao": 9,
-        "vendas": 18
+        "atendimento": 0,
+        "ferramentas_maquininha": 17,
+        "financas": 27,
+        "gestao": 10,
+        "historia_de_empreendedor": 7,
+        "marketing": 8,
+        "motivacao": 8,
+        "vendas": 3
       }
     },
     "tema_x_formato_video": {
-      "talking_head": {
-        "atendimento": 17,
+      "antes_depois": {
+        "ferramentas_maquininha": 0,
+        "financas": 0,
+        "gestao": 1,
+        "historia_de_empreendedor": 0,
+        "marketing": 0,
+        "motivacao": 1,
+        "vendas": 0
+      },
+      "bastidores": {
+        "ferramentas_maquininha": 6,
+        "financas": 0,
+        "gestao": 1,
+        "historia_de_empreendedor": 3,
+        "marketing": 9,
+        "motivacao": 0,
+        "vendas": 1
+      },
+      "depoimento": {
         "ferramentas_maquininha": 8,
-        "financas": 164,
-        "gestao": 18,
-        "historia_de_empreendedor": 12,
-        "marketing": 8,
-        "motivacao": 44,
-        "vendas": 91
+        "financas": 6,
+        "gestao": 2,
+        "historia_de_empreendedor": 13,
+        "marketing": 1,
+        "motivacao": 8,
+        "vendas": 0
+      },
+      "humor_esquete": {
+        "ferramentas_maquininha": 9,
+        "financas": 2,
+        "gestao": 4,
+        "historia_de_empreendedor": 5,
+        "marketing": 3,
+        "motivacao": 8,
+        "vendas": 0
+      },
+      "lista_dicas": {
+        "ferramentas_maquininha": 0,
+        "financas": 1,
+        "gestao": 1,
+        "historia_de_empreendedor": 0,
+        "marketing": 1,
+        "motivacao": 0,
+        "vendas": 0
+      },
+      "talking_head": {
+        "ferramentas_maquininha": 0,
+        "financas": 16,
+        "gestao": 5,
+        "historia_de_empreendedor": 0,
+        "marketing": 1,
+        "motivacao": 3,
+        "vendas": 1
+      },
+      "tutorial": {
+        "ferramentas_maquininha": 8,
+        "financas": 14,
+        "gestao": 4,
+        "historia_de_empreendedor": 0,
+        "marketing": 4,
+        "motivacao": 0,
+        "vendas": 4
       }
     },
     "tipo_hook_x_plataforma": {
       "instagram": {
-        "curiosidade": 9,
-        "dor": 82,
-        "nenhum": 1,
-        "numero": 1,
-        "pergunta": 5,
-        "polemica": 7,
-        "promessa": 240
+        "curiosidade": 112,
+        "dor": 31,
+        "nenhum": 50,
+        "numero": 13,
+        "pergunta": 50,
+        "polemica": 28,
+        "promessa": 61
       },
       "youtube": {
-        "curiosidade": 1,
-        "dor": 19,
-        "nenhum": 0,
-        "numero": 0,
-        "pergunta": 0,
-        "polemica": 1,
-        "promessa": 64
+        "curiosidade": 23,
+        "dor": 9,
+        "nenhum": 7,
+        "numero": 3,
+        "pergunta": 19,
+        "polemica": 2,
+        "promessa": 17
       }
     },
     "segmento_x_tema": {
       "atendimento": {
-        "alimentacao": 5,
-        "beleza": 6,
-        "educacao_empreendedora": 2,
-        "ferramentas_maquininha": 2,
-        "financas": 4,
-        "gestao": 1,
-        "marketing": 0,
-        "varejo": 0
-      },
-      "ferramentas_maquininha": {
-        "alimentacao": 2,
+        "alimentacao": 0,
         "beleza": 1,
-        "educacao_empreendedora": 3,
-        "ferramentas_maquininha": 2,
-        "financas": 0,
-        "gestao": 0,
-        "marketing": 2,
-        "varejo": 0
-      },
-      "financas": {
-        "alimentacao": 1,
-        "beleza": 1,
-        "educacao_empreendedora": 13,
-        "ferramentas_maquininha": 59,
-        "financas": 91,
-        "gestao": 28,
-        "marketing": 0,
-        "varejo": 1
-      },
-      "gestao": {
-        "alimentacao": 3,
-        "beleza": 3,
-        "educacao_empreendedora": 0,
-        "ferramentas_maquininha": 3,
-        "financas": 13,
-        "gestao": 1,
-        "marketing": 0,
-        "varejo": 0
-      },
-      "historia_de_empreendedor": {
-        "alimentacao": 1,
-        "beleza": 0,
-        "educacao_empreendedora": 10,
-        "ferramentas_maquininha": 4,
+        "educacao_empreendedora": 1,
+        "ferramentas_maquininha": 0,
         "financas": 1,
         "gestao": 0,
         "marketing": 0,
         "varejo": 0
       },
-      "marketing": {
-        "alimentacao": 6,
-        "beleza": 1,
+      "ferramentas_maquininha": {
+        "alimentacao": 4,
+        "beleza": 4,
         "educacao_empreendedora": 0,
-        "ferramentas_maquininha": 0,
-        "financas": 0,
+        "ferramentas_maquininha": 55,
+        "financas": 1,
         "gestao": 1,
-        "marketing": 3,
+        "marketing": 0,
         "varejo": 0
+      },
+      "financas": {
+        "alimentacao": 1,
+        "beleza": 1,
+        "educacao_empreendedora": 7,
+        "ferramentas_maquininha": 23,
+        "financas": 67,
+        "gestao": 14,
+        "marketing": 0,
+        "varejo": 1
+      },
+      "gestao": {
+        "alimentacao": 4,
+        "beleza": 4,
+        "educacao_empreendedora": 8,
+        "ferramentas_maquininha": 4,
+        "financas": 33,
+        "gestao": 14,
+        "marketing": 0,
+        "varejo": 0
+      },
+      "historia_de_empreendedor": {
+        "alimentacao": 7,
+        "beleza": 2,
+        "educacao_empreendedora": 6,
+        "ferramentas_maquininha": 14,
+        "financas": 4,
+        "gestao": 0,
+        "marketing": 0,
+        "varejo": 1
+      },
+      "marketing": {
+        "alimentacao": 11,
+        "beleza": 4,
+        "educacao_empreendedora": 12,
+        "ferramentas_maquininha": 16,
+        "financas": 11,
+        "gestao": 1,
+        "marketing": 8,
+        "varejo": 4
       },
       "motivacao": {
-        "alimentacao": 2,
-        "beleza": 8,
-        "educacao_empreendedora": 18,
-        "ferramentas_maquininha": 8,
-        "financas": 14,
-        "gestao": 3,
-        "marketing": 3,
-        "varejo": 0
+        "alimentacao": 7,
+        "beleza": 10,
+        "educacao_empreendedora": 16,
+        "ferramentas_maquininha": 7,
+        "financas": 18,
+        "gestao": 6,
+        "marketing": 0,
+        "varejo": 2
       },
       "vendas": {
-        "alimentacao": 15,
-        "beleza": 6,
-        "educacao_empreendedora": 6,
-        "ferramentas_maquininha": 51,
-        "financas": 12,
-        "gestao": 2,
+        "alimentacao": 1,
+        "beleza": 0,
+        "educacao_empreendedora": 2,
+        "ferramentas_maquininha": 5,
+        "financas": 0,
+        "gestao": 0,
         "marketing": 0,
-        "varejo": 8
+        "varejo": 1
       }
     }
   },
@@ -1258,9 +1620,9 @@
       "plataforma": "instagram",
       "faixa": "grande",
       "posts_top": 35,
-      "tema_predominante": "financas",
+      "tema_predominante": "marketing",
       "tipo_post_predominante": "reels",
-      "formato_predominante": "talking_head",
+      "formato_predominante": "bastidores",
       "lift_mediano": 12.13
     },
     {
@@ -1268,9 +1630,9 @@
       "plataforma": "instagram",
       "faixa": "grande",
       "posts_top": 31,
-      "tema_predominante": "vendas",
+      "tema_predominante": "ferramentas_maquininha",
       "tipo_post_predominante": "reels",
-      "formato_predominante": "talking_head",
+      "formato_predominante": "humor_esquete",
       "lift_mediano": 11.21
     },
     {
@@ -1278,9 +1640,9 @@
       "plataforma": "instagram",
       "faixa": "grande",
       "posts_top": 30,
-      "tema_predominante": "financas",
+      "tema_predominante": "gestao",
       "tipo_post_predominante": "reels",
-      "formato_predominante": "talking_head",
+      "formato_predominante": null,
       "lift_mediano": 10.88
     },
     {
@@ -1288,20 +1650,10 @@
       "plataforma": "instagram",
       "faixa": "grande",
       "posts_top": 28,
-      "tema_predominante": "financas",
+      "tema_predominante": "gestao",
       "tipo_post_predominante": "reels",
       "formato_predominante": "talking_head",
       "lift_mediano": 8.89
-    },
-    {
-      "perfil": "infinitepay",
-      "plataforma": "youtube",
-      "faixa": "grande",
-      "posts_top": 27,
-      "tema_predominante": "financas",
-      "tipo_post_predominante": "short",
-      "formato_predominante": "talking_head",
-      "lift_mediano": 34.75
     },
     {
       "perfil": "mercadopagobr",
@@ -1310,17 +1662,27 @@
       "posts_top": 25,
       "tema_predominante": "financas",
       "tipo_post_predominante": "reels",
-      "formato_predominante": "talking_head",
+      "formato_predominante": "humor_esquete",
       "lift_mediano": 19.92
+    },
+    {
+      "perfil": "infinitepay",
+      "plataforma": "youtube",
+      "faixa": "grande",
+      "posts_top": 24,
+      "tema_predominante": "ferramentas_maquininha",
+      "tipo_post_predominante": "short",
+      "formato_predominante": "depoimento",
+      "lift_mediano": 58.58
     },
     {
       "perfil": "luizdobrownie",
       "plataforma": "instagram",
       "faixa": "medio",
       "posts_top": 17,
-      "tema_predominante": "vendas",
+      "tema_predominante": "historia_de_empreendedor",
       "tipo_post_predominante": "reels",
-      "formato_predominante": "talking_head",
+      "formato_predominante": "humor_esquete",
       "lift_mediano": 14.79
     },
     {
@@ -1330,7 +1692,7 @@
       "posts_top": 16,
       "tema_predominante": "financas",
       "tipo_post_predominante": "reels",
-      "formato_predominante": "talking_head",
+      "formato_predominante": "tutorial",
       "lift_mediano": 8.15
     },
     {
@@ -1347,11 +1709,11 @@
       "perfil": "stone",
       "plataforma": "youtube",
       "faixa": "medio",
-      "posts_top": 15,
-      "tema_predominante": "financas",
+      "posts_top": 14,
+      "tema_predominante": "historia_de_empreendedor",
       "tipo_post_predominante": "short",
-      "formato_predominante": "talking_head",
-      "lift_mediano": 16.75
+      "formato_predominante": "depoimento",
+      "lift_mediano": 17.25
     },
     {
       "perfil": "bldfoodbr",
@@ -1360,7 +1722,7 @@
       "posts_top": 12,
       "tema_predominante": "marketing",
       "tipo_post_predominante": "reels",
-      "formato_predominante": "talking_head",
+      "formato_predominante": "bastidores",
       "lift_mediano": 7.07
     },
     {
@@ -1368,9 +1730,9 @@
       "plataforma": "instagram",
       "faixa": "grande",
       "posts_top": 12,
-      "tema_predominante": "vendas",
+      "tema_predominante": "historia_de_empreendedor",
       "tipo_post_predominante": "reels",
-      "formato_predominante": "talking_head",
+      "formato_predominante": "depoimento",
       "lift_mediano": 10.73
     },
     {
@@ -1378,9 +1740,9 @@
       "plataforma": "instagram",
       "faixa": "micro",
       "posts_top": 11,
-      "tema_predominante": "vendas",
+      "tema_predominante": "ferramentas_maquininha",
       "tipo_post_predominante": "reels",
-      "formato_predominante": "talking_head",
+      "formato_predominante": "tutorial",
       "lift_mediano": 16.55
     },
     {
@@ -1388,9 +1750,9 @@
       "plataforma": "instagram",
       "faixa": "grande",
       "posts_top": 11,
-      "tema_predominante": "financas",
+      "tema_predominante": "historia_de_empreendedor",
       "tipo_post_predominante": "reels",
-      "formato_predominante": "talking_head",
+      "formato_predominante": "depoimento",
       "lift_mediano": 9.31
     },
     {
@@ -1400,7 +1762,7 @@
       "posts_top": 11,
       "tema_predominante": "motivacao",
       "tipo_post_predominante": "reels",
-      "formato_predominante": "talking_head",
+      "formato_predominante": "depoimento",
       "lift_mediano": 7.19
     },
     {
@@ -1408,9 +1770,9 @@
       "plataforma": "instagram",
       "faixa": "medio",
       "posts_top": 9,
-      "tema_predominante": "financas",
+      "tema_predominante": "gestao",
       "tipo_post_predominante": "reels",
-      "formato_predominante": "talking_head",
+      "formato_predominante": "bastidores",
       "lift_mediano": 9.36
     },
     {
@@ -1418,9 +1780,9 @@
       "plataforma": "youtube",
       "faixa": "grande",
       "posts_top": 7,
-      "tema_predominante": "financas",
+      "tema_predominante": "ferramentas_maquininha",
       "tipo_post_predominante": "short",
-      "formato_predominante": "talking_head",
+      "formato_predominante": "depoimento",
       "lift_mediano": 4.63
     },
     {
@@ -1430,7 +1792,7 @@
       "posts_top": 7,
       "tema_predominante": "financas",
       "tipo_post_predominante": "short",
-      "formato_predominante": "talking_head",
+      "formato_predominante": "humor_esquete",
       "lift_mediano": 7.0
     },
     {
@@ -1438,7 +1800,7 @@
       "plataforma": "instagram",
       "faixa": "micro",
       "posts_top": 6,
-      "tema_predominante": "motivacao",
+      "tema_predominante": "historia_de_empreendedor",
       "tipo_post_predominante": "carrossel",
       "formato_predominante": "talking_head",
       "lift_mediano": 7.43
@@ -1448,9 +1810,9 @@
       "plataforma": "instagram",
       "faixa": "grande",
       "posts_top": 6,
-      "tema_predominante": "motivacao",
+      "tema_predominante": "marketing",
       "tipo_post_predominante": "carrossel",
-      "formato_predominante": "talking_head",
+      "formato_predominante": null,
       "lift_mediano": 13.98
     },
     {
@@ -1460,7 +1822,7 @@
       "posts_top": 6,
       "tema_predominante": "motivacao",
       "tipo_post_predominante": "short",
-      "formato_predominante": "talking_head",
+      "formato_predominante": "tutorial",
       "lift_mediano": 29.01
     },
     {
@@ -1470,7 +1832,7 @@
       "posts_top": 5,
       "tema_predominante": "financas",
       "tipo_post_predominante": "reels",
-      "formato_predominante": "talking_head",
+      "formato_predominante": null,
       "lift_mediano": 10.33
     },
     {
@@ -1478,9 +1840,9 @@
       "plataforma": "instagram",
       "faixa": "grande",
       "posts_top": 4,
-      "tema_predominante": "vendas",
+      "tema_predominante": "ferramentas_maquininha",
       "tipo_post_predominante": "reels",
-      "formato_predominante": "talking_head",
+      "formato_predominante": "bastidores",
       "lift_mediano": 21.28
     },
     {
@@ -1488,9 +1850,9 @@
       "plataforma": "instagram",
       "faixa": "medio",
       "posts_top": 4,
-      "tema_predominante": "vendas",
+      "tema_predominante": "financas",
       "tipo_post_predominante": "reels",
-      "formato_predominante": "talking_head",
+      "formato_predominante": null,
       "lift_mediano": 9.73
     },
     {
@@ -1500,7 +1862,7 @@
       "posts_top": 3,
       "tema_predominante": "motivacao",
       "tipo_post_predominante": "carrossel",
-      "formato_predominante": "talking_head",
+      "formato_predominante": null,
       "lift_mediano": 5.72
     },
     {
@@ -1508,7 +1870,7 @@
       "plataforma": "instagram",
       "faixa": "micro",
       "posts_top": 3,
-      "tema_predominante": "atendimento",
+      "tema_predominante": "motivacao",
       "tipo_post_predominante": "reels",
       "formato_predominante": "talking_head",
       "lift_mediano": 6.43
@@ -1518,32 +1880,32 @@
       "plataforma": "instagram",
       "faixa": "grande",
       "posts_top": 3,
-      "tema_predominante": "vendas",
+      "tema_predominante": "marketing",
       "tipo_post_predominante": "reels",
-      "formato_predominante": "talking_head",
+      "formato_predominante": null,
       "lift_mediano": 9.17
     }
   ],
   "elementos_mais_citados": {
-    "empreendedorismo": 21,
-    "vendas": 17,
-    "infinitepay": 15,
-    "meme": 15,
-    "goleada milionária": 12,
-    "reforma tributária": 11,
-    "mercado pago": 10,
-    "empreendedor": 9,
-    "dor do empreendedor": 9,
-    "motivação": 8,
-    "sebrae": 8,
-    "link na bio": 8,
-    "venda": 8,
-    "pagbank": 8,
-    "gestaofinanceira": 7,
-    "bpofinanceiro": 7,
-    "transformação": 7,
-    "tap da infinitepay": 7,
-    "maquininha": 7,
-    "app": 7
+    "cta para baixar app": 11,
+    "oferta de pdf completo": 11,
+    "cta para compartilhar": 7,
+    "cta para link na bio": 7,
+    "prêmio de r$ 1 milhão": 6,
+    "descontaço serasa": 6,
+    "97% de desconto": 6,
+    "meme": 6,
+    "sem conteúdo textual de valor": 6,
+    "foco em crescimento de audiência": 6,
+    "legenda mínima": 6,
+    "link para formulário de financeiro": 6,
+    "direcionamento para instagram": 6,
+    "hashtags de empreendedorismo": 5,
+    "hashtags de gestão financeira": 5,
+    "texto curto e direto": 5,
+    "baixa retenção de atenção": 5,
+    "cta para bio": 4,
+    "conexão emocional": 4,
+    "cta para seguir": 4
   }
 }

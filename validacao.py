@@ -9,7 +9,7 @@ avaliar  compara a sua anotação com a do modelo e gera data/validacao_resultad
 
 Uso
     python validacao.py amostra
-    (preencha data/validacao_manual.csv no Excel ou no Google Sheets)
+    (preencha data/validacao_manual.xlsx no Excel, as colunas amarelas têm listas suspensas)
     python validacao.py avaliar
 """
 import sys
@@ -21,6 +21,7 @@ from rubrica import CAMPOS_VALIDACAO
 
 DATA = Path("data")
 ARQ = DATA / "validacao_manual.csv"
+XLSX = DATA / "validacao_manual.xlsx"
 N = 50
 SEED = 42
 
@@ -37,14 +38,26 @@ OPCOES = {
 
 
 def amostra():
+    if XLSX.exists() and "--forcar" not in sys.argv:
+        ja = ler_anotacao().filter(like="manual_").notna().to_numpy().sum()
+        if ja:
+            print(f"{XLSX} já tem {ja} células anotadas. Nada foi alterado.")
+            print("Para sortear de novo e APAGAR a anotação, use  python validacao.py amostra --forcar")
+            return
     # sorteia direto do top 10% da base, então a anotação manual pode começar
     # enquanto a categorização ainda está rodando
     base = pd.read_parquet(DATA / "base.parquet")
     cat = base[base["alto_desempenho"]]
+    # se a categorização já existe, sorteia só entre os posts categorizados
+    if (DATA / "categorias.parquet").exists():
+        feitos = set(pd.read_parquet(DATA / "categorias.parquet", columns=["post_id"])["post_id"])
+        cat = cat[cat["post_id"].isin(feitos)]
     n_estratos = cat.groupby(["plataforma", "tipo_post"]).ngroups
     por_estrato = max(1, N // n_estratos)
-    amo = (cat.groupby(["plataforma", "tipo_post"], group_keys=False)
-              .apply(lambda g: g.sample(min(len(g), por_estrato), random_state=SEED)))
+    idx = []
+    for _, g in cat.groupby(["plataforma", "tipo_post"]):
+        idx += list(g.sample(min(len(g), por_estrato), random_state=SEED).index)
+    amo = cat.loc[idx]
     if len(amo) < N:
         resto = cat.drop(amo.index).sample(min(N - len(amo), len(cat) - len(amo)), random_state=SEED)
         amo = pd.concat([amo, resto])
@@ -55,11 +68,53 @@ def amostra():
     for c in CAMPOS_VALIDACAO:
         planilha[f"manual_{c}"] = ""
     planilha.to_csv(ARQ, index=False, encoding="utf-8-sig")
+    gerar_xlsx(planilha)
 
-    print(f"{len(planilha)} posts sorteados -> {ARQ}")
+    print(f"{len(planilha)} posts sorteados -> {XLSX} (e {ARQ})")
     print("\nAbra cada URL, classifique e preencha as colunas manual_*. Valores aceitos")
     for c, o in OPCOES.items():
         print(f"  {c:<15} {o}")
+
+
+def gerar_xlsx(planilha):
+    from openpyxl import Workbook
+    from openpyxl.styles import Font, PatternFill
+    from openpyxl.worksheet.datavalidation import DataValidation
+
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "validacao"
+    ws.append(list(planilha.columns))
+    for row in planilha.itertuples(index=False):
+        ws.append(list(row))
+    for cell in ws[1]:
+        cell.font = Font(bold=True)
+    amarelo = PatternFill("solid", fgColor="FFF2CC")
+    n = len(planilha) + 1
+    for j, col in enumerate(planilha.columns, 1):
+        letra = ws.cell(1, j).column_letter
+        ws.column_dimensions[letra].width = 22
+        if col == "url":
+            for i in range(2, n + 1):
+                c = ws.cell(i, j)
+                c.hyperlink = c.value
+                c.font = Font(color="0563C1", underline="single")
+        if col.startswith("manual_"):
+            campo = col[len("manual_"):]
+            valores = [v.strip() for v in OPCOES[campo].split("|") if "(" not in v]
+            dv = DataValidation(type="list", formula1='"' + ",".join(valores) + '"', allow_blank=True)
+            ws.add_data_validation(dv)
+            dv.add(f"{letra}2:{letra}{n}")
+            for i in range(2, n + 1):
+                ws.cell(i, j).fill = amarelo
+    ws.freeze_panes = "B2"
+    wb.save(XLSX)
+
+
+def ler_anotacao():
+    if XLSX.exists():
+        return pd.read_excel(XLSX, dtype=str)
+    return pd.read_csv(ARQ, encoding="utf-8-sig", dtype=str)
 
 
 def kappa(a, b):
@@ -82,9 +137,18 @@ def normaliza(v):
 
 
 def avaliar():
-    man = pd.read_csv(ARQ, encoding="utf-8-sig")
+    man = ler_anotacao()
+    anotadas = man.filter(like="manual_").apply(lambda c: c.map(normaliza) != "").to_numpy().sum()
+    if anotadas == 0:
+        print(f"{XLSX if XLSX.exists() else ARQ} ainda não tem nenhuma anotação manual.")
+        print("Preencha as colunas manual_* (amarelas no Excel), salve e rode de novo.")
+        return
     cat = pd.read_parquet(DATA / "categorias.parquet")
     df = man.merge(cat, on="post_id", suffixes=("", "_modelo"))
+    # completa plataforma e tipo_post a partir da categorização, se vierem vazios na planilha
+    for col in ["plataforma", "tipo_post"]:
+        if f"{col}_modelo" in df.columns:
+            df[col] = df[col].where(df[col].notna() & (df[col].astype(str) != ""), df[f"{col}_modelo"])
     faltam = len(man) - len(df)
     if faltam:
         print(f"atenção: {faltam} posts da amostra ainda não foram categorizados e ficaram de fora")

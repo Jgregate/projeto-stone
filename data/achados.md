@@ -1,209 +1,216 @@
 # Achados do top 10%
 
-Base de 430 publicações de alto desempenho categorizadas pela rubrica do TAPI.
+Base de 425 publicações de alto desempenho categorizadas pela rubrica do TAPI.
 Categorias com menos de 10 publicações recebem o aviso de baixa confiança (⚠).
 
 ## formato_video
 
 | valor | posts | % | exemplos |
 |---|---|---|---|
-| talking_head | 322 | 100% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) |
+| depoimento | 38 | 12% | [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) [infinitepay](https://www.youtube.com/shorts/sU-EorgQxUg) [stone](https://www.youtube.com/shorts/FblZAg1Z5Rw) |
+| tutorial | 34 | 11% | [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [stone](https://www.youtube.com/shorts/0G6tOJvnVhk) [infinitepay](https://www.youtube.com/shorts/L0djkZ3Jq6s) |
+| humor_esquete | 31 | 10% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [stone](https://www.youtube.com/shorts/wgVQPX_izJs) [mercadopagobr](https://www.instagram.com/reel/DTgaRH6DckT/) |
+| talking_head | 26 | 8% | [nathfinancas](https://www.instagram.com/reel/DedC9fgJjXU/) [nathfinancas](https://www.instagram.com/reel/De9jfVmxRZp/) [luizdobrownie](https://www.instagram.com/reel/DPl0DW1kbIM/) |
+| bastidores | 20 | 6% | [bldfoodbr](https://www.instagram.com/reel/DXiEpzBDckO/) [stone](https://www.youtube.com/shorts/f2VGKROBQ4g) [mercadopagobr](https://www.instagram.com/reel/DIwvEwHSfjN/) |
+| lista_dicas ⚠ | 3 | 1% | [contaazul](https://www.instagram.com/reel/DbtDWt3xJDR/) [bldfoodbr](https://www.instagram.com/reel/DdrpvUxtvLb/) [nathfinancas](https://www.youtube.com/shorts/qJHdlzLFbS0) |
+| antes_depois ⚠ | 2 | 1% | [zicaassis](https://www.instagram.com/reel/DEh0kSYuyTg/) [contaazul](https://www.instagram.com/reel/Dbtgy_9pnue/) |
 
 ## tipo_hook
 
 | valor | posts | % | exemplos |
 |---|---|---|---|
-| promessa | 304 | 71% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) |
-| dor | 101 | 23% | [stone](https://www.youtube.com/shorts/wgVQPX_izJs) [pagbank](https://www.youtube.com/shorts/bHHvBkp84V4) [mercadopagobr](https://www.instagram.com/reel/DandghUEQB0/) |
-| curiosidade | 10 | 2% | [mercadopagobr](https://www.instagram.com/reel/DTgaRH6DckT/) [luizdobrownie](https://www.instagram.com/reel/DKwn0QVOK5F/) [luizdobrownie](https://www.instagram.com/reel/DDSWqUBRBEt/) |
-| polemica ⚠ | 8 | 2% | [rodrigofinancas](https://www.instagram.com/reel/DX2coM0hZ7H/) [nathfinancas](https://www.instagram.com/reel/DZ_GyQpJ_Mc/) [mkt.insider.ca](https://www.instagram.com/p/Dc6Qu6XEc0t/) |
-| pergunta ⚠ | 5 | 1% | [sebrae](https://www.instagram.com/reel/Da3lYR1vTsc/) [mkt.insider.ca](https://www.instagram.com/p/Ddd5ZsAERHf/) [sebrae](https://www.instagram.com/reel/DY5Oe1KxIW8/) |
-| nenhum ⚠ | 1 | 0% | [luizdobrownie](https://www.instagram.com/p/DZ3Ck58mLK1/) |
-| numero ⚠ | 1 | 0% | [contadoramunique](https://www.instagram.com/reel/DeAvDhIKhKK/) |
+| curiosidade | 135 | 32% | [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) [infinitepay](https://www.youtube.com/shorts/sU-EorgQxUg) [stone](https://www.youtube.com/shorts/wgVQPX_izJs) |
+| promessa | 78 | 18% | [belezacomonegociooficial](https://www.instagram.com/reel/DdMYU6ER815/) [stone](https://www.youtube.com/shorts/FblZAg1Z5Rw) [stone](https://www.youtube.com/shorts/0G6tOJvnVhk) |
+| pergunta | 69 | 16% | [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [contaazul](https://www.instagram.com/reel/DeptsOuxzFs/) [rodrigofinancas](https://www.instagram.com/reel/DXRe44aAK6n/) |
+| nenhum | 57 | 13% | [bldfoodbr](https://www.instagram.com/reel/DXiEpzBDckO/) [sebrae](https://www.instagram.com/reel/DbCOxTaufZp/) [bldfoodbr](https://www.instagram.com/reel/DXchpBIjs5T/) |
+| dor | 40 | 9% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/5b7db6nghTk) [mercadopagobr](https://www.instagram.com/reel/DaVb9OflW6a/) |
+| polemica | 30 | 7% | [luizdobrownie](https://www.instagram.com/reel/DEBBtiIy1UY/) [belezacomonegociooficial](https://www.instagram.com/reel/DePxtnvMMah/) [nathfinancas](https://www.instagram.com/reel/De9jfVmxRZp/) |
+| numero | 16 | 4% | [contaazul](https://www.instagram.com/reel/Dec9JvwRYcU/) [contaazul](https://www.instagram.com/reel/DbtDWt3xJDR/) [sebrae](https://www.instagram.com/reel/DeABxFNRkAU/) |
 
 ## tema_principal
 
 | valor | posts | % | exemplos |
 |---|---|---|---|
-| financas | 194 | 45% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) [stone](https://www.youtube.com/shorts/wgVQPX_izJs) |
-| vendas | 100 | 23% | [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [belezacomonegociooficial](https://www.instagram.com/reel/DdMYU6ER815/) [infinitepay](https://www.youtube.com/shorts/sU-EorgQxUg) |
-| motivacao | 56 | 13% | [pagbank](https://www.youtube.com/shorts/bHHvBkp84V4) [sebrae](https://www.instagram.com/reel/DZawG_cBm7o/) [sebrae](https://www.instagram.com/reel/Da8Ge6lRA_F/) |
-| gestao | 23 | 5% | [stone](https://www.youtube.com/shorts/0G6tOJvnVhk) [stone](https://www.youtube.com/shorts/MT8TzmTqSCk) [contaazul](https://www.instagram.com/p/DeAypSHEQtd/) |
-| atendimento | 20 | 5% | [stone](https://www.youtube.com/shorts/f2VGKROBQ4g) [deliverycomdebora](https://www.instagram.com/reel/De-MtJ9B9Pq/) [luizdobrownie](https://www.instagram.com/reel/DQEiJGHDiYC/) |
-| historia_de_empreendedor | 16 | 4% | [sebrae](https://www.instagram.com/reel/DbCOxTaufZp/) [sebrae](https://www.instagram.com/reel/DY8EFliuRyy/) [sebrae](https://www.instagram.com/reel/DbVzatiOUJB/) |
-| marketing | 11 | 3% | [bldfoodbr](https://www.instagram.com/reel/DXiEpzBDckO/) [bldfoodbr](https://www.instagram.com/reel/DXchpBIjs5T/) [mkt.insider.ca](https://www.instagram.com/p/DcBRZEskeFG/) |
-| ferramentas_maquininha | 10 | 2% | [mercadopagobr](https://www.instagram.com/reel/DTgaRH6DckT/) [deliverycomdebora](https://www.instagram.com/reel/DfVaF-Rhdcq/) [belezacomonegociooficial](https://www.instagram.com/reel/DeaSvMNRHLy/) |
+| financas | 114 | 27% | [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) [stone](https://www.youtube.com/shorts/FblZAg1Z5Rw) [contaazul](https://www.instagram.com/reel/DeptsOuxzFs/) |
+| marketing | 67 | 16% | [bldfoodbr](https://www.instagram.com/reel/DXiEpzBDckO/) [mercadopagobr](https://www.instagram.com/reel/DTgaRH6DckT/) [mercadopagobr](https://www.instagram.com/reel/DIwvEwHSfjN/) |
+| gestao | 67 | 16% | [belezacomonegociooficial](https://www.instagram.com/reel/DdMYU6ER815/) [stone](https://www.youtube.com/shorts/wgVQPX_izJs) [infinitepay](https://www.youtube.com/shorts/9vWvGF2nSOA) |
+| motivacao | 66 | 16% | [pagbank](https://www.youtube.com/shorts/bHHvBkp84V4) [sebrae](https://www.instagram.com/reel/DZawG_cBm7o/) [sebrae](https://www.instagram.com/reel/Da8Ge6lRA_F/) |
+| ferramentas_maquininha | 65 | 15% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/sU-EorgQxUg) [infinitepay](https://www.youtube.com/shorts/rxYdB7fpIKk) |
+| historia_de_empreendedor | 34 | 8% | [stone](https://www.youtube.com/shorts/f2VGKROBQ4g) [nuvemshop](https://www.youtube.com/shorts/-9KriL2wT18) [luizdobrownie](https://www.instagram.com/reel/DKuDbWXOVTl/) |
+| vendas ⚠ | 9 | 2% | [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [metodomajuseller](https://www.instagram.com/reel/Db3__ydRYV1/) [infinitepay](https://www.instagram.com/reel/DW38Y98jWBB/) |
+| atendimento ⚠ | 3 | 1% | [belezacomonegociooficial](https://www.instagram.com/reel/DePzbevPBPG/) [sebrae](https://www.instagram.com/reel/Dad1N_bPeRH/) [nathfinancas](https://www.instagram.com/p/DZYf6sJianR/) |
 
 ## tem_rosto
 
 | valor | posts | % | exemplos |
 |---|---|---|---|
-| True | 428 | 100% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) |
-| False ⚠ | 2 | 0% | [stone](https://www.instagram.com/reel/DYfsMTlRmtX/) [stone](https://www.youtube.com/shorts/dfT8FIAwElM) |
+| True | 257 | 60% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) |
+| False | 168 | 40% | [belezacomonegociooficial](https://www.instagram.com/reel/DdMYU6ER815/) [stone](https://www.youtube.com/shorts/wgVQPX_izJs) [stone](https://www.youtube.com/shorts/FblZAg1Z5Rw) |
 
 ## criador_e_empreendedor_real
 
 | valor | posts | % | exemplos |
 |---|---|---|---|
-| True | 430 | 100% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) |
+| False | 352 | 83% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [belezacomonegociooficial](https://www.instagram.com/reel/DdMYU6ER815/) |
+| True | 73 | 17% | [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) [stone](https://www.youtube.com/shorts/0G6tOJvnVhk) [pagbank](https://www.youtube.com/shorts/bHHvBkp84V4) |
 
 ## prova_social
 
 | valor | posts | % | exemplos |
 |---|---|---|---|
-| True | 412 | 96% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) |
-| False | 18 | 4% | [sebrae](https://www.instagram.com/reel/Da8Ge6lRA_F/) [contadoramunique](https://www.instagram.com/reel/DeAvDhIKhKK/) [luizdobrownie](https://www.instagram.com/reel/DDSWqUBRBEt/) |
+| False | 386 | 91% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) |
+| True | 39 | 9% | [stone](https://www.youtube.com/shorts/FblZAg1Z5Rw) [facoascontas](https://www.instagram.com/p/DISTB_8NwwC/) [metodomajuseller](https://www.instagram.com/reel/Db3__ydRYV1/) |
 
 ## texto_na_tela
 
 | valor | posts | % | exemplos |
 |---|---|---|---|
-| True | 271 | 63% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) |
-| False | 159 | 37% | [infinitepay](https://www.youtube.com/shorts/sU-EorgQxUg) [stone](https://www.youtube.com/shorts/wgVQPX_izJs) [stone](https://www.youtube.com/shorts/FblZAg1Z5Rw) |
+| True | 267 | 63% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) |
+| False | 158 | 37% | [infinitepay](https://www.youtube.com/shorts/sU-EorgQxUg) [stone](https://www.youtube.com/shorts/wgVQPX_izJs) [stone](https://www.youtube.com/shorts/FblZAg1Z5Rw) |
 
 ## tom
 
 | valor | posts | % | exemplos |
 |---|---|---|---|
-| informal | 249 | 58% | [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [stone](https://www.youtube.com/shorts/FblZAg1Z5Rw) [infinitepay](https://www.youtube.com/shorts/rxYdB7fpIKk) |
-| inspiracional | 128 | 30% | [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) [pagbank](https://www.youtube.com/shorts/bHHvBkp84V4) [sebrae](https://www.instagram.com/reel/DZawG_cBm7o/) |
-| humoristico | 52 | 12% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [belezacomonegociooficial](https://www.instagram.com/reel/DdMYU6ER815/) [infinitepay](https://www.youtube.com/shorts/sU-EorgQxUg) |
-| tecnico ⚠ | 1 | 0% | [rodrigofinancas](https://www.instagram.com/reel/DOim7rEgDpp/) |
+| informal | 182 | 43% | [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [stone](https://www.youtube.com/shorts/FblZAg1Z5Rw) [infinitepay](https://www.youtube.com/shorts/rxYdB7fpIKk) |
+| inspiracional | 109 | 26% | [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) [stone](https://www.youtube.com/shorts/f2VGKROBQ4g) [pagbank](https://www.youtube.com/shorts/bHHvBkp84V4) |
+| tecnico | 88 | 21% | [belezacomonegociooficial](https://www.instagram.com/reel/DdMYU6ER815/) [contaazul](https://www.instagram.com/reel/DeptsOuxzFs/) [stone](https://www.youtube.com/shorts/MT8TzmTqSCk) |
+| humoristico | 46 | 11% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/sU-EorgQxUg) [stone](https://www.youtube.com/shorts/wgVQPX_izJs) |
 
 ## usa_linguagem_regional
 
 | valor | posts | % | exemplos |
 |---|---|---|---|
-| True | 295 | 69% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [belezacomonegociooficial](https://www.instagram.com/reel/DdMYU6ER815/) |
-| False | 135 | 31% | [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) [stone](https://www.youtube.com/shorts/FblZAg1Z5Rw) [bldfoodbr](https://www.instagram.com/reel/DXiEpzBDckO/) |
+| False | 416 | 98% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) |
+| True ⚠ | 9 | 2% | [infinitepay](https://www.youtube.com/shorts/sU-EorgQxUg) [mercadopagobr](https://www.instagram.com/reel/Dc6BTzhjDxQ/) [infinitepay](https://www.youtube.com/shorts/fT0KwjPkOMk) |
 
 ## tem_cta
 
 | valor | posts | % | exemplos |
 |---|---|---|---|
-| True | 418 | 97% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) |
-| False | 12 | 3% | [sebrae](https://www.instagram.com/reel/Da8Ge6lRA_F/) [sebrae](https://www.instagram.com/reel/DbCOxTaufZp/) [luizdobrownie](https://www.instagram.com/reel/DDSWqUBRBEt/) |
+| False | 245 | 58% | [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) [belezacomonegociooficial](https://www.instagram.com/reel/DdMYU6ER815/) |
+| True | 180 | 42% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/sU-EorgQxUg) [stone](https://www.youtube.com/shorts/wgVQPX_izJs) |
 
 ## tipo_cta
 
 | valor | posts | % | exemplos |
 |---|---|---|---|
-| comentar | 403 | 94% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) |
-| link_na_bio | 16 | 4% | [infinitepay](https://www.youtube.com/shorts/HWorztRfQMI) [nathfinancas](https://www.instagram.com/reel/DedC9fgJjXU/) [metodomajuseller](https://www.instagram.com/reel/Db3__ydRYV1/) |
-| nenhum ⚠ | 7 | 2% | [sebrae](https://www.instagram.com/reel/Da8Ge6lRA_F/) [luizdobrownie](https://www.instagram.com/reel/DDSWqUBRBEt/) [mkt.insider.ca](https://www.instagram.com/p/Dc6Qu6XEc0t/) |
-| dm ⚠ | 2 | 0% | [contadoramunique](https://www.instagram.com/reel/DceluazKl5Z/) [contaazul](https://www.instagram.com/reel/DZ8dzzUkeJq/) |
-| compartilhar ⚠ | 1 | 0% | [sebrae](https://www.instagram.com/p/DfZ5AmBkWe-/) |
-| salvar ⚠ | 1 | 0% | [sebrae](https://www.instagram.com/p/Dbf5KvUDnxi/) |
+| nenhum | 245 | 58% | [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) [belezacomonegociooficial](https://www.instagram.com/reel/DdMYU6ER815/) |
+| link_na_bio | 91 | 21% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/sU-EorgQxUg) [stone](https://www.youtube.com/shorts/FblZAg1Z5Rw) |
+| comentar | 48 | 11% | [sebrae](https://www.instagram.com/reel/DZP6p15FWVp/) [belezacomonegociooficial](https://www.instagram.com/reel/DePxtnvMMah/) [rodrigofinancas](https://www.instagram.com/reel/DMP4KhWO77B/) |
+| seguir | 19 | 4% | [stone](https://www.youtube.com/shorts/wgVQPX_izJs) [bldfoodbr](https://www.instagram.com/reel/DXiEpzBDckO/) [stone](https://www.youtube.com/shorts/MT8TzmTqSCk) |
+| compartilhar | 15 | 4% | [nuvemshop](https://www.youtube.com/shorts/-9KriL2wT18) [mercadopagobr](https://www.instagram.com/reel/Dc6BTzhjDxQ/) [sauloabrahaoo](https://www.instagram.com/p/DfW5KIIkVNy/) |
+| salvar ⚠ | 4 | 1% | [facoascontas](https://www.instagram.com/reel/DY4slKGx_mO/) [infinitepay](https://www.instagram.com/p/DeIK7-9m4AN/) [facoascontas](https://www.instagram.com/reel/DKjsUCWOETS/) |
+| dm ⚠ | 3 | 1% | [rodrigofinancas](https://www.instagram.com/reel/DZDIk1RRUNe/) [contadoramunique](https://www.instagram.com/reel/DceluazKl5Z/) [contaazul](https://www.instagram.com/reel/DZs4nTnj0bl/) |
 
 ## oferta_ou_beneficio_explicito
 
 | valor | posts | % | exemplos |
 |---|---|---|---|
-| True | 245 | 57% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [belezacomonegociooficial](https://www.instagram.com/reel/DdMYU6ER815/) |
-| False | 185 | 43% | [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) [bldfoodbr](https://www.instagram.com/reel/DXiEpzBDckO/) [contaazul](https://www.instagram.com/reel/DeptsOuxzFs/) |
+| False | 261 | 61% | [pagbank](https://www.youtube.com/shorts/gekE1L2ENQw) [bldfoodbr](https://www.instagram.com/reel/DXiEpzBDckO/) [stone](https://www.youtube.com/shorts/f2VGKROBQ4g) |
+| True | 164 | 39% | [infinitepay](https://www.youtube.com/shorts/aUEuk1J3lu4) [infinitepay](https://www.youtube.com/shorts/Efv_beC-m5A) [belezacomonegociooficial](https://www.instagram.com/reel/DdMYU6ER815/) |
 
 ## Notas médias
 
 | nota | média | mediana |
 |---|---|---|
-| forca_hook_0a10 | 9.9 | 10 |
-| clareza_mensagem_0a10 | 9.8 | 10 |
+| forca_hook_0a10 | 5.9 | 6 |
+| clareza_mensagem_0a10 | 7.3 | 8 |
 
 ## Tema x tipo de post
 
 | tema_principal           |   carrossel |   imagem |   reels |   short |
 |:-------------------------|------------:|---------:|--------:|--------:|
-| atendimento              |           2 |        1 |      15 |       2 |
-| ferramentas_maquininha   |           2 |        0 |       7 |       1 |
-| financas                 |          44 |       10 |      92 |      48 |
-| gestao                   |           4 |        3 |      14 |       2 |
-| historia_de_empreendedor |           3 |        1 |       9 |       3 |
-| marketing                |           3 |        0 |       6 |       2 |
-| motivacao                |          16 |        4 |      27 |       9 |
-| vendas                   |          10 |        5 |      67 |      18 |
+| atendimento              |           1 |        0 |       2 |       0 |
+| ferramentas_maquininha   |           7 |        2 |      39 |      17 |
+| financas                 |          21 |        6 |      60 |      27 |
+| gestao                   |          18 |        3 |      36 |      10 |
+| historia_de_empreendedor |           7 |        2 |      18 |       7 |
+| marketing                |          13 |        3 |      43 |       8 |
+| motivacao                |          16 |        8 |      34 |       8 |
+| vendas                   |           1 |        0 |       5 |       3 |
 
 ## Tema x formato de vídeo
 
-| tema_principal           |   talking_head |
-|:-------------------------|---------------:|
-| atendimento              |             17 |
-| ferramentas_maquininha   |              8 |
-| financas                 |            164 |
-| gestao                   |             18 |
-| historia_de_empreendedor |             12 |
-| marketing                |              8 |
-| motivacao                |             44 |
-| vendas                   |             91 |
+| tema_principal           |   antes_depois |   bastidores |   depoimento |   humor_esquete |   lista_dicas |   talking_head |   tutorial |
+|:-------------------------|---------------:|-------------:|-------------:|----------------:|--------------:|---------------:|-----------:|
+| ferramentas_maquininha   |              0 |            6 |            8 |               9 |             0 |              0 |          8 |
+| financas                 |              0 |            0 |            6 |               2 |             1 |             16 |         14 |
+| gestao                   |              1 |            1 |            2 |               4 |             1 |              5 |          4 |
+| historia_de_empreendedor |              0 |            3 |           13 |               5 |             0 |              0 |          0 |
+| marketing                |              0 |            9 |            1 |               3 |             1 |              1 |          4 |
+| motivacao                |              1 |            0 |            8 |               8 |             0 |              3 |          0 |
+| vendas                   |              0 |            1 |            0 |               0 |             0 |              1 |          4 |
 
 ## Tipo de gancho x plataforma
 
 | tipo_hook   |   instagram |   youtube |
 |:------------|------------:|----------:|
-| curiosidade |           9 |         1 |
-| dor         |          82 |        19 |
-| nenhum      |           1 |         0 |
-| numero      |           1 |         0 |
-| pergunta    |           5 |         0 |
-| polemica    |           7 |         1 |
-| promessa    |         240 |        64 |
+| curiosidade |         112 |        23 |
+| dor         |          31 |         9 |
+| nenhum      |          50 |         7 |
+| numero      |          13 |         3 |
+| pergunta    |          50 |        19 |
+| polemica    |          28 |         2 |
+| promessa    |          61 |        17 |
 
 ## Segmento do perfil x tema
 
 | segmento               |   atendimento |   ferramentas_maquininha |   financas |   gestao |   historia_de_empreendedor |   marketing |   motivacao |   vendas |
 |:-----------------------|--------------:|-------------------------:|-----------:|---------:|---------------------------:|------------:|------------:|---------:|
-| alimentacao            |             5 |                        2 |          1 |        3 |                          1 |           6 |           2 |       15 |
-| beleza                 |             6 |                        1 |          1 |        3 |                          0 |           1 |           8 |        6 |
-| educacao_empreendedora |             2 |                        3 |         13 |        0 |                         10 |           0 |          18 |        6 |
-| ferramentas_maquininha |             2 |                        2 |         59 |        3 |                          4 |           0 |           8 |       51 |
-| financas               |             4 |                        0 |         91 |       13 |                          1 |           0 |          14 |       12 |
-| gestao                 |             1 |                        0 |         28 |        1 |                          0 |           1 |           3 |        2 |
-| marketing              |             0 |                        2 |          0 |        0 |                          0 |           3 |           3 |        0 |
-| varejo                 |             0 |                        0 |          1 |        0 |                          0 |           0 |           0 |        8 |
+| alimentacao            |             0 |                        4 |          1 |        4 |                          7 |          11 |           7 |        1 |
+| beleza                 |             1 |                        4 |          1 |        4 |                          2 |           4 |          10 |        0 |
+| educacao_empreendedora |             1 |                        0 |          7 |        8 |                          6 |          12 |          16 |        2 |
+| ferramentas_maquininha |             0 |                       55 |         23 |        4 |                         14 |          16 |           7 |        5 |
+| financas               |             1 |                        1 |         67 |       33 |                          4 |          11 |          18 |        0 |
+| gestao                 |             0 |                        1 |         14 |       14 |                          0 |           1 |           6 |        0 |
+| marketing              |             0 |                        0 |          0 |        0 |                          0 |           8 |           0 |        0 |
+| varejo                 |             0 |                        0 |          1 |        0 |                          1 |           4 |           2 |        1 |
 
 ## Perfis em destaque
 
 | perfil | plataforma | faixa | posts no top | tema predominante | formato predominante | lift mediano |
 |---|---|---|---|---|---|---|
 | nathfinancas | instagram | grande | 56 | financas | talking_head | 9.47 |
-| sebrae | instagram | grande | 35 | financas | talking_head | 12.13 |
-| infinitepay | instagram | grande | 31 | vendas | talking_head | 11.21 |
-| rodrigofinancas | instagram | grande | 30 | financas | talking_head | 10.88 |
-| contaazul | instagram | grande | 28 | financas | talking_head | 8.89 |
-| infinitepay | youtube | grande | 27 | financas | talking_head | 34.75 |
-| mercadopagobr | instagram | grande | 25 | financas | talking_head | 19.92 |
-| luizdobrownie | instagram | medio | 17 | vendas | talking_head | 14.79 |
-| facoascontas | instagram | medio | 16 | financas | talking_head | 8.15 |
+| sebrae | instagram | grande | 35 | marketing | bastidores | 12.13 |
+| infinitepay | instagram | grande | 31 | ferramentas_maquininha | humor_esquete | 11.21 |
+| rodrigofinancas | instagram | grande | 30 | gestao | reels | 10.88 |
+| contaazul | instagram | grande | 28 | gestao | talking_head | 8.89 |
+| mercadopagobr | instagram | grande | 25 | financas | humor_esquete | 19.92 |
+| infinitepay | youtube | grande | 24 | ferramentas_maquininha | depoimento | 58.58 |
+| luizdobrownie | instagram | medio | 17 | historia_de_empreendedor | humor_esquete | 14.79 |
+| facoascontas | instagram | medio | 16 | financas | tutorial | 8.15 |
 | nathfinancas | youtube | grande | 16 | financas | talking_head | 6.53 |
-| stone | youtube | medio | 15 | financas | talking_head | 16.75 |
-| bldfoodbr | instagram | micro | 12 | marketing | talking_head | 7.07 |
-| stone | instagram | grande | 12 | vendas | talking_head | 10.73 |
-| belezacomonegociooficial | instagram | micro | 11 | vendas | talking_head | 16.55 |
-| pagbank | instagram | grande | 11 | financas | talking_head | 9.31 |
+| stone | youtube | medio | 14 | historia_de_empreendedor | depoimento | 17.25 |
+| bldfoodbr | instagram | micro | 12 | marketing | bastidores | 7.07 |
+| stone | instagram | grande | 12 | historia_de_empreendedor | depoimento | 10.73 |
+| belezacomonegociooficial | instagram | micro | 11 | ferramentas_maquininha | tutorial | 16.55 |
+| pagbank | instagram | grande | 11 | historia_de_empreendedor | depoimento | 9.31 |
 
 ## Elementos mais citados pelo modelo (elementos_top5)
 
-| elementos_top5      |   posts |
-|:--------------------|--------:|
-| empreendedorismo    |      21 |
-| vendas              |      17 |
-| infinitepay         |      15 |
-| meme                |      15 |
-| goleada milionária  |      12 |
-| reforma tributária  |      11 |
-| mercado pago        |      10 |
-| empreendedor        |       9 |
-| dor do empreendedor |       9 |
-| motivação           |       8 |
-| sebrae              |       8 |
-| link na bio         |       8 |
-| venda               |       8 |
-| pagbank             |       8 |
-| gestaofinanceira    |       7 |
-| bpofinanceiro       |       7 |
-| transformação       |       7 |
-| tap da infinitepay  |       7 |
-| maquininha          |       7 |
-| app                 |       7 |
+| elementos_top5                     |   posts |
+|:-----------------------------------|--------:|
+| cta para baixar app                |      11 |
+| oferta de pdf completo             |      11 |
+| cta para compartilhar              |       7 |
+| cta para link na bio               |       7 |
+| prêmio de r$ 1 milhão              |       6 |
+| descontaço serasa                  |       6 |
+| 97% de desconto                    |       6 |
+| meme                               |       6 |
+| sem conteúdo textual de valor      |       6 |
+| foco em crescimento de audiência   |       6 |
+| legenda mínima                     |       6 |
+| link para formulário de financeiro |       6 |
+| direcionamento para instagram      |       6 |
+| hashtags de empreendedorismo       |       5 |
+| hashtags de gestão financeira      |       5 |
+| texto curto e direto               |       5 |
+| baixa retenção de atenção          |       5 |
+| cta para bio                       |       4 |
+| conexão emocional                  |       4 |
+| cta para seguir                    |       4 |
 
 ## Leitura
 

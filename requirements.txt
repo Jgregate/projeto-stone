@@ -4,5 +4,6 @@ pyarrow
 python-dotenv
 google-api-python-client
 tabulate
-opencv-python
+opencv-python<5
 pydantic
+openpyxl
