@@ -7,3 +7,5 @@ tabulate
 opencv-python<5
 pydantic
 openpyxl
+langgraph
+fastmcp
