@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jade</title>
+  <link rel="icon" href="data:,">
+  <link rel="preload" href="/static/fontes/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/fontes/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/static/estilo.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="topo">
+    <div class="topo__barra">
+      <p class="marca">jade</p>
+      <div class="abas" role="tablist" aria-label="Seções">
+        <button type="button" role="tab" id="aba-agente" aria-selected="true" aria-controls="painel-agente">Consultar o agente</button>
+        <button type="button" role="tab" id="aba-base" aria-selected="false" aria-controls="painel-base" tabindex="-1">Visão da base</button>
+      </div>
+    </div>
+    <div class="topo__hero">
+      <h1 class="topo__titulo">O que faz o pequeno negócio <span>engajar</span></h1>
+      <p class="topo__sub">Publicações de alto engajamento para micro e pequenos empreendedores, no Instagram e no YouTube Shorts</p>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ===================================================== painel do agente -->
+    <div role="tabpanel" id="painel-agente" aria-labelledby="aba-agente">
+      <div class="consulta">
+        <form class="pedido" id="form" novalidate>
+          <h2 class="pedido__titulo">Novo pedido</h2>
+
+          <fieldset class="modos">
+            <legend>O que o agente deve fazer</legend>
+            <label class="modo"><input type="radio" name="mode" value="analisar"><span><strong>Analisar</strong><small>Mostra o que se repete nas publicações de maior engajamento</small></span></label>
+            <label class="modo"><input type="radio" name="mode" value="recomendar"><span><strong>Recomendar</strong><small>Sugere ações de conteúdo para a Stone</small></span></label>
+            <label class="modo"><input type="radio" name="mode" value="gerar_criativo" checked><span><strong>Criar criativo</strong><small>Escreve gancho, roteiro, legenda e chamada</small></span></label>
+          </fieldset>
+
+          <div class="campo">
+            <label for="query">Pedido</label>
+            <textarea id="query" name="query" rows="4" required aria-describedby="query-ajuda query-erro"></textarea>
+            <p class="ajuda" id="query-ajuda">Escreva como pediria a alguém da equipe, por exemplo “Reels para donas de salão de beleza”.</p>
+            <p class="erro-campo" id="query-erro" hidden>Escreva o pedido antes de consultar.</p>
+          </div>
+
+          <div class="campo">
+            <label for="segment">Segmento</label>
+            <select id="segment" name="segment">
+              <option value="">Detectar pelo pedido</option>
+              <option value="alimentacao">Alimentação</option>
+              <option value="beleza">Beleza</option>
+              <option value="varejo">Varejo</option>
+              <option value="financas">Finanças</option>
+              <option value="gestao">Gestão</option>
+              <option value="marketing">Marketing</option>
+            </select>
+          </div>
+
+          <details class="filtros" id="filtros">
+            <summary>Filtros <span id="filtros-resumo" class="filtros__resumo"></span></summary>
+            <div class="filtros__grade">
+              <div class="campo">
+                <label for="plataforma">Plataforma</label>
+                <select id="plataforma" name="plataforma">
+                  <option value="">Todas</option>
+                  <option value="instagram">Instagram</option>
+                  <option value="youtube">YouTube Shorts</option>
+                </select>
+              </div>
+              <div class="campo">
+                <label for="tipo_post">Tipo de publicação</label>
+                <select id="tipo_post" name="tipo_post">
+                  <option value="">Todos</option>
+                  <option value="reels">Reels</option>
+                  <option value="carrossel">Carrossel</option>
+                  <option value="imagem">Imagem</option>
+                  <option value="short">Short</option>
+                </select>
+              </div>
+              <div class="campo">
+                <label for="faixa">Tamanho do perfil</label>
+                <select id="faixa" name="faixa">
+                  <option value="">Todos</option>
+                  <option value="micro">Micro</option>
+                  <option value="medio">Médio</option>
+                  <option value="grande">Grande</option>
+                </select>
+              </div>
+              <div class="campo">
+                <label for="tema_principal">Tema</label>
+                <select id="tema_principal" name="tema_principal">
+                  <option value="">Todos</option>
+                  <option value="financas">Finanças</option>
+                  <option value="gestao">Gestão</option>
+                  <option value="marketing">Marketing</option>
+                  <option value="vendas">Vendas</option>
+                  <option value="atendimento">Atendimento</option>
+                  <option value="motivacao">Motivação</option>
+                  <option value="ferramentas_maquininha">Ferramentas e maquininha</option>
+                  <option value="historia_de_empreendedor">História de empreendedor</option>
+                </select>
+              </div>
+            </div>
+            <p class="ajuda">Se sobrarem menos de 15 publicações, o agente retira os filtros mais específicos e avisa no resultado.</p>
+          </details>
+
+          <div class="campo campo--curto" id="campo-n">
+            <label for="n_criativos">Quantos criativos</label>
+            <select id="n_criativos" name="n_criativos">
+              <option>1</option><option>2</option><option>3</option>
+            </select>
+          </div>
+
+          <button type="submit" class="botao" id="enviar">Criar criativo</button>
+          <progress class="carregando" id="carregando" hidden aria-label="Consultando o agente"></progress>
+          <p class="ajuda" id="tempo" hidden></p>
+
+          <section class="exemplos" aria-labelledby="exemplos-titulo">
+            <h2 id="exemplos-titulo">Pedidos prontos para a demonstração</h2>
+            <ul id="exemplos"></ul>
+          </section>
+        </form>
+
+        <div class="resultado" id="resultado" tabindex="-1">
+          <div class="inicio" id="estado-inicial">
+            <div class="vazio">
+              <h2>O resultado aparece aqui</h2>
+              <p>Cada recomendação e cada criativo mostram as publicações reais em que se apoiam. Os números vêm sempre da base coletada, nunca do texto gerado pelo modelo.</p>
+              <p>Comece por um dos pedidos prontos ou escreva o seu ao lado.</p>
+              <ul class="atalhos" id="exemplos-iniciais"></ul>
+            </div>
+            <div class="panorama" id="panorama" aria-label="Panorama da base"></div>
+          </div>
+          <div id="saida"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================== painel da base -->
+    <div role="tabpanel" id="painel-base" aria-labelledby="aba-base" hidden>
+      <div class="base" id="base">
+        <p class="ajuda">Carregando a base</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="sr" aria-live="polite" id="anuncio"></div>
+
+  <template id="tpl-tooltip"><div class="tooltip" role="tooltip"></div></template>
+</body>
+</html>
