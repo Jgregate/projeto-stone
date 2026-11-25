@@ -2,6 +2,10 @@
 
 Este documento reúne o que o sistema faz, como usar, de onde vêm os dados, como as publicações são medidas e categorizadas, como o agente funciona por dentro, as decisões técnicas, os resultados, a estratégia de testes, as limitações e os próximos passos. O [README](../README.md) é o resumo de entrada. Todo número citado aqui sai de um arquivo do repositório, indicado ao lado.
 
+Além disso, o vídeo demo da solução se encontra abaixo para visualização:
+
+[Vídeo demo](https://www.youtube.com/watch?v=wbaUUgALxIY)
+
 **Sumário**
 
 [1. Problema e recorte](#1-problema-e-recorte)

@@ -10,6 +10,10 @@
 
 Desenvolvido no **Case Stone** (Inteli Academy, Impulso Stone). A documentação completa, com base de dados, métrica, rubrica, arquitetura, contrato, decisões, resultados, testes e limitações, está em [`docs/documentacao.md`](docs/documentacao.md).
 
+Além disso, o vídeo demo da solução se encontra abaixo para visualização:
+
+[Vídeo demo](https://www.youtube.com/watch?v=wbaUUgALxIY)
+
 ## Problema
 
 A equipe de conteúdo da Stone fala com micro e pequenos empreendedores (MPEs) no Instagram e no YouTube, mas escolher gancho, tema e formato costuma depender de intuição ou de exemplos soltos. Comparar publicações pelo número de curtidas também engana, porque contas maiores sempre têm mais curtidas, e um perfil com audiência muito engajada pode parecer a regra quando é a exceção. Pedir ideias direto a um modelo de linguagem gera texto plausível, sem números verificáveis e sem dizer de onde a ideia saiu.
