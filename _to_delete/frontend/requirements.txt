@@ -1,3 +1,0 @@
-# dependências extras do frontend (as demais estão no requirements.txt da raiz)
-fastapi
-uvicorn
