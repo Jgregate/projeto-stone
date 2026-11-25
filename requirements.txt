@@ -1,3 +1,4 @@
+# coleta, base e categorização
 requests
 pandas
 pyarrow
@@ -7,5 +8,17 @@ tabulate
 opencv-python<5
 pydantic
 openpyxl
+
+# agente e servidor MCP
 langgraph
 fastmcp
+
+# API do frontend
+fastapi
+uvicorn
+
+# testes e figuras da documentação
+httpx
+pytest
+matplotlib
+# scripts/capturar_telas.py precisa também de playwright (pip install playwright e playwright install chromium)

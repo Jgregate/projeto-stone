@@ -1,10 +1,10 @@
 flowchart LR
     subgraph Dados["Base (offline)"]
-        IG["coleta_instagram.py<br/>Instagram Graph API<br/>Business Discovery"]
-        YT["coleta_youtube.py<br/>YouTube Data API v3"]
-        MB["montar_base.py<br/>engajamento, lift, top 10%"]
-        CT["categorizar_texto.py<br/>rubrica (Groq + OpenCV + VLM local)"]
-        AT["analisar_top.py<br/>achados.json"]
+        IG["ingestion/coleta_instagram.py<br/>Instagram Graph API<br/>Business Discovery"]
+        YT["ingestion/coleta_youtube.py<br/>YouTube Data API v3"]
+        MB["analysis/montar_base.py<br/>engajamento, lift, top 10%"]
+        CT["categorization/categorizar_texto.py<br/>rubrica (Groq + OpenCV + VLM local)"]
+        AT["analysis/analisar_top.py<br/>achados.json"]
         IG --> MB
         YT --> MB
         MB --> CT --> AT
@@ -14,7 +14,7 @@ flowchart LR
         E["mode, query,<br/>segment, filters"]
     end
 
-    subgraph Orquestrador["Orquestrador LangGraph (agente.py)"]
+    subgraph Orquestrador["Orquestrador LangGraph (backend/graph/agente.py)"]
         N1["interpretar<br/>segmento e filtros, sem LLM"]
         N2["consultar<br/>ferramenta consultar_base"]
         N3["referenciar<br/>ferramenta buscar_referencias"]
@@ -30,16 +30,16 @@ flowchart LR
         S["findings, reference_posts,<br/>creatives, recomendacoes,<br/>confidence_flag, explanation"]
     end
 
-    LOG[("data/execucoes.jsonl<br/>registro de cada execução")]
+    LOG[("outputs/execucoes/execucoes.jsonl<br/>registro de cada execução")]
 
     subgraph Interfaces["Interfaces"]
         F["função executar()"]
-        M["servidor_mcp.py<br/>FastMCP"]
-        W["frontend/app.py<br/>FastAPI + página web"]
+        M["backend/mcp_server<br/>FastMCP"]
+        W["backend/api<br/>FastAPI + página em frontend/"]
     end
 
-    MB -. "data/base.parquet" .-> N2
-    CT -. "data/categorias.parquet" .-> N2
+    MB -. "data/processed/base.parquet" .-> N2
+    CT -. "data/processed/categorias.parquet" .-> N2
     E --> N1
     N4 --> S
     N5 --> S

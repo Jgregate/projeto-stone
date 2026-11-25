@@ -25,51 +25,54 @@ Uma base de 4.841 publicações de 37 perfis e canais, coletada pelas APIs ofici
 | Categorização | Groq (`qwen/qwen3.8-27b`), Ollama (`qwen3-vl:2b-instruct`), OpenCV, Pydantic |
 | Agente | LangGraph, Groq (`openai/gpt-oss-120b`), Pydantic |
 | Interfaces | função `executar()`, FastMCP, FastAPI com página em HTML, CSS e JavaScript |
+| Testes | pytest |
 
 ## Estrutura de pastas
 
 ```
-validar_perfis.py      validação e balanceamento dos perfis do Instagram
-coleta_instagram.py    coleta oficial do Instagram (Business Discovery)
-coleta_youtube.py      coleta oficial do YouTube Shorts
-montar_base.py         base unificada, engajamento, lift, top 10%, chamada para ação e capas
-rubrica.py             rubrica do TAPI em Pydantic e prompt da categorização
-categorizar.py         categorização com imagem (Groq ou Ollama)
-categorizar_texto.py   categorização híbrida final
-validacao.py           amostra e concordância da validação manual
-anotar.py              página local para a anotação cega
-analisar_top.py        achados, recortes e perfis em destaque
-agente.py              agente LangGraph, contrato e função executar()
-servidor_mcp.py        servidor MCP (FastMCP)
-demo.py                demonstração por script
-gerar_playbook.py      playbook com cinco criativos
-candidatos.csv, perfis.csv, perfis_validados.csv, canais_youtube.csv
-frontend/              API e página da demonstração
-data/                  base, categorias, achados, logs e saídas
-modelos/               detector de rostos do OpenCV
-docs/                  documentação, capturas, diagrama e figuras
+backend/
+  ingestion/         validação de perfis e coleta (Instagram e YouTube)
+  analysis/          base, engajamento, lift, top 10% e achados
+  categorization/    categorização pela rubrica
+  validation/        validação manual da categorização
+  schemas/           contratos Pydantic (ferramenta e rubrica)
+  prompts/           prompts da rubrica, da categorização e do agente
+  graph/             agente LangGraph e ferramentas
+  mcp_server/        servidor MCP
+  api/               API do frontend
+frontend/            página da demonstração
+data/                perfis, dados processados, validação e modelos de apoio
+outputs/             coleta, análise, validação, demo, playbook e execuções
+docs/                documentação, capturas, diagrama e figuras
+notebooks/           análises exploratórias (vazia por enquanto)
+scripts/             demo, playbook, figuras e capturas
+tests/               testes automatizados
+_to_delete/          arquivos sem uso, para revisão antes de apagar
 ```
 
 ## O que é cada pasta
 
-**Raiz.** Ficam os scripts do pipeline, listados acima na ordem de uso, de `validar_perfis.py` a `analisar_top.py`. `agente.py` tem o grafo, os modelos `Entrada` e `Saida` e a função `executar()`, e `servidor_mcp.py`, `demo.py` e `gerar_playbook.py` usam essa função. Os CSVs da raiz são as listas de perfis e canais, com origem e segmento de cada um.
+**`backend/`** é o núcleo em Python. `ingestion/` valida os perfis candidatos e coleta as publicações pela Instagram Graph API (Business Discovery) e pela YouTube Data API v3, com cache das respostas e espera em caso de limite; `analysis/` monta a base unificada, calcula a taxa de engajamento normalizada, o lift e o top 10% e levanta as características recorrentes; `categorization/` aplica a rubrica com o Groq, o modelo local e o OpenCV; `validation/` sorteia a amostra, gera a página de anotação cega e calcula a concordância; `schemas/` define em Pydantic o contrato da ferramenta e a rubrica; `prompts/` guarda os prompts da rubrica, da categorização e do agente; `graph/` tem o agente LangGraph e as ferramentas `consultar_base`, `buscar_referencias` e `gerar_criativos`; `mcp_server/` expõe o agente por MCP; e `api/` serve a página e a API do frontend. Na raiz de `backend/` ficam `config.py`, com todos os caminhos de dados e saídas, e `run.py`, o CLI do agente.
 
-**`frontend/`** tem `app.py`, uma API FastAPI que chama `executar()` e acrescenta dados da base, e `static/`, com a página (abas Consultar o agente e Visão da base), os estilos e as fontes. **`data/`** guarda a base (`base.parquet`, `top10.csv`), as categorias (`categorias.parquet` e a rodada só com o modelo local em `categorias_vlm.parquet`), os achados (`achados.md`, `achados.json`), os logs de coleta, a validação manual, as saídas da demonstração e do playbook e o registro de cada execução do agente (`execucoes.jsonl`). As respostas brutas das APIs (`raw/`, `raw_youtube/`) e as capas (`midia/`) ficam fora do git. **`modelos/`** tem o detector Haar usado para identificar rosto na capa. **`docs/`** tem a documentação completa, as capturas de tela, o diagrama de arquitetura em Mermaid e as figuras de resultados.
+**`frontend/`** é a página da demonstração (abas Consultar o agente e Visão da base), em HTML, CSS e JavaScript sem build, com as fontes. **`data/`** guarda as listas de perfis e canais (`perfis/`), a base e as categorias (`processed/`), a anotação manual (`validacao/`) e o detector de rostos (`modelos/`). As respostas brutas das APIs e as capas das publicações ficam em `raw/`, fora do git. **`outputs/`** guarda os registros da coleta, os achados e o relatório da base, o resultado da validação, as saídas da demo e do playbook e o registro de cada execução do agente (`execucoes/execucoes.jsonl`). **`docs/`** tem a documentação completa, as capturas de tela, o diagrama de arquitetura e as figuras de resultados. **`scripts/`** roda a demo por script, gera o playbook e refaz as figuras e as capturas da documentação. **`tests/`** tem 30 testes offline, com a base real e um modelo de linguagem falso. **`_to_delete/`** reúne arquivos que não são usados (fontes antigas do frontend e o antigo `frontend/requirements.txt`) para conferência antes de apagar.
 
 ## Como rodar a demo
 
-É preciso Python 3.14 e um `.env` na raiz com `GROQ_API_KEY` e `GROQ_AGENT_MODEL` (as demais variáveis estão na [seção Como usar](docs/documentacao.md#2-como-usar) da documentação). A base já coletada está em `data/`, então a demo não chama as APIs de coleta.
+É preciso Python 3.14. A base já coletada está em `data/`, então a demo não chama as APIs de coleta. Na raiz do projeto, instale as dependências e crie o `.env`.
 
 ```powershell
 python -m venv .venv
 .venv\Scripts\activate
-pip install -r requirements.txt -r frontend\requirements.txt
+pip install -r requirements.txt
+copy .env.example .env      # preencha GROQ_API_KEY
 ```
 
-Depois, na raiz do projeto, um único comando sobe a API e a página e abre o navegador em http://127.0.0.1:8000.
+Depois, um único comando sobe a API e a página e abre o navegador em http://127.0.0.1:8000.
 
 ```powershell
-.\.venv\Scripts\python.exe frontend\app.py
+python -m backend.api
 ```
 
-A página tem três pedidos prontos, um para cada modo (analisar, recomendar e criar criativo). Sem a chave do Groq, os achados e as publicações de referência continuam aparecendo, sem os textos do modelo.
+A página tem três pedidos prontos, um para cada modo (analisar, recomendar e criar criativo). Sem a chave do Groq, os achados e as publicações de referência continuam aparecendo, sem os textos do modelo. O servidor MCP sobe com `python -m backend.mcp_server`, a função Python é `from backend.graph.agente import executar` e os testes rodam com `python -m pytest`. Os demais comandos estão na seção [Como usar](docs/documentacao.md#2-como-usar) da documentação.
+
+Licença [PREENCHER].

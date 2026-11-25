@@ -47,41 +47,41 @@ A resposta tem duas partes. A primeira é uma base de publicações reais do Ins
 As decisões de escopo foram estas.
 
 - **Plataformas.** Instagram (Reels, carrossel e imagem) e YouTube Shorts.
-- **Público.** Perfis que falam com MPEs, classificados por origem em `candidatos.csv` e `canais_youtube.csv`. As origens são o ecossistema Stone, a curadoria do setor (Sebrae, PEGN, contabilidade), concorrentes do segmento de pagamentos, plataformas para MPE e criadores MPE encontrados por busca por segmento.
+- **Público.** Perfis que falam com MPEs, classificados por origem em `data/perfis/candidatos.csv` e `data/perfis/canais_youtube.csv`. As origens são o ecossistema Stone, a curadoria do setor (Sebrae, PEGN, contabilidade), concorrentes do segmento de pagamentos, plataformas para MPE e criadores MPE encontrados por busca por segmento.
 - **Nível de análise.** Nível 1 do TAPI, com legenda, título, descrição e imagem de capa. O vídeo não é assistido, então campos que dependem dele (ritmo de cortes) ficam nulos.
 - **Natureza dos achados.** Padrões observados no top 10%. Eles orientam a criação e não garantem engajamento.
 
 ## 2. Como usar
 
-O projeto roda no Windows com Python 3.14 e um ambiente virtual em `.venv/` (o caminho do interpretador está em `.venv/pyvenv.cfg`). A instalação é feita assim.
+O projeto roda no Windows com Python 3.14 e um ambiente virtual em `.venv/` (o caminho do interpretador está em `.venv/pyvenv.cfg`). Todos os comandos abaixo são rodados na raiz do repositório, porque os módulos ficam no pacote `backend`. A instalação é feita assim.
 
 ```powershell
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
-pip install -r frontend\requirements.txt
+copy .env.example .env      # preencha as chaves
 ```
 
-O arquivo `.env` na raiz guarda as chaves e os modelos. O repositório não tem `.env.example`, então a tabela abaixo lista as variáveis lidas pelo código.
+O arquivo `.env` na raiz guarda as chaves e os modelos e fica fora do git. O modelo é `.env.example`, e a tabela abaixo lista as variáveis lidas pelo código. Os caminhos de dados e saídas ficam em `backend/config.py`.
 
 | Variável | Usada por | Para que serve |
 |---|---|---|
-| `IG_USER_ID` | `validar_perfis.py`, `coleta_instagram.py` | id da conta profissional que faz as consultas ao Business Discovery |
-| `IG_TOKEN` | `validar_perfis.py`, `coleta_instagram.py` | token de usuário de longa duração da Meta |
-| `IG_API_VERSION` | `validar_perfis.py`, `coleta_instagram.py` | versão da Graph API (a coleta registrou `v27.0` em `data/coleta_log.json`) |
-| `YOUTUBE_API_KEY` | `coleta_youtube.py` | chave da YouTube Data API v3 |
+| `IG_USER_ID` | `backend/ingestion/validar_perfis.py`, `backend/ingestion/coleta_instagram.py` | id da conta profissional que faz as consultas ao Business Discovery |
+| `IG_TOKEN` | `backend/ingestion/validar_perfis.py`, `backend/ingestion/coleta_instagram.py` | token de usuário de longa duração da Meta |
+| `IG_API_VERSION` | `backend/ingestion/validar_perfis.py`, `backend/ingestion/coleta_instagram.py` | versão da Graph API (a coleta registrou `v27.0` em `outputs/coleta/coleta_log.json`) |
+| `YOUTUBE_API_KEY` | `backend/ingestion/coleta_youtube.py` | chave da YouTube Data API v3 |
 | `GROQ_API_KEY` | categorização e agente | chave do Groq |
-| `GROQ_MODEL` | `categorizar.py`, `categorizar_texto.py` | modelo da categorização (`qwen/qwen3.8-27b`) |
-| `GROQ_AGENT_MODEL` | `agente.py` | modelo do agente (`openai/gpt-oss-120b`) |
-| `OLLAMA_URL`, `OLLAMA_MODEL` | `categorizar.py` | alternativa local para a categorização |
-| `PORTA_FRONTEND`, `ABRIR_NAVEGADOR`, `SIMULAR_LIMITE` | `frontend/app.py` | porta do frontend, abertura automática do navegador e simulação do erro 429 |
+| `GROQ_MODEL` | `backend/categorization/categorizar.py`, `backend/categorization/categorizar_texto.py` | modelo da categorização (`qwen/qwen3.8-27b`) |
+| `GROQ_AGENT_MODEL` | `backend/graph/agente.py` | modelo do agente (`openai/gpt-oss-120b`) |
+| `OLLAMA_URL`, `OLLAMA_MODEL` | `backend/categorization/categorizar.py` | alternativa local para a categorização |
+| `PORTA_FRONTEND`, `ABRIR_NAVEGADOR`, `SIMULAR_LIMITE` | `backend/api/main.py` | porta do frontend, abertura automática do navegador e simulação do erro 429 |
 
-**Demonstração.** Na raiz do projeto, `.\.venv\Scripts\python.exe frontend\app.py` sobe a API e a página em http://127.0.0.1:8000 e abre o navegador. A documentação interativa da API fica em http://127.0.0.1:8000/api/docs. A página tem três pedidos prontos, um para cada modo, e funciona com a base já coletada. Só os textos redigidos pelo modelo precisam da chave do Groq.
+**Demonstração.** Na raiz do projeto, `.\.venv\Scripts\python.exe -m backend.api` sobe a API e a página em http://127.0.0.1:8000 e abre o navegador. A documentação interativa da API fica em http://127.0.0.1:8000/api/docs. A página tem três pedidos prontos, um para cada modo, e funciona com a base já coletada. Só os textos redigidos pelo modelo precisam da chave do Groq.
 
 **Função Python.** O agente é uma função que recebe um dicionário ou um objeto `Entrada` e devolve um objeto `Saida`.
 
 ```python
-from agente import executar
+from backend.graph.agente import executar
 
 r = executar({"mode": "gerar_criativo",
               "query": "Preciso de um Reels para atrair donos de pequenos restaurantes",
@@ -91,17 +91,19 @@ r = executar({"mode": "gerar_criativo",
 print(r.model_dump())
 ```
 
-Pelo terminal, `python agente.py gerar_criativo "Reels para donos de pequenos restaurantes"` faz o mesmo e imprime o JSON.
+Pelo terminal, `python -m backend.run gerar_criativo "Reels para donos de pequenos restaurantes"` faz o mesmo e imprime o JSON.
 
-**Servidor MCP.** `python servidor_mcp.py` expõe o agente para qualquer cliente MCP (Claude Desktop, Cursor). São duas ferramentas, `conteudo_mpe`, que recebe os mesmos campos da entrada, e `resumo_da_base`, que devolve volume, período, perfis e critério de alto desempenho. A configuração do Claude Desktop está no cabeçalho de `servidor_mcp.py`.
+**Servidor MCP.** `python -m backend.mcp_server` expõe o agente para qualquer cliente MCP (Claude Desktop, Cursor). São duas ferramentas, `conteudo_mpe`, que recebe os mesmos campos da entrada, e `resumo_da_base`, que devolve volume, período, perfis e critério de alto desempenho. A configuração do Claude Desktop está no cabeçalho de `backend/mcp_server/servidor.py`.
 
-**Demonstração por script e playbook.** `python demo.py` roda um pedido de cada modo e salva o resultado em `data/demo.md`. `python gerar_playbook.py` gera recomendações e cinco criativos, um por segmento, em `data/playbook.md` e `data/playbook_criativos.json`.
+**Demonstração por script e playbook.** `python scripts/demo.py` roda um pedido de cada modo e salva o resultado em `outputs/demo/demo.md`. `python scripts/gerar_playbook.py` gera recomendações e cinco criativos, um por segmento, em `outputs/playbook/playbook.md` e `outputs/playbook/playbook_criativos.json`.
+
+**Testes e artefatos da documentação.** `python -m pytest` roda os testes offline. `python scripts/gerar_figuras.py` refaz as figuras de `docs/resultados/figuras/` e `python scripts/capturar_telas.py` refaz as capturas de `docs/img/` a partir das execuções gravadas, sem chamar o modelo (esse último precisa do playwright).
 
 **Problemas comuns.** Uma mensagem de limite de requisições na tela significa que o plano gratuito do Groq recusou novas chamadas. Os dados da base continuam válidos e o botão de consultar de novo libera quando o tempo informado pelo Groq passa. Porta ocupada se resolve com `$env:PORTA_FRONTEND="8001"` antes do comando. O erro "o OpenCV instalado não tem o detector de rostos" pede `pip install "opencv-python<5"`, como já está em `requirements.txt`.
 
 ## 3. Interface
 
-O frontend (`frontend/`) é a interface do contrato da ferramenta. A página tem duas abas, Consultar o agente e Visão da base. Antes da primeira consulta, a aba do agente mostra os pedidos prontos, a distribuição de ganchos, tons e chamadas para ação no top 10% e as publicações que mais superaram a mediana do próprio perfil.
+O frontend (`frontend/`, servido por `backend/api/`) é a interface do contrato da ferramenta. A página tem duas abas, Consultar o agente e Visão da base. Antes da primeira consulta, a aba do agente mostra os pedidos prontos, a distribuição de ganchos, tons e chamadas para ação no top 10% e as publicações que mais superaram a mediana do próprio perfil.
 
 ![Tela inicial](img/00_inicio.png)
 
@@ -139,10 +141,10 @@ A aba Visão da base mostra os números gerais, os temas e formatos do top 10%, 
 
 **Origem e rotas.** Só foram usadas rotas oficiais, sem scraping.
 
-- **Instagram.** Endpoint Business Discovery da Instagram Graph API (Meta), versão `v27.0`, com app em modo de desenvolvimento e token de usuário (`coleta_instagram.py`). O Business Discovery só lê contas profissionais e devolve curtidas, comentários, legenda, tipo de mídia, data e link de cada post. Salvamentos e compartilhamentos não são fornecidos. Os limites de taxa (códigos 4, 17, 32 e 613) são tratados com espera de 60, 180, 300 e 600 segundos, e cada página baixada fica em cache em `data/raw/`.
-- **YouTube.** YouTube Data API v3 (`coleta_youtube.py`). O canal é encontrado pelo `@handle` com `channels.list`, os vídeos vêm da playlist de uploads com `playlistItems.list` (1 unidade de cota por página, em vez das 100 da busca) e as estatísticas vêm de `videos.list`. Como a API não marca Shorts, o critério é duração de até 180 segundos. As respostas ficam em cache em `data/raw_youtube/`.
+- **Instagram.** Endpoint Business Discovery da Instagram Graph API (Meta), versão `v27.0`, com app em modo de desenvolvimento e token de usuário (`backend/ingestion/coleta_instagram.py`). O Business Discovery só lê contas profissionais e devolve curtidas, comentários, legenda, tipo de mídia, data e link de cada post. Salvamentos e compartilhamentos não são fornecidos. Os limites de taxa (códigos 4, 17, 32 e 613) são tratados com espera de 60, 180, 300 e 600 segundos, e cada página baixada fica em cache em `data/raw/instagram/`.
+- **YouTube.** YouTube Data API v3 (`backend/ingestion/coleta_youtube.py`). O canal é encontrado pelo `@handle` com `channels.list`, os vídeos vêm da playlist de uploads com `playlistItems.list` (1 unidade de cota por página, em vez das 100 da busca) e as estatísticas vêm de `videos.list`. Como a API não marca Shorts, o critério é duração de até 180 segundos. As respostas ficam em cache em `data/raw/youtube/`.
 
-**Seleção de perfis.** A lista de candidatos (`candidatos.csv`) tem 62 contas do Instagram. O `validar_perfis.py` consulta cada uma e aprova só contas profissionais acessíveis com post nos últimos 12 meses. Para reduzir o viés de sobrevivência, limita as contas grandes a 15, mantendo `impulsostone`, `sebrae` e `nathfinancas` e, entre as demais, as de menos seguidores. Contas não oficiais e um banco generalista foram excluídos na curadoria manual. O resultado está em `perfis_validados.csv`.
+**Seleção de perfis.** A lista de candidatos (`data/perfis/candidatos.csv`) tem 62 contas do Instagram. O `backend/ingestion/validar_perfis.py` consulta cada uma e aprova só contas profissionais acessíveis com post nos últimos 12 meses. Para reduzir o viés de sobrevivência, limita as contas grandes a 15, mantendo `impulsostone`, `sebrae` e `nathfinancas` e, entre as demais, as de menos seguidores. Contas não oficiais e um banco generalista foram excluídos na curadoria manual. O resultado está em `data/perfis/perfis_validados.csv`.
 
 | Situação dos candidatos do Instagram | Perfis |
 |---|---|
@@ -152,19 +154,19 @@ A aba Visão da base mostra os números gerais, os temas e formatos do top 10%, 
 | Excluídos na curadoria manual (contas não oficiais da Ton e da SumUp, banco generalista) | 4 |
 | Sem posts nos últimos 12 meses | 1 |
 
-Dos 31 aprovados, 15 são grandes, 10 médios e 6 micro, e por origem são 21 criadores MPE, 5 concorrentes, 4 do ecossistema Stone e 1 da curadoria do setor (`perfis_validados.csv`). No YouTube, 14 dos 20 canais de `canais_youtube.csv` foram encontrados pelo handle (`data/coleta_youtube_log.json`), e 13 deles têm Shorts na base. As faixas de tamanho são micro (menos de 10 mil seguidores ou inscritos), médio (de 10 mil a 100 mil) e grande (acima de 100 mil).
+Dos 31 aprovados, 15 são grandes, 10 médios e 6 micro, e por origem são 21 criadores MPE, 5 concorrentes, 4 do ecossistema Stone e 1 da curadoria do setor (`data/perfis/perfis_validados.csv`). No YouTube, 14 dos 20 canais de `data/perfis/canais_youtube.csv` foram encontrados pelo handle (`outputs/coleta/coleta_youtube_log.json`), e 13 deles têm Shorts na base. As faixas de tamanho são micro (menos de 10 mil seguidores ou inscritos), médio (de 10 mil a 100 mil) e grande (acima de 100 mil).
 
 **Critérios das publicações.** Só entram posts com pelo menos 14 dias, para que curtidas e comentários estejam estabilizados. A janela foi de 730 dias no Instagram, para garantir volume em contas que publicam pouco, e de 365 dias no YouTube. A coleta do Instagram buscou até 300 posts por perfil e a do YouTube até 150 vídeos por canal.
 
 | Item | Valor | Fonte |
 |---|---|---|
-| Data registrada da coleta | 23/11/2026 (Instagram e YouTube) | `data/coleta_log.json`, `data/coleta_youtube_log.json` |
-| Posts do Instagram, brutos e válidos | 4.350 e 3.866 | `data/coleta_log.json` |
-| Vídeos do YouTube, brutos e Shorts válidos | 1.993 e 975 | `data/coleta_youtube_log.json` |
-| Publicações na base | 4.841 | `data/relatorio_base.md` |
-| Publicações com métrica válida | 4.314 | `data/relatorio_base.md` |
-| Período | 22/11/2024 a 09/11/2026 (YouTube a partir de 24/11/2025) | `data/relatorio_base.md`, `data/base.parquet` |
-| Perfis e canais distintos | 37 | `data/relatorio_base.md` |
+| Data registrada da coleta | 23/11/2026 (Instagram e YouTube) | `outputs/coleta/coleta_log.json`, `outputs/coleta/coleta_youtube_log.json` |
+| Posts do Instagram, brutos e válidos | 4.350 e 3.866 | `outputs/coleta/coleta_log.json` |
+| Vídeos do YouTube, brutos e Shorts válidos | 1.993 e 975 | `outputs/coleta/coleta_youtube_log.json` |
+| Publicações na base | 4.841 | `outputs/analise/relatorio_base.md` |
+| Publicações com métrica válida | 4.314 | `outputs/analise/relatorio_base.md` |
+| Período | 22/11/2024 a 09/11/2026 (YouTube a partir de 24/11/2025) | `outputs/analise/relatorio_base.md`, `data/processed/base.parquet` |
+| Perfis e canais distintos | 37 | `outputs/analise/relatorio_base.md` |
 
 | Volume por plataforma e faixa | Publicações |
 |---|---|
@@ -175,15 +177,15 @@ Dos 31 aprovados, 15 são grandes, 10 médios e 6 micro, e por origem são 21 cr
 | YouTube médio | 268 |
 | YouTube micro | 17 |
 
-Fonte `data/relatorio_base.md`. Das 527 publicações sem métrica válida (10,9% da base), 402 são posts do Instagram com curtidas ocultas (`data/coleta_log.json`).
+Fonte `outputs/analise/relatorio_base.md`. Das 527 publicações sem métrica válida (10,9% da base), 402 são posts do Instagram com curtidas ocultas (`outputs/coleta/coleta_log.json`).
 
-**Licença e uso.** Os dados são públicos e vêm de perfis profissionais, coletados pelas APIs oficiais dentro dos termos de cada plataforma. As imagens de capa baixadas para a categorização são de terceiros e ficam fora do git (`data/midia/`, listado em `.gitignore`), assim como as respostas brutas das APIs. A licença do código do repositório é [PREENCHER].
+**Licença e uso.** Os dados são públicos e vêm de perfis profissionais, coletados pelas APIs oficiais dentro dos termos de cada plataforma. As imagens de capa baixadas para a categorização são de terceiros e ficam fora do git (`data/raw/midia/`, dentro de `data/raw/`, que está no `.gitignore`), assim como as respostas brutas das APIs. A licença do código do repositório é [PREENCHER].
 
-**Representatividade.** A base descreve o recorte escolhido e não o universo de conteúdo para MPEs. Só contas profissionais são acessíveis pela API, a faixa micro tem 6 perfis no Instagram e o YouTube micro tem só 17 publicações, abaixo do mínimo de 30 que `montar_base.py` usa para considerar um estrato confiável.
+**Representatividade.** A base descreve o recorte escolhido e não o universo de conteúdo para MPEs. Só contas profissionais são acessíveis pela API, a faixa micro tem 6 perfis no Instagram e o YouTube micro tem só 17 publicações, abaixo do mínimo de 30 que `backend/analysis/montar_base.py` usa para considerar um estrato confiável.
 
 ## 5. Métrica e critério de alto desempenho
 
-**Taxa de engajamento normalizada.** Para cada publicação, calculada em `montar_base.py`.
+**Taxa de engajamento normalizada.** Para cada publicação, calculada em `backend/analysis/montar_base.py`.
 
 ```
 engajamento = (curtidas + comentários) / seguidores
@@ -199,13 +201,13 @@ lift = engajamento do post / mediana do engajamento do próprio perfil
 
 O lift compara cada publicação com o desempenho normal da conta que a publicou e isola o efeito do conteúdo. Só entram perfis com pelo menos 10 publicações válidas, para que a mediana seja confiável.
 
-**Corte do top 10%.** Alto desempenho é o top 10% de lift dentro de cada plataforma (`pct_lift >= 0,90`). O resultado são 430 publicações, 345 do Instagram e 85 do YouTube, e a maior participação de um único perfil caiu para 16,7% (`data/relatorio_base.md`). A marcação por estrato (plataforma e faixa) continua salva na base, na coluna `alto_estrato`, para comparação.
+**Corte do top 10%.** Alto desempenho é o top 10% de lift dentro de cada plataforma (`pct_lift >= 0,90`). O resultado são 430 publicações, 345 do Instagram e 85 do YouTube, e a maior participação de um único perfil caiu para 16,7% (`outputs/analise/relatorio_base.md`). A marcação por estrato (plataforma e faixa) continua salva na base, na coluna `alto_estrato`, para comparação.
 
-**Indicador de lead.** Métricas públicas não medem conversão. Como indicador indireto, `montar_base.py` marca a presença e o tipo de chamada para ação na legenda por expressões regulares (link na bio, comentar, salvar, mensagem direta, seguir, compartilhar), e a rubrica repete a marcação com o modelo.
+**Indicador de lead.** Métricas públicas não medem conversão. Como indicador indireto, `backend/analysis/montar_base.py` marca a presença e o tipo de chamada para ação na legenda por expressões regulares (link na bio, comentar, salvar, mensagem direta, seguir, compartilhar), e a rubrica repete a marcação com o modelo.
 
 ## 6. Rubrica de categorização
 
-A rubrica fixa do TAPI (seção 6.2) está em `rubrica.py` como modelo Pydantic. Cada resposta do modelo é validada contra ela, e uma resposta inválida volta para o modelo uma vez com os erros.
+A rubrica fixa do TAPI (seção 6.2) está em `backend/schemas/rubrica.py` como modelo Pydantic, e os prompts da categorização ficam em `backend/prompts/rubrica.py` e `backend/prompts/categorizacao_texto.py`. Cada resposta do modelo é validada contra ela, e uma resposta inválida volta para o modelo uma vez com os erros.
 
 | Campo | Tipo e valores | Origem na versão final |
 |---|---|---|
@@ -226,15 +228,15 @@ A rubrica fixa do TAPI (seção 6.2) está em `rubrica.py` como modelo Pydantic.
 | `tipo_cta` | `comentar`, `salvar`, `link_na_bio`, `dm`, `seguir`, `compartilhar`, `nenhum` | legenda, Groq |
 | `oferta_ou_beneficio_explicito` | booleano | legenda, Groq |
 | `elementos_top5` | lista de até 5 textos curtos | legenda, Groq |
-| `legenda_tamanho`, `duracao_faixa`, `tipo_post` | calculados sem modelo | `categorizar.py`, `montar_base.py` |
+| `legenda_tamanho`, `duracao_faixa`, `tipo_post` | calculados sem modelo | `backend/categorization/categorizar.py`, `backend/analysis/montar_base.py` |
 
 **Modelos testados.** A categorização passou por três versões, todas registradas no repositório.
 
-1. **Groq com imagem.** `categorizar.py` com `qwen/qwen3.8-27b`, legenda e capa. O plano gratuito comportou cerca de 50 publicações por dia, porque cada imagem consome muitos tokens (registro no cabeçalho de `categorizar.py`).
-2. **Modelo de visão local.** `categorizar.py --provedor ollama` com `qwen3-vl:2b-instruct` no Ollama. As respostas colapsaram para quase o mesmo valor em todos os posts, com 100% de `talking_head`, 100% de empreendedor real, 97,2% com chamada para ação e notas médias de 9,89 para o gancho e 9,75 para a clareza. Essa rodada está guardada em `data/categorias_vlm.parquet`.
-3. **Versão híbrida por fonte (final).** `categorizar_texto.py`. Os campos de texto vêm do `qwen/qwen3.8-27b` lendo só a legenda, em lotes de 10 publicações, com temperatura 0 e legenda limitada a 500 caracteres. O rosto vem do detector Haar do OpenCV (`modelos/haarcascade_frontalface_default.xml`), que é determinístico. O texto na tela vem do modelo de visão local, o único campo visual dele com distribuição plausível. O resultado está em `data/categorias.parquet`, com 425 das 430 publicações do top 10%, e o campo `modelo` registra a combinação usada.
+1. **Groq com imagem.** `backend/categorization/categorizar.py` com `qwen/qwen3.8-27b`, legenda e capa. O plano gratuito comportou cerca de 50 publicações por dia, porque cada imagem consome muitos tokens (registro no cabeçalho de `backend/categorization/categorizar.py`).
+2. **Modelo de visão local.** `python -m backend.categorization.categorizar --provedor ollama` com `qwen3-vl:2b-instruct` no Ollama. As respostas colapsaram para quase o mesmo valor em todos os posts, com 100% de `talking_head`, 100% de empreendedor real, 97,2% com chamada para ação e notas médias de 9,89 para o gancho e 9,75 para a clareza. Essa rodada está guardada em `data/processed/categorias_vlm.parquet`.
+3. **Versão híbrida por fonte (final).** `backend/categorization/categorizar_texto.py`. Os campos de texto vêm do `qwen/qwen3.8-27b` lendo só a legenda, em lotes de 10 publicações, com temperatura 0 e legenda limitada a 500 caracteres. O rosto vem do detector Haar do OpenCV (`data/modelos/haarcascade_frontalface_default.xml`), que é determinístico. O texto na tela vem do modelo de visão local, o único campo visual dele com distribuição plausível. O resultado está em `data/processed/categorias.parquet`, com 425 das 430 publicações do top 10%, e o campo `modelo` registra a combinação usada.
 
-**Validação manual.** `validacao.py amostra` sorteou 50 publicações do top 10%, estratificadas por plataforma e tipo de post (semente 42). A anotação foi feita às cegas, sem ver a resposta do modelo, com a ferramenta `anotar.py`, que gera uma página local com a capa, a legenda e as listas de opções. Entraram 49 publicações, porque uma da amostra não tem categorização. `validacao.py avaliar` calcula a concordância e o kappa de Cohen por campo e grava `data/validacao_resultado.md`.
+**Validação manual.** `python -m backend.validation.validacao amostra` sorteou 50 publicações do top 10%, estratificadas por plataforma e tipo de post (semente 42). A anotação foi feita às cegas, sem ver a resposta do modelo, com a ferramenta `backend/validation/anotar.py`, que gera uma página local com a capa, a legenda e as listas de opções. Entraram 49 publicações, porque uma da amostra não tem categorização. `python -m backend.validation.validacao avaliar` calcula a concordância e o kappa de Cohen por campo e grava `outputs/validacao/validacao_resultado.md`.
 
 | Campo | Publicações | Concordância | Kappa | Leitura |
 |---|---|---|---|---|
@@ -244,18 +246,18 @@ A rubrica fixa do TAPI (seção 6.2) está em `rubrica.py` como modelo Pydantic.
 
 ![Validação manual](resultados/figuras/validacao_manual.png)
 
-Os campos `tipo_hook`, `tema_principal`, `tom` e `tipo_cta` aparecem em `data/validacao_resultado.md` com concordância de 0% a 10%, mas não são comparáveis, porque a anotação usou categorias livres em vez dos valores da rubrica (por exemplo "reforma tributária" como gancho). Essa anotação mostra uma lacuna da rubrica, já que notícias (reforma tributária, limite do MEI) e propaganda de produto aparecem com frequência no topo e não têm categoria própria. O `formato_video` aparece com 100% em 25 publicações porque a anotação deixou o campo em branco e o cálculo conta como concordância os carrosséis e imagens, em que o campo é nulo dos dois lados. Na prática, o formato de vídeo não foi validado. Nas divergências de chamada para ação, a anotação humana considerou pedidos como "baixe o app" e "inscreva-se", que a rubrica não cobre bem.
+Os campos `tipo_hook`, `tema_principal`, `tom` e `tipo_cta` aparecem em `outputs/validacao/validacao_resultado.md` com concordância de 0% a 10%, mas não são comparáveis, porque a anotação usou categorias livres em vez dos valores da rubrica (por exemplo "reforma tributária" como gancho). Essa anotação mostra uma lacuna da rubrica, já que notícias (reforma tributária, limite do MEI) e propaganda de produto aparecem com frequência no topo e não têm categoria própria. O `formato_video` aparece com 100% em 25 publicações porque a anotação deixou o campo em branco e o cálculo conta como concordância os carrosséis e imagens, em que o campo é nulo dos dois lados. Na prática, o formato de vídeo não foi validado. Nas divergências de chamada para ação, a anotação humana considerou pedidos como "baixe o app" e "inscreva-se", que a rubrica não cobre bem.
 
 ## 7. Arquitetura
 
 ```mermaid
 flowchart LR
     subgraph Dados["Base (offline)"]
-        IG["coleta_instagram.py<br/>Instagram Graph API<br/>Business Discovery"]
-        YT["coleta_youtube.py<br/>YouTube Data API v3"]
-        MB["montar_base.py<br/>engajamento, lift, top 10%"]
-        CT["categorizar_texto.py<br/>rubrica (Groq + OpenCV + VLM local)"]
-        AT["analisar_top.py<br/>achados.json"]
+        IG["ingestion/coleta_instagram.py<br/>Instagram Graph API<br/>Business Discovery"]
+        YT["ingestion/coleta_youtube.py<br/>YouTube Data API v3"]
+        MB["analysis/montar_base.py<br/>engajamento, lift, top 10%"]
+        CT["categorization/categorizar_texto.py<br/>rubrica (Groq + OpenCV + VLM local)"]
+        AT["analysis/analisar_top.py<br/>achados.json"]
         IG --> MB
         YT --> MB
         MB --> CT --> AT
@@ -265,7 +267,7 @@ flowchart LR
         E["mode, query,<br/>segment, filters"]
     end
 
-    subgraph Orquestrador["Orquestrador LangGraph (agente.py)"]
+    subgraph Orquestrador["Orquestrador LangGraph (backend/graph/agente.py)"]
         N1["interpretar<br/>segmento e filtros, sem LLM"]
         N2["consultar<br/>ferramenta consultar_base"]
         N3["referenciar<br/>ferramenta buscar_referencias"]
@@ -281,16 +283,16 @@ flowchart LR
         S["findings, reference_posts,<br/>creatives, recomendacoes,<br/>confidence_flag, explanation"]
     end
 
-    LOG[("data/execucoes.jsonl<br/>registro de cada execução")]
+    LOG[("outputs/execucoes/execucoes.jsonl<br/>registro de cada execução")]
 
     subgraph Interfaces["Interfaces"]
         F["função executar()"]
-        M["servidor_mcp.py<br/>FastMCP"]
-        W["frontend/app.py<br/>FastAPI + página web"]
+        M["backend/mcp_server<br/>FastMCP"]
+        W["backend/api<br/>FastAPI + página em frontend/"]
     end
 
-    MB -. "data/base.parquet" .-> N2
-    CT -. "data/categorias.parquet" .-> N2
+    MB -. "data/processed/base.parquet" .-> N2
+    CT -. "data/processed/categorias.parquet" .-> N2
     E --> N1
     N4 --> S
     N5 --> S
@@ -302,7 +304,7 @@ flowchart LR
 
 O mesmo diagrama está em [`arquitetura/arquitetura.mmd`](arquitetura/arquitetura.mmd).
 
-O sistema tem três camadas. A **base** é montada fora do agente, por scripts que rodam uma vez e gravam arquivos em `data/`. O **agente** (`agente.py`) é um `StateGraph` do LangGraph que lê esses arquivos. As **interfaces** (função Python, servidor MCP e frontend) chamam a mesma função `executar()`.
+O sistema tem três camadas. A **base** é montada fora do agente, pelos módulos de `backend/ingestion/`, `backend/analysis/`, `backend/categorization/` e `backend/validation/`, que rodam uma vez e gravam arquivos em `data/` e `outputs/`. O **agente** (`backend/graph/agente.py`) é um `StateGraph` do LangGraph que lê esses arquivos. As **interfaces** (função Python, servidor MCP e frontend) chamam a mesma função `executar()`.
 
 O grafo tem cinco nós e uma aresta condicional.
 
@@ -312,13 +314,13 @@ O grafo tem cinco nós e uma aresta condicional.
 - **redigir** (modos analisar e recomendar) pede ao modelo uma análise ou de 3 a 5 recomendações com base só nos achados e nas referências recebidos. Se o modelo falhar, a explicação é montada direto dos achados, sem modelo.
 - **criar** (modo gerar_criativo) chama a ferramenta `gerar_criativos`, que pede ao modelo gancho, roteiro, legenda, chamada e justificativa. Cada criativo é validado com Pydantic, e os identificadores de inspiração que não estão entre as referências são descartados.
 
-Ao final, `executar()` calcula o `confidence_flag`, monta a `Saida` e grava a execução em `data/execucoes.jsonl`, com data, duração, modelo, entrada, erros e saída.
+Ao final, `executar()` calcula o `confidence_flag`, monta a `Saida` e grava a execução em `outputs/execucoes/execucoes.jsonl`, com data, duração, modelo, entrada, erros e saída.
 
-O frontend (`frontend/app.py`) é uma API FastAPI fina sobre `executar()`. Ela acrescenta só dados lidos da base (curtidas, comentários, seguidores, capa e exemplos de cada achado), verifica antes da chamada se o pedido tem alguma palavra presente no top 10% e troca a espera do Groq por uma resposta HTTP 429 imediata quando o limite é atingido. A página é HTML, CSS e JavaScript sem etapa de build.
+A API do frontend (`backend/api/main.py`) é uma camada FastAPI fina sobre `executar()`. Ela acrescenta só dados lidos da base (curtidas, comentários, seguidores, capa e exemplos de cada achado), verifica antes da chamada se o pedido tem alguma palavra presente no top 10% e troca a espera do Groq por uma resposta HTTP 429 imediata quando o limite é atingido. A página fica em `frontend/` e é HTML, CSS e JavaScript sem etapa de build.
 
 ## 8. Contrato da ferramenta
 
-A entrada e a saída são modelos Pydantic em `agente.py`.
+A entrada e a saída são modelos Pydantic em `backend/schemas/contrato.py`.
 
 **Entrada (`Entrada`)**
 
@@ -344,7 +346,7 @@ O contrato não tem filtro de período. A janela de datas é definida na coleta.
 | `confidence_flag` | verdadeiro quando o recorte tem menos de 15 publicações, quando algum filtro foi retirado ou quando gancho, tema ou formato se apoiam em menos de 10 publicações |
 | `explanation` | justificativa em linguagem natural |
 
-**Exemplo real.** Execução registrada em `data/execucoes.jsonl` em 24/11/2026 às 23:33:47 UTC, com o modelo `openai/gpt-oss-120b`. A saída abaixo foi encurtada nas listas, indicadas com `...`.
+**Exemplo real.** Execução registrada em `outputs/execucoes/execucoes.jsonl` em 24/11/2026 às 23:33:47 UTC, com o modelo `openai/gpt-oss-120b`. A saída abaixo foi encurtada nas listas, indicadas com `...`.
 
 ```json
 {
@@ -396,18 +398,18 @@ Nesse exemplo, o `confidence_flag` é verdadeiro porque `depoimento` e `bastidor
 
 | Etapa | Modelo e versão | Parâmetros | Onde |
 |---|---|---|---|
-| Categorização final, campos de texto | `qwen/qwen3.8-27b` no Groq | temperatura 0, saída JSON, `reasoning_effort` none, até 2.500 tokens, lotes de 10, legenda até 500 caracteres | `categorizar_texto.py` |
-| Categorização com imagem (primeira tentativa) | `qwen/qwen3.8-27b` no Groq | temperatura 0, saída JSON, até 500 tokens, imagem com lado máximo de 768 px | `categorizar.py` |
-| Texto na tela | `qwen3-vl:2b-instruct` no Ollama, local | temperatura 0, saída estruturada pelo esquema da rubrica | `categorizar.py --provedor ollama` |
-| Rosto na capa | detector Haar `haarcascade_frontalface_default.xml`, OpenCV abaixo da versão 5 | imagem reduzida para 640 px, `scaleFactor` 1,1, `minNeighbors` 5 | `categorizar_texto.py` |
-| Agente | `openai/gpt-oss-120b` no Groq | temperatura 0,4, saída JSON, `reasoning_effort` low, até 2.500 tokens no criativo e 1.800 na análise | `agente.py` |
+| Categorização final, campos de texto | `qwen/qwen3.8-27b` no Groq | temperatura 0, saída JSON, `reasoning_effort` none, até 2.500 tokens, lotes de 10, legenda até 500 caracteres | `backend/categorization/categorizar_texto.py` |
+| Categorização com imagem (primeira tentativa) | `qwen/qwen3.8-27b` no Groq | temperatura 0, saída JSON, até 500 tokens, imagem com lado máximo de 768 px | `backend/categorization/categorizar.py` |
+| Texto na tela | `qwen3-vl:2b-instruct` no Ollama, local | temperatura 0, saída estruturada pelo esquema da rubrica | `backend/categorization/categorizar.py --provedor ollama` |
+| Rosto na capa | detector Haar `haarcascade_frontalface_default.xml`, OpenCV abaixo da versão 5 | imagem reduzida para 640 px, `scaleFactor` 1,1, `minNeighbors` 5 | `backend/categorization/categorizar_texto.py` |
+| Agente | `openai/gpt-oss-120b` no Groq | temperatura 0,4, saída JSON, `reasoning_effort` low, até 2.500 tokens no criativo e 1.800 na análise | `backend/graph/agente.py`, prompts em `backend/prompts/agente.py` |
 
-**Limites gratuitos.** O plano gratuito do Groq limita requisições e tokens por modelo. O cabeçalho de `categorizar.py` registra que a categorização com imagem comportou cerca de 50 publicações por dia. Os limites numéricos do `openai/gpt-oss-120b` no plano usado são [PREENCHER]. A YouTube Data API v3 tem cota diária por chave, e a leitura pela playlist de uploads custa 1 unidade por página em vez das 100 da busca. Os limites de taxa da Instagram Graph API em modo de desenvolvimento são [PREENCHER].
+**Limites gratuitos.** O plano gratuito do Groq limita requisições e tokens por modelo. O cabeçalho de `backend/categorization/categorizar.py` registra que a categorização com imagem comportou cerca de 50 publicações por dia. Os limites numéricos do `openai/gpt-oss-120b` no plano usado são [PREENCHER]. A YouTube Data API v3 tem cota diária por chave, e a leitura pela playlist de uploads custa 1 unidade por página em vez das 100 da busca. Os limites de taxa da Instagram Graph API em modo de desenvolvimento são [PREENCHER].
 
 **Tratamento do erro 429.**
 
-- Coleta do Instagram. Espera de 60, 180, 300 e 600 segundos e, se o limite persistir, segue só com as páginas já em cache e registra onde parou em `data/coleta_log.json`.
-- Categorização. Respeita o cabeçalho `retry-after` do Groq em até 10 tentativas e para quando a espera passa de 600 segundos, sinal de limite diário. As respostas já obtidas ficam em `data/categorias_texto.jsonl`, então a execução continua de onde parou.
+- Coleta do Instagram. Espera de 60, 180, 300 e 600 segundos e, se o limite persistir, segue só com as páginas já em cache e registra onde parou em `outputs/coleta/coleta_log.json`.
+- Categorização. Respeita o cabeçalho `retry-after` do Groq em até 10 tentativas e para quando a espera passa de 600 segundos, sinal de limite diário. As respostas já obtidas ficam em `data/processed/categorias_texto.jsonl`, então a execução continua de onde parou.
 - Agente. Respeita o `retry-after` em até 6 tentativas e desiste quando a espera passa de 300 segundos. Se o modelo falhar no modo analisar ou recomendar, a explicação é montada direto da base.
 - Frontend. Espera no máximo uma vez, por até 8 segundos, e depois responde HTTP 429 com o tempo de espera e os dados da base, para a tela não ficar parada durante a apresentação.
 
@@ -415,7 +417,7 @@ Nesse exemplo, o `confidence_flag` é verdadeiro porque `depoimento` e `bastidor
 
 ## 10. Decisões técnicas
 
-**LangGraph como orquestrador.** O TAPI pede um agente com ferramentas e estado. O `StateGraph` deixa o fluxo explícito no código (interpretar, consultar, referenciar e redigir ou criar), com uma aresta condicional pelo modo. A alternativa de uma cadeia única de prompts esconderia as etapas e misturaria cálculo com redação. O custo é que um novo modo exige um nó e uma aresta em `montar_grafo()`.
+**LangGraph como orquestrador.** O TAPI pede um agente com ferramentas e estado. O `StateGraph` deixa o fluxo explícito no código (interpretar, consultar, referenciar e redigir ou criar), com uma aresta condicional pelo modo. A alternativa de uma cadeia única de prompts esconderia as etapas e misturaria cálculo com redação. O custo é que um novo modo exige um nó e uma aresta em `montar_grafo()`, em `backend/graph/agente.py`.
 
 **Modelo de linguagem só para interpretar e redigir.** Os números da base precisam ser verificáveis na apresentação. Frequências, filtros, ranking e escolha das referências são feitos em pandas, e o modelo recebe esses resultados prontos. A consequência é que a qualidade das referências depende de uma busca simples por palavras, e não de busca semântica.
 
@@ -425,7 +427,7 @@ Nesse exemplo, o `confidence_flag` é verdadeiro porque `depoimento` e `bastidor
 
 **Categorização híbrida por fonte.** A rodada só com imagem no Groq não cabia no plano gratuito e a rodada local com o modelo de 2B colapsou. Cada campo passou a vir da fonte mais confiável para ele, que é a legenda para os campos de texto, um detector determinístico para o rosto e o modelo local para o texto na tela. O preço é que o formato de vídeo é inferido do texto, sem ver o vídeo.
 
-**Rotas oficiais de coleta com cache.** Business Discovery e YouTube Data API são as rotas permitidas e reproduzíveis. Cada resposta fica em `data/raw/` e `data/raw_youtube/`, o que permite reconstruir a base sem gastar cota (`--somente-cache` no Instagram). O limite é que só contas profissionais ficam acessíveis.
+**Rotas oficiais de coleta com cache.** Business Discovery e YouTube Data API são as rotas permitidas e reproduzíveis. Cada resposta fica em `data/raw/instagram/` e `data/raw/youtube/`, o que permite reconstruir a base sem gastar cota (`--somente-cache` no Instagram). O limite é que só contas profissionais ficam acessíveis.
 
 **FastMCP para integração.** O servidor MCP expõe a mesma função a clientes externos com poucas linhas, sem duplicar lógica.
 
@@ -437,21 +439,21 @@ Cada passo grava arquivos em `data/` que o passo seguinte lê, e as respostas da
 
 | Passo | Comando | Saída |
 |---|---|---|
-| 1. Validar perfis | `python validar_perfis.py --entrada candidatos.csv` | `perfis_validados.csv`, `perfis.csv` |
-| 2. Coletar Instagram | `python coleta_instagram.py --perfis perfis.csv --max-posts 300 --janela-dias 730` | `data/posts.parquet`, `data/perfis.parquet`, `data/coleta_log.json` |
-| 3. Coletar YouTube | `python coleta_youtube.py --canais canais_youtube.csv --max-videos 150` | `data/youtube_posts.parquet`, `data/youtube_canais.parquet`, `data/coleta_youtube_log.json` |
-| 4. Montar base e ranking | `python montar_base.py` | `data/base.parquet`, `data/base.csv`, `data/top10.csv`, `data/midia/`, `data/relatorio_base.md` |
-| 5. Categorizar | `python categorizar.py --provedor ollama` e depois `python categorizar_texto.py` | `data/categorias_vlm.parquet`, `data/categorias_texto.jsonl`, `data/categorias.parquet` |
-| 6. Validar | `python validacao.py amostra`, `python anotar.py gerar`, anotação, `python anotar.py importar <csv>`, `python validacao.py avaliar` | `data/validacao_manual.xlsx`, `data/validacao_resultado.md` |
-| 7. Gerar achados | `python analisar_top.py` | `data/achados.md`, `data/achados.json` |
-| 8. Demonstrar | `python demo.py`, `python gerar_playbook.py` | `data/demo.md`, `data/playbook.md`, `data/playbook_criativos.json` |
-| 9. Usar | `.\.venv\Scripts\python.exe frontend\app.py` ou `python servidor_mcp.py` | `data/execucoes.jsonl` |
+| 1. Validar perfis | `python -m backend.ingestion.validar_perfis` | `data/perfis/perfis_validados.csv`, `data/perfis/perfis.csv` |
+| 2. Coletar Instagram | `python -m backend.ingestion.coleta_instagram --max-posts 300 --janela-dias 730` | `data/processed/posts.parquet`, `data/processed/perfis.parquet`, `outputs/coleta/coleta_log.json` |
+| 3. Coletar YouTube | `python -m backend.ingestion.coleta_youtube --max-videos 150` | `data/processed/youtube_posts.parquet`, `data/processed/youtube_canais.parquet`, `outputs/coleta/coleta_youtube_log.json` |
+| 4. Montar base e ranking | `python -m backend.analysis.montar_base` | `data/processed/base.parquet`, `data/processed/base.csv`, `data/processed/top10.csv`, `data/raw/midia/`, `outputs/analise/relatorio_base.md` |
+| 5. Categorizar | `python -m backend.categorization.categorizar --provedor ollama` e depois `python -m backend.categorization.categorizar_texto` | `data/processed/categorias_vlm.parquet`, `data/processed/categorias_texto.jsonl`, `data/processed/categorias.parquet` |
+| 6. Validar | `python -m backend.validation.validacao amostra`, `python -m backend.validation.anotar gerar`, anotação, `python -m backend.validation.anotar importar <csv>`, `python -m backend.validation.validacao avaliar` | `data/validacao/validacao_manual.xlsx`, `outputs/validacao/validacao_resultado.md` |
+| 7. Gerar achados | `python -m backend.analysis.analisar_top` | `outputs/analise/achados.md`, `outputs/analise/achados.json` |
+| 8. Demonstrar | `python scripts/demo.py`, `python scripts/gerar_playbook.py` | `outputs/demo/demo.md`, `outputs/playbook/playbook.md`, `outputs/playbook/playbook_criativos.json` |
+| 9. Usar | `python -m backend.api` ou `python -m backend.mcp_server` | `outputs/execucoes/execucoes.jsonl` |
 
-Para reproduzir sem chamar as APIs de coleta, basta manter `data/raw/` e `data/raw_youtube/` e rodar `coleta_instagram.py --somente-cache` e `coleta_youtube.py`, que leem o cache antes de qualquer requisição.
+Os comandos rodam na raiz do repositório e os valores padrão das listas de perfis e canais apontam para `data/perfis/`. Para reproduzir sem chamar as APIs de coleta, basta manter `data/raw/instagram/` e `data/raw/youtube/` e rodar `python -m backend.ingestion.coleta_instagram --somente-cache` e `python -m backend.ingestion.coleta_youtube`, que leem o cache antes de qualquer requisição.
 
 ## 12. Resultados
 
-Os números abaixo descrevem as 425 publicações de alto desempenho categorizadas (`data/achados.json` e `data/achados.md`). São padrões observados no topo, sem comparação com o restante da base, e não garantem engajamento.
+Os números abaixo descrevem as 425 publicações de alto desempenho categorizadas (`outputs/analise/achados.json` e `outputs/analise/achados.md`). São padrões observados no topo, sem comparação com o restante da base, e não garantem engajamento.
 
 ![Frequências no top 10%](resultados/figuras/frequencias_top10.png)
 
@@ -472,11 +474,11 @@ Os números abaixo descrevem as 425 publicações de alto desempenho categorizad
 
 As notas médias atribuídas pelo modelo foram 5,9 para a força do gancho e 7,3 para a clareza da mensagem. Os temas vendas (9 publicações) e atendimento (3) e os formatos lista de dicas (3) e antes e depois (2) aparecem com o aviso de baixa confiança.
 
-**Tipo de publicação.** Reels aparecem um pouco mais no topo do que na base (razão 1,10) e imagem estática bem menos (razão 0,60). Fonte `data/relatorio_base.md`.
+**Tipo de publicação.** Reels aparecem um pouco mais no topo do que na base (razão 1,10) e imagem estática bem menos (razão 0,60). Fonte `outputs/analise/relatorio_base.md`.
 
 ![Tipo de publicação na base e no top 10%](resultados/figuras/tipo_post_base_vs_top.png)
 
-**Recortes por tema e formato.** Fonte `data/achados.md`.
+**Recortes por tema e formato.** Fonte `outputs/analise/achados.md`.
 
 - Finanças aparece mais em pessoa falando para a câmera (16) e tutorial (14).
 - História de empreendedor aparece mais em depoimento (13).
@@ -485,9 +487,9 @@ As notas médias atribuídas pelo modelo foram 5,9 para a força do gancho e 7,3
 - Motivação aparece em depoimento (8) e humor ou esquete (8).
 - Curiosidade é o gancho mais comum nas duas plataformas (112 no Instagram e 23 no YouTube). Polêmica aparece quase só no Instagram (28 contra 2).
 
-**Comparação entre base e topo (`data/relatorio_base.md`).** Perfis grandes somam 60,5% da base e 70,7% do topo, médios caem de 30,2% para 19,1% e micro sobem de 9,2% para 10,2%. A presença de chamada para ação detectada por regra é de 30,4% na base e 27,0% no topo. Por origem, o topo tem 186 publicações de criadores MPE, 131 de concorrentes, 70 do ecossistema Stone, 41 da curadoria do setor e 2 de plataformas para MPE.
+**Comparação entre base e topo (`outputs/analise/relatorio_base.md`).** Perfis grandes somam 60,5% da base e 70,7% do topo, médios caem de 30,2% para 19,1% e micro sobem de 9,2% para 10,2%. A presença de chamada para ação detectada por regra é de 30,4% na base e 27,0% no topo. Por origem, o topo tem 186 publicações de criadores MPE, 131 de concorrentes, 70 do ecossistema Stone, 41 da curadoria do setor e 2 de plataformas para MPE.
 
-**Perfis em destaque.** Perfis com mais publicações no top 10% categorizado (`data/achados.md`).
+**Perfis em destaque.** Perfis com mais publicações no top 10% categorizado (`outputs/analise/achados.md`).
 
 | Perfil | Plataforma | Faixa | Posts no topo | Tema predominante | Formato predominante | Lift mediano |
 |---|---|---|---|---|---|---|
@@ -504,9 +506,9 @@ As notas médias atribuídas pelo modelo foram 5,9 para a força do gancho e 7,3
 | bldfoodbr | Instagram | micro | 12 | marketing | bastidores | 7,07 |
 | belezacomonegociooficial | Instagram | micro | 11 | ferramentas e maquininha | tutorial | 16,55 |
 
-**Exemplos reais.** A publicação de maior lift em cada categoria frequente está em `data/achados.json`. Alguns casos são um Short da PagBank com gancho de curiosidade, tema finanças e formato depoimento ([link](https://www.youtube.com/shorts/gekE1L2ENQw), lift 1.547,54), um Reels da @belezacomonegociooficial com gancho de promessa e tema gestão ([link](https://www.instagram.com/reel/DdMYU6ER815/), lift 1.014,09) e um Short da InfinitePay com gancho de pergunta em formato tutorial ([link](https://www.youtube.com/shorts/Efv_beC-m5A), lift 1.732,08).
+**Exemplos reais.** A publicação de maior lift em cada categoria frequente está em `outputs/analise/achados.json`. Alguns casos são um Short da PagBank com gancho de curiosidade, tema finanças e formato depoimento ([link](https://www.youtube.com/shorts/gekE1L2ENQw), lift 1.547,54), um Reels da @belezacomonegociooficial com gancho de promessa e tema gestão ([link](https://www.instagram.com/reel/DdMYU6ER815/), lift 1.014,09) e um Short da InfinitePay com gancho de pergunta em formato tutorial ([link](https://www.youtube.com/shorts/Efv_beC-m5A), lift 1.732,08).
 
-**Saídas do agente.** `data/demo.md` tem um pedido de cada modo e `data/playbook.md` tem recomendações e cinco criativos (alimentação, beleza, varejo e moda, finanças do MEI e gestão), cada um com as publicações que o inspiraram.
+**Saídas do agente.** `outputs/demo/demo.md` tem um pedido de cada modo e `outputs/playbook/playbook.md` tem recomendações e cinco criativos (alimentação, beleza, varejo e moda, finanças do MEI e gestão), cada um com as publicações que o inspiraram.
 
 ## 13. Rastreabilidade
 
@@ -517,19 +519,28 @@ Cada recomendação e cada criativo se liga a publicações reais por quatro mec
 3. **Números fora do texto do modelo.** O frontend mostra engajamento, lift, curtidas, comentários, seguidores e frequências a partir dos campos da base. O texto do modelo aparece com um selo de origem e sem destaque numérico.
 4. **Links na tela.** Cada referência tem link para a publicação original. Nos textos do modelo, todo identificador citado vira um link numerado para a referência correspondente, um link para o post quando ele está na base fora das referências ou um aviso quando não está na base. Cada barra do gráfico de achados abre as três publicações de maior lift que ela conta, no mesmo recorte usado pelo agente.
 
-Cada execução fica em `data/execucoes.jsonl` com entrada, saída, modelo e erros, o que permite reconstruir de onde saiu cada criativo apresentado.
+Cada execução fica em `outputs/execucoes/execucoes.jsonl` com entrada, saída, modelo e erros, o que permite reconstruir de onde saiu cada criativo apresentado.
 
 ## 14. Testes
 
-O repositório não tem uma suíte automatizada. A verificação foi feita em quatro frentes.
+A suíte em `tests/` tem 30 testes offline, que rodam com `python -m pytest` na raiz. Eles usam a base real versionada em `data/processed/` e um modelo de linguagem falso (fixture `agente_offline` em `tests/conftest.py`), que devolve um criativo com um identificador de inspiração inventado para testar o filtro de rastreabilidade. O registro das execuções vai para uma pasta temporária, então os testes não alteram `outputs/execucoes/execucoes.jsonl`.
 
-**Validação da categorização.** Amostra de 49 publicações anotadas às cegas, com concordância e kappa por campo (seção 6 e `data/validacao_resultado.md`).
+| Arquivo | O que cobre |
+|---|---|
+| `tests/test_estrutura.py` | pastas e arquivos de `backend/config.py` e importação de todos os módulos |
+| `tests/test_schemas.py` | contrato de entrada e saída, rubrica com valores fechados, lote da categorização e prompts |
+| `tests/test_metrica.py` | engajamento normalizado, lift, top 10% em base sintética, chamada para ação por regra e coerência da base salva |
+| `tests/test_agente.py` | detecção de segmento e formato, retirada de filtros, findings contados da base, referências do recorte, descarte de inspiração inventada, os três modos e a explicação montada da base quando o modelo falha |
+| `tests/test_api.py` | página e arquivos estáticos, visão da base, contrato e rastreabilidade na consulta, erros 400, 404 e 422 e o 429 simulado |
+| `tests/test_mcp.py` | servidor MCP em memória com as duas ferramentas |
 
-**Validação dos dados.** `montar_base.py` registra em `data/relatorio_base.md` os estratos com menos de 30 publicações e a participação máxima de um perfil no topo, e as coletas registram volumes e falhas em `data/coleta_log.json` e `data/coleta_youtube_log.json`. O download das capas do top 10% teve as 430 publicações com status ok (coluna `midia_status` de `data/base.parquet`).
+Além da suíte, a verificação teve três frentes.
 
-**Execuções de ponta a ponta.** `data/execucoes.jsonl` registra 21 execuções do agente (3 de análise, 4 de recomendação e 14 de criativo) com a base real. Duas delas registram o erro de limite, geradas de propósito com `SIMULAR_LIMITE=1` para testar a tela de erro. Uma execução de criativo de `demo.py` terminou sem criativo e sem erro registrado. O código descarta sem registrar erro os criativos que não passam na validação do Pydantic, o que deixa esse caso sem diagnóstico no log.
+**Validação da categorização.** Amostra de 49 publicações anotadas às cegas, com concordância e kappa por campo (seção 6 e `outputs/validacao/validacao_resultado.md`).
 
-**Frontend.** Os três pedidos prontos foram executados pela interface com a base real. Também foram testados o pedido vazio (HTTP 400), a consulta sem resultado (HTTP 404, por exemplo "criptomoedas e blockchain") e o limite do modelo (HTTP 429 com `SIMULAR_LIMITE=1`). As telas da seção 3 foram capturadas a partir de execuções gravadas em `data/execucoes.jsonl`.
+**Validação dos dados.** `backend/analysis/montar_base.py` registra em `outputs/analise/relatorio_base.md` os estratos com menos de 30 publicações e a participação máxima de um perfil no topo, e as coletas registram volumes e falhas em `outputs/coleta/`. O download das capas do top 10% teve as 430 publicações com status ok (coluna `midia_status` de `data/processed/base.parquet`).
+
+**Execuções de ponta a ponta.** `outputs/execucoes/execucoes.jsonl` registra as execuções reais do agente com o modelo `openai/gpt-oss-120b`, nos três modos. Duas delas registram o erro de limite, geradas de propósito com `SIMULAR_LIMITE=1` para testar a tela de erro. Uma execução de criativo de `scripts/demo.py` terminou sem criativo e sem erro registrado. O código descarta sem registrar erro os criativos que não passam na validação do Pydantic, o que deixa esse caso sem diagnóstico no log. Os três pedidos prontos do frontend, o pedido vazio (HTTP 400), a consulta sem resultado (HTTP 404) e o limite do modelo (HTTP 429) foram testados pela interface com a base real.
 
 ## 15. Limitações, vieses e riscos
 
@@ -545,7 +556,7 @@ O repositório não tem uma suíte automatizada. A verificação foi feita em qu
 
 **Agente.** A busca de referências usa palavras em comum, então pedidos com sinônimos que não aparecem nas legendas podem trazer referências menos próximas. O texto do modelo pode citar percentuais na justificativa, e esses números precisam ser conferidos nos achados exibidos ao lado. O tom do criativo segue as instruções do Impulso Stone escritas no prompt e não foi avaliado por pessoas da Stone.
 
-**Dependência de serviços gratuitos.** Modelos e limites do Groq podem mudar. Os identificadores dos modelos ficam registrados em cada saída (`modelo` em `data/categorias.parquet` e `modelo_llm` em `data/execucoes.jsonl`).
+**Dependência de serviços gratuitos.** Modelos e limites do Groq podem mudar. Os identificadores dos modelos ficam registrados em cada saída (`modelo` em `data/processed/categorias.parquet` e `modelo_llm` em `outputs/execucoes/execucoes.jsonl`).
 
 **Imagens de terceiros.** As capas das publicações são de terceiros e não fazem parte do repositório. As capturas de tela em `docs/img/` mostram capas em miniatura.
 

@@ -1,7 +1,15 @@
+# segredos
 .env
+
+# ambiente e cache do Python
 .venv/
 __pycache__/
+*.pyc
+.pytest_cache/
+
+# dados brutos (respostas das APIs e capas de terceiros)
 data/raw/
-data/midia/
-data/raw_youtube/
-git delete
+
+# gerados localmente
+data/validacao/anotar.html
+~$*
